@@ -1,0 +1,37 @@
+[
+{
+	"string_title": "ko",
+	"maintenance": "봇 수리중임니다, 재송해여... 제 주인을 탓하세여 <@!272958758999818241>",
+	"exit_SIGTERM": "주기적인 종료거나 정상적인 프로세스 종료",
+	"exit_SIGINT": "오류로 인한 종료거나 강제 종료",
+	"got_new_anime": "새 애니가 떳서염!",
+	"msg_send_fail": "메세지 전송에 실패했습니닷... 바로 확인할께욧",
+	"anime_search_result_start": "\"{searchKey}\" 검색 결과",
+	"anime_search_more": "`... 그리고 {andMore}개 더 검색됨`",
+	"anime_search_no_result": "검색 결과가 없네여... 혹시 철자가 틀렸는지 확인해보세여",
+	"cse_api_exceeded": "오늘 하루 구글 API의 검색 요청 가능 수를 초과했습니당... :cry:\n`(현재 무료로 하루에 200건, 리셋까지 {timeStr} 남았어염)`",
+	"bot_uptime": "봇 가동시간 : {uptime}\n(로그인 경과 시간 : {loginTime})",
+	"system_uptime": "Heroku 시스템 가동시간 : {systemUptime}",
+	"image_search_nan": "숫자 입력이 잘못되어 키워드로 포함해 검색합니당",
+	"image_searching": "`\"{iKeyword}\" {imgIdx}번째 이미지 검색중...`",
+	"image_cse_request_fail": "이미지 검색 결과를 받는데 실패했습니닷... 확인할께욧",
+	"image_not_enough": "이미지 검색 결과가 그만큼 많지 않네여... (검색결과 : {resultQuant}건)",
+	"image_attach_fail": "이미지 첨부 실패...\n찾은 이미지 URL : {imageUrl}\n이미지 출처 URL : {imageSource}"
+},
+{
+	"string_title": "en",
+	"maintenance": "Sorry, HeBot is now under maintenance. Contact <@!272958758999818241>",
+	"got_new_anime": "Found new Anime",
+	"msg_send_fail": "메세지 전송에 실패했습니닷... 바로 확인할께욧",
+	"anime_search_result_start": "\"{searchKey}\" 검색 결과",
+	"anime_search_more": "`... 그리고 {andMore}개 더 검색됨`",
+	"anime_search_no_result": "검색 결과가 없네여... 혹시 철자가 틀렸는지 확인해보세여",
+	"cse_api_exceeded": "오늘 하루 구글 API의 검색 요청 가능 수를 초과했습니당... :cry:\n`(현재 무료로 하루에 200건, 리셋까지 {timeStr} 남았어염)`",
+	"bot_uptime": "봇 가동시간 : {uptime}\n(로그인 경과 시간 : {loginTime})",
+	"system_uptime": "Heroku 시스템 가동시간 : {systemUptime}",
+	"image_search_nan": "숫자 입력이 잘못되어 키워드로 포함해 검색합니당",
+	"image_searching": "`\"{iKeyword}\" {imgIdx}번째 이미지 검색중...`",
+	"image_cse_request_fail": "이미지 검색 결과를 받는데 실패했습니닷... 확인할께욧",
+	"image_not_enough": "이미지 검색 결과가 그만큼 많지 않네여... (검색결과 : {resultQuant}건)",
+	"image_attach_fail": "이미지 첨부 실패...\n찾은 이미지 URL : {imageUrl}\n이미지 출처 URL : {imageSource}"
+}]

@@ -1,0 +1,33 @@
+{
+  "name": "hebot003",
+  "version": "0.1.19060701",
+  "description": "Discord bot, third try...",
+  "main": "index.js",
+  "scripts": {
+    "test": "printLog(\"npm initial test\", \"\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[3~\u001b[3~\u001b[3~\u001b[3{embed:{description:\"npm initial test\"}});"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Excute/HeBot003.git"
+  },
+  "keywords": [
+    "discord",
+    "excute",
+    "bot"
+  ],
+  "author": "Excute",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Excute/HeBot003/issues"
+  },
+  "homepage": "https://github.com/Excute/HeBot003#readme",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "discord.js": "^11.5.1",
+    "googleapis": "^40.0.0",
+    "html-entities": "^1.2.1",
+    "os": "^0.1.1",
+    "pg": "^7.11.0",
+    "process": "^0.11.10"
+  }
+}
