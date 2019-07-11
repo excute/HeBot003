@@ -369,19 +369,19 @@ function prepareDB() {
 */
 
 /* ~~~~ Sending functions ~~~~ */
-function getGeneralDebugLog(message, iTitle, iColor) {
+function getGeneralDebugLog(message) {
 	var tmpEmbed = {
 		color: COLOR_DEBUG,
 		embed: {
 			title: "General Debug"
 		}
 	};
-	if (iTitle != undefined) {
-		tmpEmbed.embed.title = iTitle;
-	}
-	if (iColor != undefined) {
-		tmpEmbed.embed.color = iColor;
-	}
+	// if (iTitle != undefined) {
+	// 	tmpEmbed.embed.title = iTitle;
+	// }
+	// if (iColor != undefined) {
+	// 	tmpEmbed.embed.color = iColor;
+	// }
 	switch (message.channel.type) {
 		default:
 		case "text":
@@ -450,8 +450,13 @@ async function printLog(consoleLog, embedLog, embedText) {
 	}
 }
 
-async function printLogError(consoleLog, embedLog, message) {
-	printLog("[ERR] " + consoleLog, getGeneralDebugLog(message, "Error command", COLOR_ERROR), `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
+async function printLogError(message, consoleLog, eDesc) {
+	var tmpEmbed = getGeneralDebugLog(message);
+	tmpEmbed.color = COLOR_ERROR;
+	// tmpEmbed.title = eTitle;
+	tmpEmbed.title = consoleLog;
+	tmpEmbed.description = eDesc;
+	printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
 }
 
 async function answerToTheChannel(inputMessage, outputText, outputOptions, callback) {
@@ -462,12 +467,7 @@ async function answerToTheChannel(inputMessage, outputText, outputOptions, callb
 			}
 		})
 		.catch((error) => {
-			printLogError("answerToTheChannel() failed :\n" + error, {
-				embed: {
-					title: "ERROR : answerToTheChannel() failed",
-					description: error.toString()
-				}
-			}, inputMessage);
+			printLogError(message, "answerToTheChannel() failed", error);
 		});
 }
 
@@ -785,12 +785,7 @@ async function responseToMessage(message, args) {
 						start: 1 + (qNum * (qPage - 1)),
 					}, (error, response) => {
 						if (error) {
-							printLogError("searchGoogle failed?\n" + error, {
-								embed: {
-									title: "searchGoogle failed?",
-									description: error.toString()
-								}
-							}, message);
+							printLogError(message, "searchGoogle failed?", error);
 							answerToTheChannel(message, "구글 검색 실패...?", undefined, (sentMessage) => {
 								message.channel.stopTyping();
 							});
@@ -848,12 +843,7 @@ async function responseToMessage(message, args) {
 								);
 							}
 						} else {
-							printLogError("searchGoogle error : No error, No response", {
-								embed: {
-									title: "searchGoogle error : No error, No response",
-									description: "What the...??"
-								}
-							}, message);
+							printLogError(message, "searchGoogle error : No error, No response", "What the...??");
 							answerToTheChannel(message, "엥...? 검색 오류도 없는데 구글 응답이 없어요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
 						}
 					});
@@ -900,12 +890,7 @@ async function responseToMessage(message, args) {
 						searchType: "image"
 					}, (searchErr, searchRes) => {
 						if (searchErr) {
-							printLogError("searchGoogle(image) error :\n" + searchErr, {
-								embed: {
-									title: "searchGoogle(image) error",
-									description: searchErr.toString()
-								}
-							}, message);
+							printLogError(message, "searchGoogle(image) error", searchErr);
 							answerToTheChannel(message, "이미지 검색 에러... 라는대여...??", undefined, (sentMessage) => {
 								message.channel.stopTyping();
 							});
@@ -922,12 +907,7 @@ async function responseToMessage(message, args) {
 										}, 3,
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
-												printLogError("tryRequest(image) error :\n" + imgReqErr, {
-													embed: {
-														title: "tryRequest(image) error",
-														description: imgReqErr.toString()
-													}
-												}, message);
+												printLogError(message, "tryRequest(image) error", imgReqErr);
 												answerToTheChannel(message, "이미지 다운로드 실패...??", undefined, (sentMessage) => { message.channel.stopTyping(); });
 											} else {
 												if (imgReqRes.statusCode != 200) {
@@ -943,12 +923,7 @@ async function responseToMessage(message, args) {
 															message.channel.stopTyping();
 														});
 													} else {
-														printLogError("imgReqRes.statusCode != 200", {
-															embed: {
-																title: "imgReqRes.statusCode != 200",
-																description: searchRes.data.items[0].link
-															}
-														}, message);
+														printLogError(message, "imgReqRes.statusCode != 200", searchRes.data.items[0].link);
 														answerToTheChannel(message, "_403 이미지 표시 제한, 구글 썸네일로 대체_", {
 															embed: {
 																color: COLOR_WARN,
@@ -1011,12 +986,7 @@ async function responseToMessage(message, args) {
 								}
 							}
 						} else {
-							printLogError("searchGoogle(image) No error, no response", {
-								embed: {
-									title: "searchGoogle(image) No error, no response",
-									description: "Not an error, but undefined searchRes.data returned"
-								}
-							}, message);
+							printLogError(message, "searchGoogle(image) No error, no response", "Not an error, but undefined searchRes.data returned");
 							answerToTheChannel(message, "엥?? 검색 에러도 없고 결과도 없는대요???? :thinking:", undefined, (sentMessage) => { message.channel.stopTyping(); });
 						}
 					});
