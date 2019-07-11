@@ -24,6 +24,7 @@
   "dependencies": {
     "bufferutil": "^4.0.1",
     "discord.js": "^11.5.1",
+    "expr-eval": "^1.2.3",
     "googleapis": "^40.0.0",
     "html-entities": "^1.2.1",
     "os": "^0.1.1",

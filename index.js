@@ -25,6 +25,7 @@ const CSE_ID = process.env.CSE_ID;
 const CSE_JP_ID = process.env.CSE_JP_ID;
 const CustomSearch = google.customsearch("v1");
 const CustomSearchJp = google.customsearch("v1");
+const ExprParser = require('expr-eval').Parser;
 
 const SwPowerTable = require("./sw_power_table.json");
 
@@ -123,16 +124,183 @@ function getValueOfHex(hexStr) {
 	return parseInt(hexStr.replace("#", "0x"));
 }
 
-async function rollDices(numA, numB, callback) {
-	var dices = [];
-	for (var i = 0; i < numA; i++) {
-		dices.push(Math.floor(Math.random() * numB + 1));
-	}
-	if (callback != undefined) {
-		callback(dices);
+function rollDices(numA, numB) {
+	var iNumA = Number(numA);
+	var iNumB = Number(numB);
+	if (!Number.isInteger(iNumA) || !Number.isInteger(iNumB)) {
+		return [-1];
+	} else if (iNumA > 101 || iNumA < 0 || iNumB > 101 || iNumB < 0) {
+		return [-2];
 	} else {
+		var dices = [];
+		for (var i = 0; i < iNumA; i++) {
+			dices.push(Math.floor(Math.random() * iNumB + 1));
+		}
 		return dices;
 	}
+}
+/*
+async function doMath(iForm, callback) {
+	var formArray = [];
+	var calculateStack = [];
+	var tmpPnt = 0;
+	var operands = ["+", "-", "/", "*", "%", "(", ")", "{", "}", "[", "]"];
+	// var operateFlag = true;
+	var braceArray = [];
+	for (var i = 0; i < iForm.length; i++) {
+		if (operands.find((anOper) => { return anOper === iForm[i]; })) {
+			if (i === tmpPnt) { return callback("no term between operands", undefined); } else {
+				formArray.push(iForm.substr(tmpPnt, i).trim());
+				formArray.push(iForm[i]);
+				tmpPnt = i + 1;
+			}
+		}
+	}
+	// tmpPnt = formArray.length - 1;
+	tmpPnt = 0;
+	for (var i = 0; i < formArray.length; i++) {
+		if (formArray[i] === "(") {
+			var tmpFlag = false;
+			for (var j = i + 1; j < formArray.length; j++) {
+				if (formArray[j] === ")") {
+					braceArray.push({
+						brace: "()",
+						point: [i, j]
+					});
+					tmpFlag = true;
+				}
+			}
+			if (!tmpFlag) { return callback("no brace close", undefined); }
+		}
+		if (formArray[i] === "{") {
+			var tmpFlag = false;
+			for (var j = i + 1; j < formArray.length; j++) {
+				if (formArray[j] === "}") {
+					braceArray.push({
+						brace: "{}",
+						point: [i, j]
+					});
+					tmpFlag = true;
+				}
+			}
+			if (!tmpFlag) { return callback("no brace close", undefined); }
+		}
+		if (formArray[i] === "[") {
+			var tmpFlag = false;
+			for (var j = i + 1; j < formArray.length; j++) {
+				if (formArray[j] === "]") {
+					braceArray.push({
+						brace: "[]",
+						point: [i, j]
+					});
+					tmpFlag = true;
+				}
+			}
+			if (!tmpFlag) { return callback("no brace close", undefined); }
+		}
+	}
+	for (var i = 0; i + 1 < formArray.length; i++) {
+		for (var j = i + 1; j < formArray.length; j++) {
+			if (formArray[i].point[0] > formArray[j].point[0]) {
+				if ((!formArray[i].point[0] > formArray[j].point[1]) || (!formArray[i].point[1] < formArray[j].point[1])) {
+					return callback("wrong brace", undefined);
+				}
+			} else if (formArray[i].point[0] < formArray[j].point[0]) {
+				if ((!formArray[i].point[1] > formArray[j].point[1]) || (!formArray[i].point[1] < formArray[j].point[0])) {
+					return callback("wrong brace", undefined);
+				}
+			} else {
+				return callback("WHAT??", undefined);
+			}
+		}
+	}
+
+
+	formArray.map((aTerm) => { if (Number.isNaN(Number(aTerm))) { operateFlag = false } });
+	if (!operateFlag) {
+		callback("not a number", undefined);
+	} else {
+
+	}
+}
+*/
+
+async function doMathWithDice(iForm, callback) {
+	var formArray = [];
+	var operands = ["+", "-", "/", "*", "%", "(", ")"];
+	var operandsRegExp = ["\\\+", "\\\-", "\\\/", "\\\*", "\\\%", "\\\(", "\\\)"];
+	var tmpForm = iForm;
+	// for (var i = 0; i < iForm.length; i++) {
+	// 	if (operands.find((anOper) => { return anOper === iForm[i]; })) {
+	// 		formArray.push(iForm.substr(, i).trim());
+	// 		formArray.push(iForm[i]);
+	// 	}
+	// }
+	// formArray.push(iForm);
+	// operands.map((anOper) => {
+	// 	formArray = formArray.map((someTerms) => {
+	// 		return someTerms.split(anOper);
+	// 	});
+	// });
+	var formStr = "";
+	var dicedStr = "";
+
+	operandsRegExp.map((anOper) => {
+		tmpForm = tmpForm.replace(new RegExp(anOper, "g"), " " + anOper[1] + " ");
+	});
+	formArray = tmpForm.split(" ");
+	formArray = formArray.map((aTerm) => { return aTerm.trim(); });
+	// formArray = formArray.map((aTerm) => {
+	// 	if ((aTerm != undefined) && (aTerm != null) && (aTerm != "")) { return aTerm; }
+	// });
+	formArray = formArray.filter((aTerm) => {
+		return (aTerm != null) && (aTerm.length > 0);
+	});
+	// printLog("[DBG] formArray : \n" + JSON.stringify(formArray), undefined, undefined);
+	// var dicedArray = formArray.map((aTerm) => {
+	// 	if (aTerm.toLowerCase().search("d") > -1) {
+	// 		var diceArg = aTerm.split("d");
+	// 		var dices = rollDices(diceArg[0], diceArg[1]);
+	// 		return ["("].concat(dices).concat([")"]);
+	// 	} else { return aTerm; }
+	// });
+
+	var dicedArray = [];
+	for (var i = 0; i < formArray.length; i++) {
+		if (formArray[i].toLowerCase().search("d") > -1) {
+			var diceArg = formArray[i].split("d");
+			var dices = rollDices(diceArg[0], diceArg[1]);
+			// return ["("].concat(dices).concat([")"]);
+			if (dices[0] < 0) {
+				return callback("wrong dice");
+			}
+			dicedArray = dicedArray.concat(["("]).concat(dices.join(" + ").split(" ")).concat([")"]);
+			formStr += " **" + formArray[i] + "**";
+			dicedStr += " ( **" + dices.join("** + **") + "** )";
+		} else {
+			dicedArray.push(formArray[i]);
+			formStr += " " + avoidMarkdown(formArray[i]);
+			dicedStr += " " + avoidMarkdown(formArray[i]);
+		}
+	}
+	// printLog("[DBG] formArray : \n" + JSON.stringify(formArray), undefined, undefined);
+	// printLog("[DBG] dicedArray : \n" + JSON.stringify(dicedArray), undefined, undefined);
+
+	// printLog("[DBG] formStr = " + formStr);
+	// printLog("[DBG] dicedStr = " + dicedStr);
+
+	try {
+		// printLog("[DBG] dicedArray result = " + ExprParser.evaluate(dicedArray.join(" ")), undefined, undefined);
+		callback(undefined, formStr, dicedStr, ExprParser.evaluate(dicedArray.join(" ")));
+	} catch (error) {
+		// printLog("[DBG] dicedArray ERROR = " + error, undefined, undefined);
+		callback("parse error");
+	}
+
+	// callback(undefined,)
+
+
+	// printLog("[DBG] dicedArray result = " + eval(dicedArray.join(" ")), undefined, undefined);
 }
 
 function stringifyHtmlSnippet(snp) {
@@ -727,7 +895,52 @@ async function responseToMessage(message, args) {
 			})
 			break;
 		case "dice":
-			if (args.arg.length > 0) {
+			if (args.arg === undefined || args.arg.length < 1) {
+				var diceEmoji = ":waitWhat:";
+				switch (rollDices(1, 6)[0]) {
+					case 1:
+						diceEmoji = ":one:";
+						break;
+					case 2:
+						diceEmoji = ":two:";
+						break;
+					case 3:
+						diceEmoji = ":three:";
+						break;
+					case 4:
+						diceEmoji = ":four:";
+						break;
+					case 5:
+						diceEmoji = ":five:";
+						break;
+					case 6:
+						diceEmoji = ":six:";
+						break;
+				}
+				answerToTheChannel(message, "", {
+					embed: {
+						color: COLOR_GREEN,
+						title: ":game_die: " + authorCallname + "의 다이스 롤!",
+						description: diceEmoji
+					}
+				}, (sentMessage) => { message.channel.stopTyping() });
+			} else {
+				doMathWithDice(args.arg, (error, formStr, dicedStr, formSum) => {
+					if (error) {
+						//TODO : 오류 자세히 말해주기?
+						answerToTheChannel(message, "수식 입력 오류인것 같은데염...", undefined, (sentMessage) => { message.channel.stopTyping() });
+					} else {
+						answerToTheChannel(message, undefined, {
+							embed: {
+								color: COLOR_GREEN,
+								title: ":game_die: " + authorCallname + "의 다이스 롤!",
+								description: formStr + "\n = " + dicedStr + "\n = **" + formSum + "**"
+							}
+						}, (sentMessage) => { message.channel.stopTyping() })
+					}
+				});
+			}
+			/*if (args.arg.length > 0) {
 				var diceInput = args.arg.toLowerCase().split("d");
 				if (diceInput.filter((aDiceInput) => {
 						return (Number.isInteger(Number(aDiceInput))) &&
@@ -806,7 +1019,7 @@ async function responseToMessage(message, args) {
 							message.channel.stopTyping();
 						});
 				});
-			}
+			}*/
 			break;
 		case "google":
 			if (args.arg.length === 0) {
@@ -1049,47 +1262,70 @@ async function responseToMessage(message, args) {
 			if (args.arg === undefined) {
 				answerToTheChannel(message, "위력값을 입력하셔야...", undefined, (sentMessage) => { message.channel.stopTyping(); });
 			} else {
-				var inputPower = Number(args.arg);
-				if (!Number.isInteger(inputPower)) {
-					answerToTheChannel(message, "**" + args.arg + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				var operands = ["+", "-", "/", "*", "%", "(", ")"];
+				var operandsRegExp = ["\\\+", "\\\-", "\\\/", "\\\*", "\\\%", "\\\(", "\\\)"];
+				var tmpForm = args.arg;
+				operandsRegExp.map((anOper) => {
+					tmpForm = tmpForm.replace(new RegExp(anOper, "g"), " " + anOper[1] + " ");
+				});
+				var argArray = tmpForm.split(" ");
+				argArray = argArray.map((aTerm) => { return aTerm.trim(); });
+				argArray = argArray.filter((aTerm) => {
+					return (aTerm != null) && (aTerm.length > 0);
+				});
+				var inputPower = argArray.shift();
+
+				if (!Number.isInteger(Number(inputPower))) {
+					answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				} else if ((inputPower < 0) || (inputPower > 100)) {
+					answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				} else if (args.options.length > 0 && args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
+					var tmpStr = "```ini\n";
+					for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
+						tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
+					}
+					answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
 				} else {
-					if ((inputPower < 0) || (inputPower > 100)) {
-						answerToTheChannel(message, "**" + args.arg + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
-					} else {
-						if (args.options.length > 0) {
-							if (args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
-								var tmpStr = "```ini\n";
-								for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
-									tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
-								}
-								answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+
+					var comments = [];
+					if (args.options.length > 0) {
+						args.options.map((anOpt) => {
+							if (anOpt.name === "comment") {
+								comments.push(anOpt.value);
 							}
-						} else {
-							rollDices(2, 6, (dices) => {
-								// var diceSum = dices[0] + dices[1];
-								if ((dices[0] === 1) && (dices[1] === 1)) {
-									answerToTheChannel(message, undefined, {
-										embed: {
-											color: COLOR_ERROR,
-											/*title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
-											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = :boom:펌블:boom: (자동실패)"*/
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + dices[0] + "** + **" + dices[1] + "** ) = :boom:**펌블**:boom:"
-										}
-									}, (sentMessage) => { message.channel.stopTyping(); });
-								} else {
-									answerToTheChannel(message, undefined, {
-										embed: {
-											color: COLOR_GREEN,
-											/*title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
-											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = **" + (dices[0] + dices[1]) + "**\n→ 위력 = " +
-												swPowerTable[inputPower].value[dices[0] + dices[1] - 3]*/
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + dices[0] + "** + **" + dices[1] + "** ) = **" + (dices[0] + dices[1]) +
-												"**\n결과 = [ **" + swPowerTable[inputPower].value[dices[0] + dices[1] - 3] + "** ]"
-										}
-									}, (sentMessage) => { message.channel.stopTyping(); });
+						});
+					}
+					var powerDices = rollDices(2, 6);
+					var powerFromTable = swPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
+					// printLog("[DBG] powerDices[0],[1] = " + powerDices[0] + ", " + powerDices[1]);
+					// printLog("[DBG] powerFromTable = " + powerFromTable);
+					try {
+						// var result = ExprParser.evaluate((powerFromTable).toString());
+						// printLog("[DBG] result = " + result);
+						if ((powerDices[0] === 1) && (powerDices[1] === 1)) {
+							answerToTheChannel(message, undefined, {
+								embed: {
+									color: COLOR_ERROR,
+									title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = :boom:**펌블**:boom: (자동실패)"
 								}
-							});
+							}, (sentMessage) => { message.channel.stopTyping(); });
+						} else {
+							var result = ExprParser.evaluate((powerFromTable).toString().concat(argArray.join(" ")));
+							var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) +
+								"**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
+							if (comments != undefined && comments.length > 0) {
+								tmpTitle += " #" + comments.join(" #");
+							}
+							answerToTheChannel(message, undefined, {
+								embed: {
+									color: COLOR_GREEN,
+									title: tmpTitle
+								}
+							}, (sentMessage) => { message.channel.stopTyping(); });
 						}
+					} catch (error) {
+						printLogError(message, "Eval error...?", error.toString());
+						answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					}
 				}
 			}
@@ -1131,6 +1367,8 @@ Bot.on("ready", () => {
 		.catch(console.error);
 
 	setSwPowerTable();
+	// doMathWithDice("(23+25)-2d6+21*25/29%(35+13-23*35)");
+	// doMathWithDice("10d6+10-2fffferx");
 });
 
 function logAndThenExit(exitSignal) {
