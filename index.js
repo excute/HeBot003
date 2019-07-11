@@ -190,6 +190,7 @@ function stringifyHtmlSnippet(snp) {
 }
 
 function avoidMarkdown(inputString) {
+	var tmpStr = inputString;
 	var rules = [{
 		from: "\\\*",
 		to: "＊"
@@ -201,8 +202,9 @@ function avoidMarkdown(inputString) {
 		to: "～～"
 	}];
 	rules.map((aRule) => {
-		inputString.replace(new RegExp(aRule.from, "g"), aRule.to);
+		tmpStr.replace(new RegExp(aRule.from, "g"), aRule.to);
 	})
+	return tmpStr;
 }
 
 async function tryRequestOld(tries, options, callback) {
