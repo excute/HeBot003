@@ -75,6 +75,7 @@
 		"inputs": [
 			"quantity",
 			"q",
+			"개수",
 			"갯수"
 		],
 		"need_arg": true,
@@ -117,10 +118,10 @@
 	{
 		"name": "detail",
 		"inputs": [
-			"--detail",
-			"--자세히",
-			"--more",
-			"--더"
+			"detail",
+			"자세히",
+			"more",
+			"더"
 		],
 		"need_arg": false,
 		"usage": "이미지의 출처, 이미지의 URL도 같이 표시합니다."
