@@ -465,7 +465,7 @@ async function answerToTheChannel(inputMessage, outputText, outputOptions, callb
 			printLogError("answerToTheChannel() failed :\n" + error, {
 				embed: {
 					title: "ERROR : answerToTheChannel() failed",
-					description: error
+					description: error.toString()
 				}
 			}, inputMessage);
 		});
@@ -788,7 +788,7 @@ async function responseToMessage(message, args) {
 							printLogError("searchGoogle failed?\n" + error, {
 								embed: {
 									title: "searchGoogle failed?",
-									description: error
+									description: error.toString()
 								}
 							}, message);
 							answerToTheChannel(message, "구글 검색 실패...?", undefined, (sentMessage) => {
@@ -903,7 +903,7 @@ async function responseToMessage(message, args) {
 							printLogError("searchGoogle(image) error :\n" + searchErr, {
 								embed: {
 									title: "searchGoogle(image) error",
-									description: searchErr
+									description: searchErr.toString()
 								}
 							}, message);
 							answerToTheChannel(message, "이미지 검색 에러... 라는대여...??", undefined, (sentMessage) => {
@@ -925,7 +925,7 @@ async function responseToMessage(message, args) {
 												printLogError("tryRequest(image) error :\n" + imgReqErr, {
 													embed: {
 														title: "tryRequest(image) error",
-														description: imgReqErr
+														description: imgReqErr.toString()
 													}
 												}, message);
 												answerToTheChannel(message, "이미지 다운로드 실패...??", undefined, (sentMessage) => { message.channel.stopTyping(); });
