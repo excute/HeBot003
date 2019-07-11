@@ -371,8 +371,8 @@ function prepareDB() {
 /* ~~~~ Sending functions ~~~~ */
 function getGeneralDebugLog(message) {
 	var tmpEmbed = {
-		color: COLOR_DEBUG,
 		embed: {
+			color: COLOR_DEBUG,
 			title: "General Debug"
 		}
 	};
@@ -452,10 +452,10 @@ async function printLog(consoleLog, embedLog, embedText) {
 
 async function printLogError(message, consoleLog, eDesc) {
 	var tmpEmbed = getGeneralDebugLog(message);
-	tmpEmbed.color = COLOR_ERROR;
+	tmpEmbed.embed.color = COLOR_ERROR;
 	// tmpEmbed.title = eTitle;
-	tmpEmbed.title = consoleLog;
-	tmpEmbed.description = eDesc;
+	tmpEmbed.embed.title = consoleLog;
+	tmpEmbed.embed.description = eDesc;
 	printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
 }
 
