@@ -326,4 +326,28 @@
 	"short_usage": "짤 표시 기능",
 	"usage": "짤을 등록하고 표시합니다",
 	"visible": true
+},
+{
+	"command": "swpower",
+	"inputs": [
+		"swpower",
+		"위력",
+		"威力"
+	],
+	"options": [
+	{
+		"name": "lookup",
+		"inputs": [
+			"lookup",
+			"테이블",
+			"보기",
+			"テーブル",
+			"威力表"
+		],
+		"need_arg": false,
+		"usage": "주사위를 굴리지 않고 해당 위력표만을 보여줍니다."
+	}],
+	"short_usage": "소드월드2.0 위력 계산 기능",
+	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.",
+	"visible": true
 }]

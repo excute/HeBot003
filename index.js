@@ -26,6 +26,7 @@ const CSE_JP_ID = process.env.CSE_JP_ID;
 const CustomSearch = google.customsearch("v1");
 const CustomSearchJp = google.customsearch("v1");
 
+const SwPowerTable = require("./sw_power_table.json");
 
 // const Aws = require("aws-sdk");
 // const Postgres
@@ -56,6 +57,8 @@ const DEVELOPER_ID = "272958758999818241";
 const DEVELOPER_DMID = "354221823120113665";
 
 const CALL_PREFIX = "//";
+
+var swPowerTable = [];
 
 /* ~~~~ General functions ~~~~ */
 function addZeroToNumber(length, num) {
@@ -125,7 +128,7 @@ async function rollDices(numA, numB, callback) {
 		dices.push(Math.floor(Math.random() * numB + 1));
 	}
 	if (callback != undefined) {
-		return callback(dices);
+		callback(dices);
 	} else {
 		return dices;
 	}
@@ -370,6 +373,32 @@ function prepareDB() {
 }
 */
 
+async function setSwPowerTable() {
+	var tmpEle = {
+		power: 0,
+		value: []
+	};
+	for (var i = 0; i < SwPowerTable.length; i++) {
+		tmpEle = {
+			power: 0,
+			value: []
+		};
+		tmpEle.power = SwPowerTable[i].power;
+		tmpEle.value.push(SwPowerTable[i].a); // 3
+		tmpEle.value.push(SwPowerTable[i].b);
+		tmpEle.value.push(SwPowerTable[i].c);
+		tmpEle.value.push(SwPowerTable[i].d);
+		tmpEle.value.push(SwPowerTable[i].e);
+		tmpEle.value.push(SwPowerTable[i].f);
+		tmpEle.value.push(SwPowerTable[i].g);
+		tmpEle.value.push(SwPowerTable[i].h);
+		tmpEle.value.push(SwPowerTable[i].i);
+		tmpEle.value.push(SwPowerTable[i].j); // 12
+		swPowerTable.push(tmpEle);
+	}
+	// printLog(JSON.stringify(swPowerTable), undefined, undefined);
+}
+
 /* ~~~~ Sending functions ~~~~ */
 function getGeneralDebugLog(message) {
 	var tmpEmbed = {
@@ -384,57 +413,59 @@ function getGeneralDebugLog(message) {
 	// if (iColor != undefined) {
 	// 	tmpEmbed.embed.color = iColor;
 	// }
-	switch (message.channel.type) {
-		default:
-		case "text":
-			tmpEmbed.embed.fields = [{
-					name: "Server",
-					value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
-					inline: true
-				},
-				{
-					name: "Channel",
-					value: `<#${message.channel.id}>`,
-					inline: true
-				},
-				{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
-			];
-			break;
-		case "group":
-			tmpEmbed.embed.fields = [{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
-			];
-			break;
-		case "dm":
-			tmpEmbed.embed.fields = [{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
-			];
-			break;
+	if (message != undefined) {
+		switch (message.channel.type) {
+			default:
+			case "text":
+				tmpEmbed.embed.fields = [{
+						name: "Server",
+						value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
+						inline: true
+					},
+					{
+						name: "Channel",
+						value: `<#${message.channel.id}>`,
+						inline: true
+					},
+					{
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
+				];
+				break;
+			case "group":
+				tmpEmbed.embed.fields = [{
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
+				];
+				break;
+			case "dm":
+				tmpEmbed.embed.fields = [{
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
+				];
+				break;
+		}
 	}
 	return tmpEmbed;
 }
@@ -453,7 +484,14 @@ async function printLog(consoleLog, embedLog, embedText) {
 }
 
 async function printLogError(message, consoleLog, eDesc) {
-	var tmpEmbed = getGeneralDebugLog(message);
+	var tmpEmbed = {
+		embed: {
+			color: COLOR_ERROR
+		}
+	};
+	if (message != undefined) {
+		tmpEmbed = getGeneralDebugLog(message);
+	}
 	tmpEmbed.embed.color = COLOR_ERROR;
 	// tmpEmbed.title = eTitle;
 	tmpEmbed.embed.title = consoleLog;
@@ -469,7 +507,7 @@ async function answerToTheChannel(inputMessage, outputText, outputOptions, callb
 			}
 		})
 		.catch((error) => {
-			printLogError(message, "answerToTheChannel() failed", error);
+			printLogError(undefined, "answerToTheChannel() failed", error);
 		});
 }
 
@@ -627,6 +665,17 @@ async function handleArgs(message, content) {
 
 async function responseToMessage(message, args) {
 	message.channel.startTyping();
+	var authorCallname = "";
+	switch (message.channel.type) {
+		default:
+		case "text":
+			authorCallname = message.guild.member(message.author).nickname === null ? message.author.username : message.guild.member(message.author).nickname;
+			break;
+		case "group":
+		case "dm":
+			authorCallname = message.author.username;
+			break;
+	}
 	switch (args.command) {
 		default:
 			printLog("[WUT] Unexpected command!", getGeneralDebugLog(message, "Error command", COLOR_ERROR), `<@${DEVELOPER_ID}>` + "!! 이상한 커멘드가 왔다구!!");
@@ -995,6 +1044,52 @@ async function responseToMessage(message, args) {
 				}
 			}
 			break;
+		case "swpower":
+			if (args.arg < 1 || args.arg === undefined) {
+				answerToTheChannel(message, "위력값을 입력하셔야...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+			} else {
+				var inputPower = Number(args.arg);
+				if (!Number.isInteger(inputPower)) {
+					answerToTheChannel(message, "**" + args.arg + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				} else {
+					if ((inputPower < 0) || (inputPower > 100)) {
+						answerToTheChannel(message, "**" + args.arg + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+					} else {
+						if (args.options.length > 0) {
+							if (args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
+								var tmpStr = "```ini\n";
+								for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
+									tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
+								}
+								answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+							}
+						} else {
+							rollDices(2, 6, (dices) => {
+								// var diceSum = dices[0] + dices[1];
+								if ((dices[0] === 1) && (dices[1] === 1)) {
+									answerToTheChannel(message, undefined, {
+										embed: {
+											color: COLOR_ERROR,
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 데미지 롤!",
+											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = :boom:펌블:boom: (자동실패)"
+										}
+									}, (sentMessage) => { message.channel.stopTyping(); });
+								} else {
+									answerToTheChannel(message, undefined, {
+										embed: {
+											color: COLOR_GREEN,
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 데미지 롤!",
+											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = **" + (dices[0] + dices[1]) + "**\n→ 데미지 = " +
+												swPowerTable[inputPower].value[dices[0] + dices[1] - 3]
+										}
+									}, (sentMessage) => { message.channel.stopTyping(); });
+								}
+							});
+						}
+					}
+				}
+			}
+			break;
 		case "youtube":
 			// printLogError("Error Test", {
 			// 	embed: {
@@ -1030,11 +1125,8 @@ Bot.on("ready", () => {
 	});
 	Bot.user.setActivity("//help", { type: "LISTENING" })
 		.catch(console.error);
-	// setHelpEmbed();
-	// Bot.channels.map((aChannel) => {
-	// 	aChannel.stopTyping(true);
-	// 	// printLog(JSON.stringify(aChannel));
-	// });
+
+	setSwPowerTable();
 });
 
 function logAndThenExit(exitSignal) {
