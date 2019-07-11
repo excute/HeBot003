@@ -1046,7 +1046,7 @@ async function responseToMessage(message, args) {
 			}
 			break;
 		case "swpower":
-			if (args.arg < 1 || args.arg === undefined) {
+			if (args.arg === undefined) {
 				answerToTheChannel(message, "위력값을 입력하셔야...", undefined, (sentMessage) => { message.channel.stopTyping(); });
 			} else {
 				var inputPower = Number(args.arg);
@@ -1071,18 +1071,20 @@ async function responseToMessage(message, args) {
 									answerToTheChannel(message, undefined, {
 										embed: {
 											color: COLOR_ERROR,
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
-											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = :boom:펌블:boom: (자동실패)"
+											/*title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
+											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = :boom:펌블:boom: (자동실패)"*/
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + dices[0] + "** + **" + dices[1] + "** ) = :boom:**펌블**:boom:"
 										}
 									}, (sentMessage) => { message.channel.stopTyping(); });
 								} else {
 									answerToTheChannel(message, undefined, {
 										embed: {
 											color: COLOR_GREEN,
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
+											/*title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
 											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = **" + (dices[0] + dices[1]) + "**\n→ 위력 = " +
-												swPowerTable[inputPower].value[dices[0] + dices[1] - 3]
-											// title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( " + dices[0] + " + " + dices[1] + " ) = " + (dices[0] + dices[1])
+												swPowerTable[inputPower].value[dices[0] + dices[1] - 3]*/
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + dices[0] + "** + **" + dices[1] + "** ) = **" + (dices[0] + dices[1]) +
+												"**\n결과 = [ **" + swPowerTable[inputPower].value[dices[0] + dices[1] - 3] + "** ]"
 										}
 									}, (sentMessage) => { message.channel.stopTyping(); });
 								}
