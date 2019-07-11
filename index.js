@@ -45,7 +45,8 @@ const Bot = new Discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
 // const BOT_SELF_ID = "354220127799214092";
 var BOT_SELF_ID = "";
-const BOT_PREFIX = "//";
+// const BOT_PREFIX = "//";
+const BOT_PREFIX = process.env.BOT_PREFIX;
 const BOT_LOG_CHANNEL = "531633010433458178";
 const COLOR_GREEN = 0x4CAF50;
 const COLOR_INFO = 0x2196F3;
@@ -1070,7 +1071,7 @@ async function responseToMessage(message, args) {
 									answerToTheChannel(message, undefined, {
 										embed: {
 											color: COLOR_ERROR,
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 데미지 롤!",
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
 											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = :boom:펌블:boom: (자동실패)"
 										}
 									}, (sentMessage) => { message.channel.stopTyping(); });
@@ -1078,9 +1079,10 @@ async function responseToMessage(message, args) {
 									answerToTheChannel(message, undefined, {
 										embed: {
 											color: COLOR_GREEN,
-											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 데미지 롤!",
-											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = **" + (dices[0] + dices[1]) + "**\n→ 데미지 = " +
+											title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 위력 롤!",
+											description: "2D6 = [" + dices[0] + "] + [" + dices[1] + "] = **" + (dices[0] + dices[1]) + "**\n→ 위력 = " +
 												swPowerTable[inputPower].value[dices[0] + dices[1] - 3]
+											// title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( " + dices[0] + " + " + dices[1] + " ) = " + (dices[0] + dices[1])
 										}
 									}, (sentMessage) => { message.channel.stopTyping(); });
 								}
