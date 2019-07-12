@@ -694,8 +694,8 @@ async function checkBotCall(message) {
 				// }
 				if (message.content.startsWith(BOT_PREFIX)) {
 					handleArgs(message, message.content.replace(BOT_PREFIX, "").trim());
-				} else if (message.content.startsWith((message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username))) {
-					handleArgs(message, message.content.replace((message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username), "").trim());
+				} else if (message.content.startsWith((message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " ")) {
+					handleArgs(message, message.content.replace((message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " ", "").trim());
 				} else if (message.isMentioned(BOT_SELF_ID)) {
 					handleArgs(message, message.content.replace(`<@!${BOT_SELF_ID}>`, "").trim());
 				}
