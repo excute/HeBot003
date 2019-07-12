@@ -60,7 +60,7 @@ const DEVELOPER_DMID = "354221823120113665";
 
 const CALL_PREFIX = "//";
 
-var swPowerTable = [];
+// var swPowerTable = [];
 
 /* ~~~~ General functions ~~~~ */
 function addZeroToNumber(length, num) {
@@ -541,7 +541,7 @@ function prepareDB() {
 	pgClient.query("SELECT table_schema, table_name FROM information_schema.tables;")
 }
 */
-
+/*
 async function setSwPowerTable() {
 	var tmpEle = {
 		power: 0,
@@ -566,7 +566,7 @@ async function setSwPowerTable() {
 		swPowerTable.push(tmpEle);
 	}
 	// printLog(JSON.stringify(swPowerTable), undefined, undefined);
-}
+}*/
 
 /* ~~~~ Sending functions ~~~~ */
 function getGeneralDebugLog(message) {
@@ -1272,7 +1272,7 @@ async function responseToMessage(message, args) {
 				var argArray = tmpForm.split(" ");
 				argArray = argArray.map((aTerm) => { return aTerm.trim(); });
 				argArray = argArray.filter((aTerm) => {
-					return (aTerm != null) && (aTerm.length > 0);
+					return (aTerm != null) && (aTerm.length > 0) && (aTerm != undefined);
 				});
 				var inputPower = undefined;
 				var powerPointer = -1;
@@ -1291,19 +1291,21 @@ async function responseToMessage(message, args) {
 					answerToTheChannel(message, "위력은 한번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
 				} else {
 					if (powerPointer === -1) {
-						inputPower = argArray[i].replace("[", "").replace("]", "").trim();
+						// printLog("[DBG] powerPointer = -1, argArray[0] = " + argArray[0], undefined, undefined);
+						inputPower = argArray[0];
 						// argArray[0] = "power";
 						powerPointer = 0;
 					}
-
+					// printLog("[DBG] inputPower = " + inputPower, undefined, undefined);
 					if (!Number.isInteger(Number(inputPower))) {
+
 						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					} else if ((inputPower < 0) || (inputPower > 100)) {
 						answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					} else if (args.options.length > 0 && args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
 						var tmpStr = "```ini\n";
-						for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
-							tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
+						for (var i = 0; i < SwPowerTable[inputPower].value.length; i++) {
+							tmpStr += "" + (i + 3) + " → [" + SwPowerTable[inputPower].value[i] + "]\n";
 						}
 						answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					} else {
@@ -1317,7 +1319,7 @@ async function responseToMessage(message, args) {
 							});
 						}
 						var powerDices = rollDices(2, 6);
-						var powerFromTable = swPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
+						var powerFromTable = SwPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
 						// printLog("[DBG] powerDices[0],[1] = " + powerDices[0] + ", " + powerDices[1]);
 						// printLog("[DBG] powerFromTable = " + powerFromTable);
 						var prePowerArray = argArray.slice(0, powerPointer);
@@ -1393,7 +1395,7 @@ Bot.on("ready", () => {
 	Bot.user.setActivity("//help", { type: "LISTENING" })
 		.catch(console.error);
 
-	setSwPowerTable();
+	// setSwPowerTable();
 	// doMathWithDice("(23+25)-2d6+21*25/29%(35+13-23*35)");
 	// doMathWithDice("10d6+10-2fffferx");
 });
