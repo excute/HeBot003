@@ -1274,11 +1274,27 @@ async function responseToMessage(message, args) {
 				argArray = argArray.filter((aTerm) => {
 					return (aTerm != null) && (aTerm.length > 0);
 				});
-				var powerBraceInputsArray = argArray.filter((aTerm) => { return aTerm.startsWith("[") && aTerm.endsWith("]") });
-				if ((powerBraceInputsArray != undefined) && (powerBraceInputsArray.length > 1)) {
+				var inputPower = undefined;
+				var powerPointer = -1;
+				for (var i = 0; i < argArray.length; i++) {
+					if (argArray[i].startsWith("[") && argArray[i].endsWith("]")) {
+						if (powerPointer >= 0) {
+							powerPointer = -2;
+						} else {
+							inputPower = argArray[i].replace("[", "").replace("]", "").trim();
+							// argArray[i] = "power";
+							powerPointer = i;
+						}
+					}
+				}
+				if (powerPointer === -2) {
 					answerToTheChannel(message, "위력은 한번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
 				} else {
-					var inputPower = argArray.shift();
+					if (powerPointer === -1) {
+						inputPower = argArray[i].replace("[", "").replace("]", "").trim();
+						// argArray[0] = "power";
+						powerPointer = 0;
+					}
 
 					if (!Number.isInteger(Number(inputPower))) {
 						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
@@ -1304,6 +1320,10 @@ async function responseToMessage(message, args) {
 						var powerFromTable = swPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
 						// printLog("[DBG] powerDices[0],[1] = " + powerDices[0] + ", " + powerDices[1]);
 						// printLog("[DBG] powerFromTable = " + powerFromTable);
+						var prePowerArray = argArray.slice(0, powerPointer);
+						var prePowerStr = prePowerArray.map((aTerm) => { return avoidMarkdown(aTerm) }).join(" ");
+						var postPowerArray = argArray.slice(powerPointer + 1, argArray.length);
+						var postPowerStr = postPowerArray.map((aTerm) => { return avoidMarkdown(aTerm) }).join(" ");
 						try {
 							// var result = ExprParser.evaluate((powerFromTable).toString());
 							// printLog("[DBG] result = " + result);
@@ -1315,9 +1335,10 @@ async function responseToMessage(message, args) {
 									}
 								}, (sentMessage) => { message.channel.stopTyping(); });
 							} else {
-								var result = ExprParser.evaluate((powerFromTable).toString().concat(argArray.join(" ")));
-								var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) +
-									"**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
+								var result = ExprParser.evaluate(prePowerArray.join(" ") + powerFromTable + postPowerArray.join(" "));
+								var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) + "** → [ **" + powerFromTable + "** ]" +
+									"\n → " + prePowerStr + " [ **" + powerFromTable + "** ] " + postPowerStr + " = **" + result + "**";
+								// "**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
 								if (comments != undefined && comments.length > 0) {
 									tmpTitle += " *#" + comments.join(" #") + "*";
 								}
