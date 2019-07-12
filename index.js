@@ -457,9 +457,9 @@ function getHelpEmbed(message) {
 		case "text":
 			return {
 				embed: {
-					title: message.guild.me.nickname + " 사용법",
+					title: (message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " 사용법",
 					color: COLOR_GREEN,
-					description: "**" + message.guild.me.nickname + " 호출 방법**\n" +
+					description: "**" + (message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " 호출 방법**\n" +
 						"```ini\n" + CALL_PREFIX + "[명령어] ([--옵션])```" +
 						"```ini\n" + message.guild.me.nickname + " [명령어] ([--옵션])```" +
 						"```ini\n@" + message.guild.me.nickname + "(멘션) [명령어] ([--옵션])```" +
@@ -1319,7 +1319,7 @@ async function responseToMessage(message, args) {
 								var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) +
 									"**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
 								if (comments != undefined && comments.length > 0) {
-									tmpTitle += " #" + comments.join(" #");
+									tmpTitle += " *#" + comments.join(" #") + "*";
 								}
 								answerToTheChannel(message, undefined, {
 									embed: {

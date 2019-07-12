@@ -360,6 +360,6 @@
 		"usage": "값의 의미를 적어 표시합니다. (주석 띄어쓰기 불가, ＿를 사용해주세요. 주석을 복수개 달을 수도 있습니다.)"
 	}],
 	"short_usage": "소드월드2.0 위력 계산 기능",
-	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.\n\n수식 중간에 `[(위력값)]`을 적어넣어 계산할 수도 있습니다.\n\n*연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
+	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.\n\n수식 중간에 `[위력값]`을 적어넣어 계산할 수도 있습니다.\n\n*연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
 	"visible": true
 }]
