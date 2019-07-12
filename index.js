@@ -727,8 +727,8 @@ async function handleArgs(message, content) {
 
 		if (foundCommand === undefined) {
 			answerToTheChannel(message,
-				"**" + avoidMarkdown(rawArgsArray[0]) + "**...? 제가 모르는 명령어인데여... 아래의 사용법을 참조해주세여",
-				getHelpEmbed(message),
+				"**" + avoidMarkdown(rawArgsArray[0]) + "**...? 제가 모르는 명령어에염...",
+				undefined,
 				undefined);
 		} else {
 			var argsStruct = {
@@ -1030,6 +1030,7 @@ async function responseToMessage(message, args) {
 			} else {
 				var qNum = 3;
 				var qPage = 1;
+				// switch()
 				args.options.map((anOpt) => {
 					if (anOpt != undefined &&
 						anOpt.name != undefined &&
@@ -1273,59 +1274,64 @@ async function responseToMessage(message, args) {
 				argArray = argArray.filter((aTerm) => {
 					return (aTerm != null) && (aTerm.length > 0);
 				});
-				var inputPower = argArray.shift();
-
-				if (!Number.isInteger(Number(inputPower))) {
-					answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
-				} else if ((inputPower < 0) || (inputPower > 100)) {
-					answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
-				} else if (args.options.length > 0 && args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
-					var tmpStr = "```ini\n";
-					for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
-						tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
-					}
-					answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				var powerBraceInputsArray = argArray.filter((aTerm) => { return aTerm.startsWith("[") && aTerm.endsWith("]") });
+				if ((powerBraceInputsArray != undefined) && (powerBraceInputsArray.length > 1)) {
+					answerToTheChannel(message, "위력은 한번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
 				} else {
+					var inputPower = argArray.shift();
 
-					var comments = [];
-					if (args.options.length > 0) {
-						args.options.map((anOpt) => {
-							if (anOpt.name === "comment") {
-								comments.push(anOpt.value);
-							}
-						});
-					}
-					var powerDices = rollDices(2, 6);
-					var powerFromTable = swPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
-					// printLog("[DBG] powerDices[0],[1] = " + powerDices[0] + ", " + powerDices[1]);
-					// printLog("[DBG] powerFromTable = " + powerFromTable);
-					try {
-						// var result = ExprParser.evaluate((powerFromTable).toString());
-						// printLog("[DBG] result = " + result);
-						if ((powerDices[0] === 1) && (powerDices[1] === 1)) {
-							answerToTheChannel(message, undefined, {
-								embed: {
-									color: COLOR_ERROR,
-									title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = :boom:**펌블**:boom: (자동실패)"
-								}
-							}, (sentMessage) => { message.channel.stopTyping(); });
-						} else {
-							var result = ExprParser.evaluate((powerFromTable).toString().concat(argArray.join(" ")));
-							var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) +
-								"**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
-							if (comments != undefined && comments.length > 0) {
-								tmpTitle += " #" + comments.join(" #");
-							}
-							answerToTheChannel(message, undefined, {
-								embed: {
-									color: COLOR_GREEN,
-									title: tmpTitle
-								}
-							}, (sentMessage) => { message.channel.stopTyping(); });
+					if (!Number.isInteger(Number(inputPower))) {
+						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+					} else if ((inputPower < 0) || (inputPower > 100)) {
+						answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+					} else if (args.options.length > 0 && args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
+						var tmpStr = "```ini\n";
+						for (var i = 0; i < swPowerTable[inputPower].value.length; i++) {
+							tmpStr += "" + (i + 3) + " → [" + swPowerTable[inputPower].value[i] + "]\n";
 						}
-					} catch (error) {
-						printLogError(message, "Eval error...?", error.toString());
-						answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+					} else {
+
+						var comments = [];
+						if (args.options.length > 0) {
+							args.options.map((anOpt) => {
+								if (anOpt.name === "comment") {
+									comments.push(anOpt.value);
+								}
+							});
+						}
+						var powerDices = rollDices(2, 6);
+						var powerFromTable = swPowerTable[inputPower].value[(powerDices[0] + powerDices[1] - 3)];
+						// printLog("[DBG] powerDices[0],[1] = " + powerDices[0] + ", " + powerDices[1]);
+						// printLog("[DBG] powerFromTable = " + powerFromTable);
+						try {
+							// var result = ExprParser.evaluate((powerFromTable).toString());
+							// printLog("[DBG] result = " + result);
+							if ((powerDices[0] === 1) && (powerDices[1] === 1)) {
+								answerToTheChannel(message, undefined, {
+									embed: {
+										color: COLOR_ERROR,
+										title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = :boom:**펌블**:boom: (자동실패)"
+									}
+								}, (sentMessage) => { message.channel.stopTyping(); });
+							} else {
+								var result = ExprParser.evaluate((powerFromTable).toString().concat(argArray.join(" ")));
+								var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) +
+									"**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
+								if (comments != undefined && comments.length > 0) {
+									tmpTitle += " #" + comments.join(" #");
+								}
+								answerToTheChannel(message, undefined, {
+									embed: {
+										color: COLOR_GREEN,
+										title: tmpTitle
+									}
+								}, (sentMessage) => { message.channel.stopTyping(); });
+							}
+						} catch (error) {
+							printLogError(message, "Eval error...?", error.toString());
+							answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						}
 					}
 				}
 			}
