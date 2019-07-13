@@ -1415,8 +1415,36 @@ async function responseToMessage(message, args) {
 				}
 			}
 			break;
-		case "anime":
 		case "saucenao":
+			if (args.options != undefined && args.options.find((anOpt) => { return anOpt.name === "last" })) {
+				var foundImageUrl = undefined;
+				message.channel.fetchMessages({ limit: 20 }).then((fetchedMessages) => {
+					fetchedMessages.map((aFetchedMessage) => {
+						if (foundImageUrl === undefined) {
+							aFetchedMessage.attachments.map((anAttatchment) => {
+								if ((anAttatchment != undefined) && (anAttatchment.height > 0) && (foundImageUrl === undefined)) {
+									foundImageUrl = anAttatchment.url;
+								}
+							});
+						}
+						// printLog(`[DBG] foundImageUrl = ${foundImageUrl}`, undefined, undefined);
+					});
+					if (foundImageUrl === undefined) {
+						answerToTheChannel(message, "최근 메세지 20개중에서 이미지를 찾을 수 없었습니당...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+					} else {
+						answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + foundImageUrl, undefined, (sentMessage) => { message.channel.stopTyping(); });
+					}
+				}).catch((error) => {
+					answerToTheChannel(message, "어라...? 메세지 기록을 읽어오지 못했나봐여...", undefined, undefined);
+					printLogError(message, "fetchMessages() failed : " + error, undefined);
+				});
+			} else if (args.arg === undefined || args.arg === null || args.arg.length < 1) {
+				answerToTheChannel(message, "검색할 url을 입력해주세여... 디스코드 이미지라면 우클릭->링크복사해서 붙여넣으시면 편해염", undefined, (sentMessage) => { message.channel.stopTyping(); });
+			} else {
+				answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + args.arg, undefined, (sentMessage) => { message.channel.stopTyping(); });
+			}
+			break;
+		case "anime":
 		case "meme":
 			answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, (sentMessage) => {
 				message.channel.stopTyping();

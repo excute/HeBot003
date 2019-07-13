@@ -46,7 +46,20 @@
 	}],
 	"short_usage": "업타임 (프로세스)",
 	"usage": "봇의 (프로세스의) 가동시간을 알려줍니다.",
-	"visible": true
+	"visible": false
+},
+{
+	"command": "chanid",
+	"inputs": [
+		"chanid",
+		"channelid",
+		"채널아이디",
+		"채널아디"
+	],
+	"options": [],
+	"short_usage": "현재 채널 ID 표시",
+	"usage": "현재 채널의 ID를 말해줍니다.",
+	"visible": false
 },
 {
 	"command": "dice",
@@ -224,8 +237,30 @@
 		"need_arg": true,
 		"usage": "몇 번째 결과부터 보여줄지 정합니다. (기본값 1)"
 	}],
-	"short_usage": "나무위키 검색",
+	"short_usage": "사운드 클라우드 검색",
 	"usage": "사운드클라우드에서 구글합니다.",
+	"visible": true
+},
+{
+	"command": "saucenao",
+	"inputs": [
+		"saucenao",
+		"소스나오",
+		"그림원본"
+	],
+	"options": [
+	{
+		"name": "last",
+		"inputs": [
+			"last",
+			"마지막",
+			"저거"
+		],
+		"need_arg": false,
+		"usage": "채널에 마지막으로 첨부된 이미지의 URL을 이용합니다"
+	}],
+	"short_usage": "Saucenao 이미지 검색",
+	"usage": "입력한 이미지 URL의 Saucenao 이미지 검색 URL을 만들어줍니다.",
 	"visible": true
 },
 {
@@ -290,11 +325,14 @@
 	"visible": true
 },
 {
-	"command": "saucenao",
+	"command": "meme",
 	"inputs": [
-		"saucenao",
-		"소스나오",
-		"그림원본"
+		"meme",
+		"짤방",
+		"짤",
+		"밈",
+		"네타",
+		"ネタ"
 	],
 	"options": [
 	{
@@ -302,27 +340,25 @@
 		"inputs": [
 			"last",
 			"마지막",
-			"저거"
+			"저거",
+			"あれ"
 		],
 		"need_arg": false,
-		"usage": "채널에 마지막으로 첨부된 이미지의 URL을 이용합니다"
+		"usage": "채널에 마지막으로 첨부된 짤의 URL을 이용하여 짤을 등록합니다"
+	},
+	{
+		"name": "list",
+		"inputs": [
+			"list",
+			"목록",
+			"一覧"
+		],
+		"need_arg": false,
+		"usage": "채널에 등록된 짤 목록을 표시합니다"
 	}],
-	"short_usage": "Saucenao 이미지 검색",
-	"usage": "입력한 이미지 URL의 Saucenao 이미지 검색 URL을 만들어줍니다.",
+	"short_usage": "짤 표시 기능",
+	"usage": "짤을 등록하고 표시합니다",
 	"visible": true
-},
-{
-	"command": "chanid",
-	"inputs": [
-		"chanid",
-		"channelid",
-		"채널아이디",
-		"채널아디"
-	],
-	"options": [],
-	"short_usage": "현재 채널 ID 표시",
-	"usage": "현재 채널의 ID를 말해줍니다.",
-	"visible": false
 },
 {
 	"command": "swpower",
@@ -358,41 +394,5 @@
 	}],
 	"short_usage": "소드월드2.0 위력 계산 기능",
 	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.\n\n수식 중간에 `[위력값]`을 적어넣어 계산할 수도 있습니다.\n\n*연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
-	"visible": true
-},
-{
-	"command": "meme",
-	"inputs": [
-		"meme",
-		"짤방",
-		"짤",
-		"밈",
-		"네타",
-		"ネタ"
-	],
-	"options": [
-	{
-		"name": "last",
-		"inputs": [
-			"last",
-			"마지막",
-			"저거",
-			"あれ"
-		],
-		"need_arg": false,
-		"usage": "채널에 마지막으로 첨부된 짤의 URL을 이용하여 짤을 등록합니다"
-	},
-	{
-		"name": "list",
-		"inputs": [
-			"list",
-			"목록",
-			"一覧"
-		],
-		"need_arg": false,
-		"usage": "채널에 등록된 짤 목록을 표시합니다"
-	}],
-	"short_usage": "짤 표시 기능",
-	"usage": "짤을 등록하고 표시합니다",
 	"visible": true
 }]
