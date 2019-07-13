@@ -67,11 +67,50 @@
 		"dice",
 		"주사위",
 		"roll",
-		"롤"
+		"롤",
+		"r",
+		"rr",
+		"dr"
 	],
 	"options": [],
 	"short_usage": "주사위 굴리기",
 	"usage": "봇이 주사위를 굴려줍니다.\n\n`(주사위 갯수)D(주사위 면체 수)`를 적어 굴릴수도 있습니다.\n\n주사위의 최솟값은 1입니다! 최댓값은 100이에염, 그 이상은 너무 커서...\n\n*사용가능 연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
+	"visible": true
+},
+{
+	"command": "swpower",
+	"inputs": [
+		"swpower",
+		"위력",
+		"威力"
+	],
+	"options": [
+	{
+		"name": "lookup",
+		"inputs": [
+			"lookup",
+			"테이블",
+			"위력표",
+			"テーブル",
+			"威力表"
+		],
+		"need_arg": false,
+		"usage": "주사위를 굴리지 않고 해당 위력표만을 보여줍니다."
+	},
+	{
+		"name": "comment",
+		"inputs": [
+			"comment",
+			"주석",
+			"설명",
+			"コメント",
+			"説明"
+		],
+		"need_arg": true,
+		"usage": "값의 의미를 적어 표시합니다. (주석 띄어쓰기 불가, ＿를 사용해주세요. 주석을 복수개 달을 수도 있습니다.)"
+	}],
+	"short_usage": "소드월드2.0 위력 계산 기능",
+	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.\n\n수식 중간에 `[위력값]`을 적어넣어 계산할 수도 있습니다.\n\n*연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
 	"visible": true
 },
 {
@@ -358,41 +397,5 @@
 	}],
 	"short_usage": "짤 표시 기능",
 	"usage": "짤을 등록하고 표시합니다",
-	"visible": true
-},
-{
-	"command": "swpower",
-	"inputs": [
-		"swpower",
-		"위력",
-		"威力"
-	],
-	"options": [
-	{
-		"name": "lookup",
-		"inputs": [
-			"lookup",
-			"테이블",
-			"위력표",
-			"テーブル",
-			"威力表"
-		],
-		"need_arg": false,
-		"usage": "주사위를 굴리지 않고 해당 위력표만을 보여줍니다."
-	},
-	{
-		"name": "comment",
-		"inputs": [
-			"comment",
-			"주석",
-			"설명",
-			"コメント",
-			"説明"
-		],
-		"need_arg": true,
-		"usage": "값의 의미를 적어 표시합니다. (주석 띄어쓰기 불가, ＿를 사용해주세요. 주석을 복수개 달을 수도 있습니다.)"
-	}],
-	"short_usage": "소드월드2.0 위력 계산 기능",
-	"usage": "소드월드2.0의 위력테이블을 찾아 2D6을 굴려줍니다.\n\n수식 중간에 `[위력값]`을 적어넣어 계산할 수도 있습니다.\n\n*연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
 	"visible": true
 }]
