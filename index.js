@@ -1024,6 +1024,7 @@ async function responseToMessage(message, args) {
 		case "google":
 		case "youtube":
 		case "namu":
+		case "soundcloud":
 			// printLog("[DBG] search arg = " + args.arg, undefined, undefined);
 			if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
 				answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
@@ -1037,6 +1038,7 @@ async function responseToMessage(message, args) {
 					// case "google":
 					// break;
 					case "youtube":
+					case "soundcloud":
 						qNum = 1;
 						break;
 						// case "namu":
@@ -1081,6 +1083,14 @@ async function responseToMessage(message, args) {
 								num: qNum,
 								start: 1 + (qNum * (qPage - 1)),
 								siteSearch: "namu.wiki/w/"
+							};
+							break;
+						case "soundcloud":
+							iQuery = {
+								q: args.arg,
+								num: qNum,
+								start: 1 + (qNum * (qPage - 1)),
+								siteSearch: "soundcloud.com"
 							};
 							break;
 					}
@@ -1147,6 +1157,7 @@ async function responseToMessage(message, args) {
 										);
 										break;
 									case "youtube":
+									case "soundcloud":
 										var tmpArray = [];
 										response.data.items.map((anItem) => { tmpArray.push(anItem.link) });
 										answerToTheChannel(message, tmpArray.join("\n"), undefined, (sentMessage) => { message.channel.stopTyping(); });
