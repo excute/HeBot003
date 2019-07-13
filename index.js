@@ -1024,8 +1024,9 @@ async function responseToMessage(message, args) {
 		case "google":
 		case "youtube":
 		case "namu":
-			if (args.arg.length === 0 || args.arg === undefined || args.arg === null) {
-				answerToTheChannel(message, "검색어가 입력되지 않았서염...", getDetailedHelpEmbed(args),
+			// printLog("[DBG] search arg = " + args.arg, undefined, undefined);
+			if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+				answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
 					(sentMessage) => {
 						message.channel.stopTyping();
 					});
