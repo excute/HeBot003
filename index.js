@@ -800,7 +800,7 @@ async function handleArgs(message, content) {
 			if (!detailedHelpFlag) {
 				var tmpArg = "";
 				for (var i = 0; i < rawArgsArray.length; i++) {
-					if (rawArgsArray[i].length > 0) { tmpArg += rawArgsArray[i]; }
+					if (rawArgsArray[i].length > 0) { tmpArg += rawArgsArray[i] + " "; }
 				}
 				if (tmpArg.length > 0) { argsStruct.arg = tmpArg.trim(); }
 
@@ -1022,7 +1022,9 @@ async function responseToMessage(message, args) {
 			}*/
 			break;
 		case "google":
-			if (args.arg.length === 0) {
+		case "youtube":
+		case "namu":
+			if (args.arg.length === 0 || args.arg === undefined || args.arg === null) {
 				answerToTheChannel(message, "검색어가 입력되지 않았서염...", getDetailedHelpEmbed(args),
 					(sentMessage) => {
 						message.channel.stopTyping();
@@ -1030,7 +1032,18 @@ async function responseToMessage(message, args) {
 			} else {
 				var qNum = 3;
 				var qPage = 1;
-				// switch()
+				switch (args.command) {
+					// case "google":
+					// break;
+					case "youtube":
+						qNum = 1;
+						break;
+						// case "namu":
+						// break;
+				}
+				// if(args.arg===undefined||args.arg===null||args.arg.length<1){
+				// 	answerToTheChannel(message,)
+				// }
 				args.options.map((anOpt) => {
 					if (anOpt != undefined &&
 						anOpt.name != undefined &&
@@ -1045,11 +1058,32 @@ async function responseToMessage(message, args) {
 				if (qNum < 1 || qPage < 1) {
 					answerToTheChannel(message, "*" + qNum + "*개 검색결과의 *" + qPage + "* 페이지를 가져온다는건 이상한데여...");
 				} else {
-					searchGoogle({
+					var iQuery = {
 						q: args.arg,
 						num: qNum,
-						start: 1 + (qNum * (qPage - 1)),
-					}, (error, response) => {
+						start: 1 + (qNum * (qPage - 1))
+					};
+					switch (args.command) {
+						// case "google":
+						// 	break;
+						case "youtube":
+							iQuery = {
+								q: args.arg,
+								num: qNum,
+								start: 1 + (qNum * (qPage - 1)),
+								siteSearch: "www.youtube.com/watch"
+							};
+							break;
+						case "namu":
+							iQuery = {
+								q: args.arg,
+								num: qNum,
+								start: 1 + (qNum * (qPage - 1)),
+								siteSearch: "namu.wiki/w/"
+							};
+							break;
+					}
+					searchGoogle(iQuery, (error, response) => {
 						if (error) {
 							printLogError(message, "searchGoogle failed?", error);
 							answerToTheChannel(message, "구글 검색 실패...?", undefined, (sentMessage) => {
@@ -1059,54 +1093,64 @@ async function responseToMessage(message, args) {
 							if (response.data.searchInformation.totalResults === "0") {
 								answerToTheChannel(message, "검색 결과가 없섯서염...", undefined, message.channel.stopTyping());
 							} else {
-								var searchResultEmbeds = response.data.items.map((anItem) => {
-									// printLog("[DBG] " + JSON.stringify(anItem.pagemap.metatags));
-									var res = {
-										embed: {
-											color: COLOR_GREEN,
-											// color: anItem.pagemap.metatags[0]["theme-color"] != undefined ? getValueOfHex(anItem.pagemap.metatags[0]["theme-color"]) : undefined,
-											title: stringifyHtmlSnippet(anItem.htmlTitle) + "\n_" + anItem.htmlFormattedUrl.replace(/<b>|<\/b>/g, "") + "_",
-											// title: stringifyWithEntityDecoder(anItem.htmlTitle) + "\n_" + anItem.htmlFormattedUrl.replace(/<b>|<\/b>/g, "") + "_",
-											url: anItem.link,
-											description: stringifyHtmlSnippet(anItem.htmlSnippet.replace(/\n/g, " ")),
-											// description: stringifyWithEntityDecoder(anItem.htmlSnippet.replace("\n", " ")),
-											thumbnail: {
-												url: anItem.pagemap.cse_thumbnail != undefined ? anItem.pagemap.cse_thumbnail[0].src : ""
-											},
-											// image: {
-											// 	url: anItem.pagemap.cse_image != undefined ? anItem.pagemap.cse_image[0].src : undefined
-											// },
-											footer: {
-												// icon_url: anItem.pagemap.metatags[0]["og:image"],
-												// icon_url: "https://" + anItem.displayLink + "/favicon.ico",
-												text: anItem.displayLink
-											}
-										}
-									};
-									return res;
-								});
-								answerToTheChannel(message,
-									((response.data.spelling != undefined) ? "혹시 " + stringifyHtmlSnippet(response.data.spelling.htmlCorrectedQuery) + "를 검색하려 하셨나염?\n" : "") +
-									"`" + response.data.queries.request[0].searchTerms + " 검색 결과 약 " +
-									response.data.searchInformation.formattedTotalResults + "건 중 " +
-									(response.data.queries.request[0].count === 1 ?
-										response.data.queries.request[0].startIndex :
-										response.data.queries.request[0].startIndex + " ~ " + (response.data.queries.request[0].startIndex + response.data.queries.request[0].count - 1) + "") +
-									"번째 결과, " + response.data.searchInformation.searchTime + "초 소요`", searchResultEmbeds[0], (sentMessage) => {
-										if (searchResultEmbeds.length > 1) {
-											var i = 1;
+								switch (args.command) {
+									case "google":
+									case "namu":
+										var searchResultEmbeds = response.data.items.map((anItem) => {
+											// printLog("[DBG] " + JSON.stringify(anItem.pagemap.metatags));
+											var res = {
+												embed: {
+													color: COLOR_GREEN,
+													// color: anItem.pagemap.metatags[0]["theme-color"] != undefined ? getValueOfHex(anItem.pagemap.metatags[0]["theme-color"]) : undefined,
+													title: stringifyHtmlSnippet(anItem.htmlTitle) + "\n_" + anItem.htmlFormattedUrl.replace(/<b>|<\/b>/g, "") + "_",
+													// title: stringifyWithEntityDecoder(anItem.htmlTitle) + "\n_" + anItem.htmlFormattedUrl.replace(/<b>|<\/b>/g, "") + "_",
+													url: anItem.link,
+													description: stringifyHtmlSnippet(anItem.htmlSnippet.replace(/\n/g, " ")),
+													// description: stringifyWithEntityDecoder(anItem.htmlSnippet.replace("\n", " ")),
+													thumbnail: {
+														url: anItem.pagemap.cse_thumbnail != undefined ? anItem.pagemap.cse_thumbnail[0].src : undefined
+													},
+													// image: {
+													// 	url: anItem.pagemap.cse_image != undefined ? anItem.pagemap.cse_image[0].src : undefined
+													// },
+													footer: {
+														// icon_url: anItem.pagemap.metatags[0]["og:image"],
+														// icon_url: "https://" + anItem.displayLink + "/favicon.ico",
+														text: anItem.displayLink
+													}
+												}
+											};
+											return res;
+										});
+										answerToTheChannel(message,
+											((response.data.spelling != undefined) ? "혹시 " + stringifyHtmlSnippet(response.data.spelling.htmlCorrectedQuery) + "를 검색하려 하셨나염?\n" : "") +
+											"`" + response.data.queries.request[0].searchTerms + " 검색 결과 약 " +
+											response.data.searchInformation.formattedTotalResults + "건 중 " +
+											(response.data.queries.request[0].count === 1 ?
+												response.data.queries.request[0].startIndex :
+												response.data.queries.request[0].startIndex + " ~ " + (response.data.queries.request[0].startIndex + response.data.queries.request[0].count - 1) + "") +
+											"번째 결과, " + response.data.searchInformation.searchTime + "초 소요`", searchResultEmbeds[0], (sentMessage) => {
+												if (searchResultEmbeds.length > 1) {
+													var i = 1;
 
-											function answerSearchResultEmbed(message, idx) {
-												if (idx + 1 < searchResultEmbeds.length) {
-													answerToTheChannel(message, "", searchResultEmbeds[idx], answerSearchResultEmbed(message, idx + 1));
-												} else if (idx < searchResultEmbeds.length) {
-													answerToTheChannel(message, "", searchResultEmbeds[idx], message.channel.stopTyping());
+													function answerSearchResultEmbed(message, idx) {
+														if (idx + 1 < searchResultEmbeds.length) {
+															answerToTheChannel(message, "", searchResultEmbeds[idx], answerSearchResultEmbed(message, idx + 1));
+														} else if (idx < searchResultEmbeds.length) {
+															answerToTheChannel(message, "", searchResultEmbeds[idx], message.channel.stopTyping());
+														}
+													}
+													answerSearchResultEmbed(message, i);
 												}
 											}
-											answerSearchResultEmbed(message, i);
-										}
-									}
-								);
+										);
+										break;
+									case "youtube":
+										var tmpArray = [];
+										response.data.items.map((anItem) => { tmpArray.push(anItem.link) });
+										answerToTheChannel(message, tmpArray.join("\n"), undefined, (sentMessage) => { message.channel.stopTyping(); });
+										break;
+								}
 							}
 						} else {
 							printLogError(message, "searchGoogle error : No error, No response", "What the...??");
@@ -1359,15 +1403,6 @@ async function responseToMessage(message, args) {
 				}
 			}
 			break;
-		case "youtube":
-			// printLogError("Error Test", {
-			// 	embed: {
-			// 		title: "Error test",
-			// 		description: ":waitWhat:"
-			// 	}
-			// }, message);
-			// break;
-		case "namu":
 		case "anime":
 		case "saucenao":
 		case "meme":
