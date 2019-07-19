@@ -12,34 +12,29 @@ Github	: https://github.com/Excute
 
 "use strict";
 
+
 /* ~~~~ Dependencies ~~~~ */
 const Commands = require("./commands.json");
 const Strings = require("./strings.json");
+const SwPowerTable = require("./sw_power_table.json");
+
 const Discord = require("discord.js");
-// const { Client } = require("pg");
 const Request = require("request");
 const { google } = require("googleapis");
+const ExprParser = require("expr-eval").Parser;
+const Postgres = require("pg");
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 const GOOGLE_JP_API_KEY = process.env.GOOGLE_JP_API_KEY;
 const CSE_ID = process.env.CSE_ID;
 const CSE_JP_ID = process.env.CSE_JP_ID;
 const CustomSearch = google.customsearch("v1");
 const CustomSearchJp = google.customsearch("v1");
-const ExprParser = require('expr-eval').Parser;
-
-const SwPowerTable = require("./sw_power_table.json");
-
-// const Aws = require("aws-sdk");
-// const Postgres
-// const pgClient = new Client({
-// 	connectionString: process.env.DATABASE_URL,
-// 	ssl: true,
-// });
 
 const HtmlEntitiesC = require("html-entities").Html5Entities;
 const HtmlEntities = new HtmlEntitiesC();
 const Os = require("os");
 const Process = require("process");
+
 
 /* ~~~~ Constants ~~~~ */
 const Bot = new Discord.Client();
@@ -49,18 +44,24 @@ var BOT_SELF_ID = "";
 // const BOT_PREFIX = "//";
 const BOT_PREFIX = process.env.BOT_PREFIX;
 const BOT_LOG_CHANNEL = "531633010433458178";
+const DEVELOPER_ID = "272958758999818241";
+const DEVELOPER_DMID = "354221823120113665";
+
 const COLOR_GREEN = 0x4CAF50;
 const COLOR_INFO = 0x2196F3;
 const COLOR_WARN = 0xFFC107;
 const COLOR_ERROR = 0xF44336;
 const COLOR_DEBUG = 0x9C27B0;
 
-const DEVELOPER_ID = "272958758999818241";
-const DEVELOPER_DMID = "354221823120113665";
+// const pgClient = new Postgres.Client({
+// 	connectionString: process.env.DATABASE_URL,
+// 	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
+// });
+const pgPool = new Postgres.Pool({
+	host: process.env.DATABASE_URL,
+	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
+});
 
-const CALL_PREFIX = "//";
-
-// var swPowerTable = [];
 
 /* ~~~~ General functions ~~~~ */
 function addZeroToNumber(length, num) {
@@ -460,7 +461,7 @@ function getHelpEmbed(message) {
 					title: (message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " 사용법",
 					color: COLOR_GREEN,
 					description: "**" + (message.guild.me.nickname != null ? message.guild.me.nickname : Bot.user.username) + " 호출 방법**\n" +
-						"```ini\n" + CALL_PREFIX + "[명령어] ([--옵션])```" +
+						"```ini\n" + BOT_PREFIX + "[명령어] ([--옵션])```" +
 						"```ini\n" + message.guild.me.nickname + " [명령어] ([--옵션])```" +
 						"```ini\n@" + message.guild.me.nickname + "(멘션) [명령어] ([--옵션])```" +
 						"(" + message.guild.me + "에게 직접 DM으로도 사용 가능, 바로 명령어부터 시작)\n\n" +
@@ -469,7 +470,7 @@ function getHelpEmbed(message) {
 					// fields: [{
 					// 	name: "헤봇 호출 방법",
 					// 	inline: false,
-					// 	value: "```ini\n" + CALL_PREFIX + "[명령어] ([--옵션])\n" +
+					// 	value: "```ini\n" + BOT_PREFIX + "[명령어] ([--옵션])\n" +
 					// 		message.guild.me.nickname + " [명령어]\n" +
 					// 		"@" + message.guild.me.nickname + " [명령어]\n```" +
 					// 		"(" + message.guild.me + "에게 직접 DM으로도 사용 가능, 바로 명령어부터 시작)\n"
@@ -496,7 +497,7 @@ function getHelpEmbed(message) {
 					title: Bot.user.username + " 사용법",
 					color: COLOR_GREEN,
 					description: "**" + Bot.user.username + " 호출 방법**\n" +
-						"```ini\n" + CALL_PREFIX + "[명령어] ([--옵션])```" +
+						"```ini\n" + BOT_PREFIX + "[명령어] ([--옵션])```" +
 						"```ini\n" + Bot.user.username + " [명령어] ([--옵션])```" +
 						"```@" + Bot.user.username + " [명령어]\n ([--옵션])```" +
 						"(" + Bot.user.username + "에게 직접 DM으로도 사용 가능, 바로 명령어부터 시작)\n\n" +
@@ -535,38 +536,32 @@ function getDetailedHelpEmbed(iCommand) {
 	return res;
 }
 
-/*
-function prepareDB() {
-	pgClient.connect();
-	pgClient.query("SELECT table_schema, table_name FROM information_schema.tables;")
+
+/* ~~~~ DataBase functions ~~~~ */
+async function initializePostgres(callback) {
+	pgPool.connect((error, client, release) => {
+		if (error) {
+			// printLogError(undefined,"Postgres connect() error",error);
+			callback(error, undefined);
+		} else {
+			callback(undefined, pgPool);
+		}
+		release();
+	});
 }
-*/
-/*
-async function setSwPowerTable() {
-	var tmpEle = {
-		power: 0,
-		value: []
-	};
-	for (var i = 0; i < SwPowerTable.length; i++) {
-		tmpEle = {
-			power: 0,
-			value: []
-		};
-		tmpEle.power = SwPowerTable[i].power;
-		tmpEle.value.push(SwPowerTable[i].a); // 3
-		tmpEle.value.push(SwPowerTable[i].b);
-		tmpEle.value.push(SwPowerTable[i].c);
-		tmpEle.value.push(SwPowerTable[i].d);
-		tmpEle.value.push(SwPowerTable[i].e);
-		tmpEle.value.push(SwPowerTable[i].f);
-		tmpEle.value.push(SwPowerTable[i].g);
-		tmpEle.value.push(SwPowerTable[i].h);
-		tmpEle.value.push(SwPowerTable[i].i);
-		tmpEle.value.push(SwPowerTable[i].j); // 12
-		swPowerTable.push(tmpEle);
-	}
-	// printLog(JSON.stringify(swPowerTable), undefined, undefined);
-}*/
+
+async function queryToDb(iQuery, callback) {
+	pgPool.connect((connectionError, client, release) => {
+		if (connectionError) { callback(connectionError, undefined) } else {
+			pgPool.query(iQuery, (queryError, queryResult) => {
+				// if(queryError){callback(queryError,undefined)}
+				callback(queryError, queryResult);
+			});
+		}
+		release();
+	});
+}
+
 
 /* ~~~~ Sending functions ~~~~ */
 function getGeneralDebugLog(message) {
@@ -679,6 +674,7 @@ async function answerToTheChannel(inputMessage, outputText, outputOptions, callb
 			printLogError(undefined, "answerToTheChannel() failed", error);
 		});
 }
+
 
 /* ~~~~ Main response function ~~~~ */
 async function checkBotCall(message) {
@@ -890,7 +886,7 @@ async function responseToMessage(message, args) {
 			}
 			break;
 		case "chanid":
-			answerToTheChannel(message, "```message.channel.id```", (sentMessage) => {
+			answerToTheChannel(message, "```" + message.channel.id + "```", (sentMessage) => {
 				message.channel.stopTyping();
 			})
 			break;
@@ -1453,6 +1449,7 @@ async function responseToMessage(message, args) {
 	}
 }
 
+
 /* ~~~~ Event handling ~~~~ */
 Bot.on("message", (message) => {
 	checkBotCall(message);
@@ -1469,6 +1466,10 @@ Bot.on("ready", () => {
 	});
 	Bot.user.setActivity("//help", { type: "LISTENING" })
 		.catch(console.error);
+
+	initializePostgres((error, pool) => {
+		if (error) { printLogError(undefined, "Postgres connect() fail", error); }
+	});
 
 	// setSwPowerTable();
 	// doMathWithDice("(23+25)-2d6+21*25/29%(35+13-23*35)");
