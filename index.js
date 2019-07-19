@@ -44,6 +44,7 @@ var BOT_SELF_ID = "";
 // const BOT_PREFIX = "//";
 const BOT_PREFIX = process.env.BOT_PREFIX;
 const BOT_LOG_CHANNEL = "531633010433458178";
+const BOT_ERROR_LOG_CHANNEL = "601660546387017739";
 const DEVELOPER_ID = "272958758999818241";
 const DEVELOPER_DMID = "354221823120113665";
 
@@ -52,11 +53,6 @@ const COLOR_INFO = 0x2196F3;
 const COLOR_WARN = 0xFFC107;
 const COLOR_ERROR = 0xF44336;
 const COLOR_DEBUG = 0x9C27B0;
-
-/*const pgClient = new Postgres.Client({
-	connectionString: process.env.DATABASE_URL,
-	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
-});*/
 
 const pgPool = new Postgres.Pool({
 	connectionString: process.env.DATABASE_URL,
@@ -542,19 +538,14 @@ function getDetailedHelpEmbed(iCommand) {
 async function initializePostgres(callback) {
 	pgPool.connect((error, client, release) => {
 		if (error) {
-			// printLogError(undefined,"Postgres connect() error",error);
 			callback(error, undefined);
 		} else {
 			callback(undefined, pgPool);
 		}
 		release();
 	});
-	/*pgClient.connect((error) => {
-		callback(error, pgClient);
-	});
-	pgClient.end();*/
 }
-/*
+
 async function queryToDb(iQuery, callback) {
 	pgPool.connect((connectionError, client, release) => {
 		if (connectionError) { callback(connectionError, undefined) } else {
@@ -565,7 +556,7 @@ async function queryToDb(iQuery, callback) {
 		}
 		release();
 	});
-}*/
+}
 
 
 /* ~~~~ Sending functions ~~~~ */
@@ -891,7 +882,7 @@ async function responseToMessage(message, args) {
 			}
 			break;
 		case "chanid":
-			answerToTheChannel(message, "```" + message.channel.id + "```", (sentMessage) => {
+			answerToTheChannel(message, "```" + message.channel.id + "```", undefined, (sentMessage) => {
 				message.channel.stopTyping();
 			})
 			break;
