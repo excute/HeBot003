@@ -53,12 +53,13 @@ const COLOR_WARN = 0xFFC107;
 const COLOR_ERROR = 0xF44336;
 const COLOR_DEBUG = 0x9C27B0;
 
-// const pgClient = new Postgres.Client({
-// 	connectionString: process.env.DATABASE_URL,
-// 	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
-// });
+/*const pgClient = new Postgres.Client({
+	connectionString: process.env.DATABASE_URL,
+	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
+});*/
+
 const pgPool = new Postgres.Pool({
-	host: process.env.DATABASE_URL,
+	connectionString: process.env.DATABASE_URL,
 	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
 });
 
@@ -548,8 +549,12 @@ async function initializePostgres(callback) {
 		}
 		release();
 	});
+	/*pgClient.connect((error) => {
+		callback(error, pgClient);
+	});
+	pgClient.end();*/
 }
-
+/*
 async function queryToDb(iQuery, callback) {
 	pgPool.connect((connectionError, client, release) => {
 		if (connectionError) { callback(connectionError, undefined) } else {
@@ -560,7 +565,7 @@ async function queryToDb(iQuery, callback) {
 		}
 		release();
 	});
-}
+}*/
 
 
 /* ~~~~ Sending functions ~~~~ */
@@ -1468,7 +1473,7 @@ Bot.on("ready", () => {
 		.catch(console.error);
 
 	initializePostgres((error, pool) => {
-		if (error) { printLogError(undefined, "Postgres connect() fail", error); }
+		if (error) { printLogError(undefined, "Postgres connect() fail", JSON.stringify(error)); }
 	});
 
 	// setSwPowerTable();
