@@ -91,6 +91,9 @@
 		"name": "lookup",
 		"inputs": [
 			"lookup",
+			"l",
+			"table",
+			"t",
 			"테이블",
 			"위력표",
 			"표",
@@ -104,7 +107,9 @@
 		"name": "comment",
 		"inputs": [
 			"comment",
+			"c",
 			"주석",
+			"주",
 			"설명",
 			"コメント",
 			"説明"
