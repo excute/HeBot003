@@ -81,7 +81,9 @@
 	"command": "swpower",
 	"inputs": [
 		"swpower",
+		"swp",
 		"위력",
+		"위",
 		"威力"
 	],
 	"options": [
@@ -91,6 +93,7 @@
 			"lookup",
 			"테이블",
 			"위력표",
+			"표",
 			"テーブル",
 			"威力表"
 		],
