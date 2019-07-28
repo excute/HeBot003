@@ -558,6 +558,8 @@ async function queryToDb(iQuery, callback) {
 	});
 }
 
+// async function 
+
 
 /* ~~~~ Sending functions ~~~~ */
 function getGeneralDebugLog(message) {
@@ -909,6 +911,14 @@ async function responseToMessage(message, args) {
 						diceEmoji = ":six:";
 						break;
 				}
+				if (args.options != undefined || args.options.length > 0) {
+					diceEmoji += "\n";
+					args.options.map((anOpt) => {
+						if (anOpt.name === "comment") {
+							diceEmoji += "*#" + anOpt.value + "* ";
+						}
+					});
+				}
 				answerToTheChannel(message, "", {
 					embed: {
 						color: COLOR_GREEN,
@@ -922,11 +932,22 @@ async function responseToMessage(message, args) {
 						//TODO : 오류 자세히 말해주기?
 						answerToTheChannel(message, "수식 입력 오류인것 같은데염...", undefined, (sentMessage) => { message.channel.stopTyping() });
 					} else {
+						// var tmpComment = undefined;
+						var tmpTitle = ":game_die: **" + authorCallname + "**, " + formStr + "\n = " + dicedStr + "\n = **" + formSum + "**";
+						if (args.options != undefined || args.options.length > 0) {
+							tmpTitle += "\n";
+							args.options.map((anOpt) => {
+								if (anOpt.name === "comment") {
+									tmpTitle += "*#" + anOpt.value + "* ";
+								}
+							});
+						}
 						answerToTheChannel(message, undefined, {
 							embed: {
 								color: COLOR_GREEN,
-								title: ":game_die: " + authorCallname + "의 다이스 롤!",
-								description: formStr + "\n = " + dicedStr + "\n = **" + formSum + "**"
+								title: tmpTitle
+								// title: ":game_die: **" + authorCallname + "**, " + formStr + "\n = " + dicedStr + "\n = **" + formSum + "**\n" + (tmpComment != undefined ? +tmpComment : ""),
+								// description: formStr + "\n = " + dicedStr + "\n = **" + formSum + "**\n*#" + tmpComment + "*"
 							}
 						}, (sentMessage) => { message.channel.stopTyping() })
 					}
@@ -1336,7 +1357,7 @@ async function responseToMessage(message, args) {
 					}
 				}
 				if (powerPointer === -2) {
-					answerToTheChannel(message, "위력은 한번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
+					answerToTheChannel(message, "위력은 한 번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
 				} else {
 					if (powerPointer === -1) {
 						// printLog("[DBG] powerPointer = -1, argArray[0] = " + argArray[0], undefined, undefined);
@@ -1346,7 +1367,6 @@ async function responseToMessage(message, args) {
 					}
 					// printLog("[DBG] inputPower = " + inputPower, undefined, undefined);
 					if (!Number.isInteger(Number(inputPower))) {
-
 						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					} else if ((inputPower < 0) || (inputPower > 100)) {
 						answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
@@ -1355,9 +1375,8 @@ async function responseToMessage(message, args) {
 						for (var i = 0; i < SwPowerTable[inputPower].value.length; i++) {
 							tmpStr += "" + (i + 3) + " → [" + SwPowerTable[inputPower].value[i] + "]\n";
 						}
-						answerToTheChannel(message, "위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, ":scroll: 위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
 					} else {
-
 						var comments = [];
 						if (args.options.length > 0) {
 							args.options.map((anOpt) => {
@@ -1378,19 +1397,23 @@ async function responseToMessage(message, args) {
 							// var result = ExprParser.evaluate((powerFromTable).toString());
 							// printLog("[DBG] result = " + result);
 							if ((powerDices[0] === 1) && (powerDices[1] === 1)) {
+								var tmpTitle = ":muscle: **" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = :boom:**펌블**:boom: (자동실패)";
+								if (comments != undefined && comments.length > 0) {
+									tmpTitle += "\n*#" + comments.join(" #") + "*";
+								}
 								answerToTheChannel(message, undefined, {
 									embed: {
 										color: COLOR_ERROR,
-										title: "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = :boom:**펌블**:boom: (자동실패)"
+										title: tmpTitle
 									}
 								}, (sentMessage) => { message.channel.stopTyping(); });
 							} else {
 								var result = ExprParser.evaluate(prePowerArray.join(" ") + powerFromTable + postPowerArray.join(" "));
-								var tmpTitle = "**" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) + "** → [ **" + powerFromTable + "** ]" +
+								var tmpTitle = ":muscle: **" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) + "** → [ **" + powerFromTable + "** ]" +
 									"\n → " + prePowerStr + " [ **" + powerFromTable + "** ] " + postPowerStr + " = **" + result + "**";
 								// "**\n결과 = [ **" + powerFromTable + "** ]" + argArray.join(" ") + " = **" + result + "**";
 								if (comments != undefined && comments.length > 0) {
-									tmpTitle += " *#" + comments.join(" #") + "*";
+									tmpTitle += "\n*#" + comments.join(" #") + "*";
 								}
 								answerToTheChannel(message, undefined, {
 									embed: {
@@ -1437,6 +1460,9 @@ async function responseToMessage(message, args) {
 			}
 			break;
 		case "anime":
+			// TODO : 190719
+			// args.options.map
+			// break;
 		case "meme":
 			answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, (sentMessage) => {
 				message.channel.stopTyping();

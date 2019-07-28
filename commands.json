@@ -66,13 +66,32 @@
 	"inputs": [
 		"dice",
 		"주사위",
+		"주",
+		"ㅈ",
+		"ㄱ",
 		"roll",
 		"롤",
 		"r",
 		"rr",
 		"dr"
 	],
-	"options": [],
+	"options": [
+	{
+		"name": "comment",
+		"inputs": [
+			"comment",
+			"c",
+			"주석",
+			"주",
+			"ㅊ",
+			"ㅈ",
+			"설명",
+			"コメント",
+			"説明"
+		],
+		"need_arg": true,
+		"usage": "값의 의미를 적어 표시합니다. (주석 띄어쓰기 불가, ＿를 사용해주세요. 주석을 복수개 달을 수도 있습니다.)"
+	}],
 	"short_usage": "주사위 굴리기",
 	"usage": "봇이 주사위를 굴려줍니다.\n\n`(주사위 갯수)D(주사위 면체 수)`를 적어 굴릴수도 있습니다.\n\n주사위의 최솟값은 1입니다! 최댓값은 100이에염, 그 이상은 너무 커서...\n\n*사용가능 연산자 목록 참고 링크 : https://www.npmjs.com/package/expr-eval#expression-syntax*",
 	"visible": true
