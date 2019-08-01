@@ -283,7 +283,8 @@ async function doMathWithDice(iForm, callback) {
 				return callback("wrong dice");
 			}
 			dicedArray = dicedArray.concat(["("]).concat(dices.join(" + ").split(" ")).concat([")"]);
-			formStr += " **" + formArray[i] + "**";
+			// formStr += " **" + formArray[i] + "**";
+			formStr += " **" + formArray[i].replace(new RegExp("[dㅇㄷ]", "g"), "D") + "**";
 			dicedStr += " ( **" + dices.join("** + **") + "** )";
 		} else {
 			dicedArray.push(formArray[i]);
