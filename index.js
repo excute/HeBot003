@@ -271,6 +271,8 @@ async function doMathWithDice(iForm, callback) {
 			diceArg = formArray[i].split("d");
 		} else if (formArray[i].toLowerCase().search("ㅇ") > -1) {
 			diceArg = formArray[i].split("ㅇ");
+		} else if (formArray[i].toLowerCase().search("ㄷ") > -1) {
+			diceArg = formArray[i].split("ㅇ");
 		}
 		// if (formArray[i].toLowerCase().search("d") > -1) {
 		// var diceArg = formArray[i].split("d");
