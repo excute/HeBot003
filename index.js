@@ -264,9 +264,17 @@ async function doMathWithDice(iForm, callback) {
 	// });
 
 	var dicedArray = [];
+	var diceArg = undefined;
 	for (var i = 0; i < formArray.length; i++) {
+		diceArg = undefined;
 		if (formArray[i].toLowerCase().search("d") > -1) {
-			var diceArg = formArray[i].split("d");
+			diceArg = formArray[i].split("d");
+		} else if (formArray[i].toLowerCase().search("ㅇ") > -1) {
+			diceArg = formArray[i].split("ㅇ");
+		}
+		// if (formArray[i].toLowerCase().search("d") > -1) {
+		// var diceArg = formArray[i].split("d");
+		if (diceArg != undefined) {
 			var dices = rollDices(diceArg[0], diceArg[1]);
 			// return ["("].concat(dices).concat([")"]);
 			if (dices[0] < 0) {
