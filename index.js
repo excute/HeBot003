@@ -569,6 +569,33 @@ async function queryToDb(iQuery, callback) {
 	});
 }
 
+async function getReadyTable(aTable) {
+	var tmp = {
+		name: "channel_anime",
+		columns: ["channel", "anime_text"]
+	};
+
+	var tmpQueryString = "select ";
+	tmp.columns.map((aColumn) => {
+		tmpQueryString += (tmpQueryString === "select " ? "" : ", ") + aColumn + " as " + aColumn;
+	});
+	tmpQueryString += " from " + tmp.name;
+
+	queryToDb(tmpQueryString, (error, response) => {
+		if (error) {
+			// printLogError(message, consoleLog, eDesc)
+			// if(error.code==="42P01"){
+
+			// }else{
+
+			// }
+		} else {
+			printLog(consoleLog, embedLog, embedText)
+		}
+	})
+}
+
+
 // async function 
 
 
