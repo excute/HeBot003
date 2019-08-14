@@ -62,6 +62,23 @@
 	"visible": false
 },
 {
+	"command": "restart",
+	"inputs": [
+		"restart",
+		"reboot",
+		"logout",
+		"재시작",
+		"다시시작",
+		"죽어",
+		"넌이미죽어있다",
+		"스위치를누르게두지마"
+	],
+	"options": [],
+	"short_usage": "봇 재시작",
+	"usage": "봇 로그아웃 후 재로그인",
+	"visible": false
+},
+{
 	"command": "dice",
 	"inputs": [
 		"dice",

@@ -583,14 +583,14 @@ async function getReadyTable(aTable) {
 
 	queryToDb(tmpQueryString, (error, response) => {
 		if (error) {
-			// printLogError(message, consoleLog, eDesc)
+			printLogError(undefined, "getReadyTable() -> queryToDb() error", "getReadyTable() -> queryToDb() error");
 			// if(error.code==="42P01"){
 
 			// }else{
 
 			// }
 		} else {
-			printLog(consoleLog, embedLog, embedText)
+			printLog(consoleLog, embedLog, embedText);
 		}
 	})
 }
@@ -925,6 +925,39 @@ async function responseToMessage(message, args) {
 			answerToTheChannel(message, "```" + message.channel.id + "```", undefined, (sentMessage) => {
 				message.channel.stopTyping();
 			})
+			break;
+		case "restart":
+			var restartJokeFlag = 0;
+			if (message.content.includes("죽")) {
+				restartJokeFlag = 1;
+			} else if (message.content.includes("스위치")) {
+				restartJokeFlag = 2;
+			}
+			var restartJoke = [
+				[{
+					answer: "재로그인 시도",
+					login: "봇 재로그인 성공"
+				}],
+				[{
+					answer: "히데붓!!",
+					login: "햣하-! 되살아났다-!"
+				}],
+				[{
+					answer: "아니, 한계다! 누르겠어, 지금이다!!",
+					login: "해, 해냈어! 발동했다! 돌아왔다고!"
+				}]
+			];
+			answerToTheChannel(message, (restartJoke[restartJokeFlag][0].answer), undefined, (sentMessage) => {
+				message.channel.stopTyping();
+				Bot.destroy().then(() => {
+					Bot.login(BOT_TOKEN).then(() => {
+						answerToTheChannel(message, restartJoke[restartJokeFlag][0].login, undefined, (sentMessage) => {
+							message.channel.stopTyping();
+						});
+					});
+				});
+			})
+
 			break;
 		case "dice":
 			if (args.arg === undefined || args.arg.length < 1) {
