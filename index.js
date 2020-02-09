@@ -17,6 +17,7 @@ Github	: https://github.com/Excute
 const Commands = require("./commands.json");
 const Strings = require("./strings.json");
 const SwPowerTable = require("./sw_power_table.json");
+const TablesForm = require("./tables.json");
 
 const Discord = require("discord.js");
 const Request = require("request");
@@ -44,7 +45,8 @@ var BOT_SELF_ID = "";
 // const BOT_PREFIX = "//";
 const BOT_PREFIX = process.env.BOT_PREFIX;
 const BOT_LOG_CHANNEL = "531633010433458178";
-const BOT_ERROR_LOG_CHANNEL = "601660546387017739";
+//const BOT_ERROR_LOG_CHANNEL = "601660546387017739";
+const BOT_ANIME_CHANNEL = "599143858135236609";
 const DEVELOPER_ID = "272958758999818241";
 const DEVELOPER_DMID = "354221823120113665";
 
@@ -58,6 +60,17 @@ const pgPool = new Postgres.Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
 });
+
+const OHYS_JSON_URL = "http://torrents.ohys.net/t/json.php?dir=disk";
+const OHYS_URL = "http://torrents.ohys.net/t/";
+const OHYS_COLUMN_TITLE = "t";
+const OHYS_COLUMN_URL = "a";
+const OHYS_FAVICON = "https://ohys.seia.io/ohys.png";
+const OHYS_PAGE_URL = "http://raws.ohys.net/t/";
+
+var tables = undefined;
+
+var incomeMessageIds = [];
 
 
 /* ~~~~ General functions ~~~~ */
@@ -569,30 +582,161 @@ async function queryToDb(iQuery, callback) {
 	});
 }
 
-async function getReadyTable(aTable) {
-	var tmp = {
-		name: "channel_anime",
-		columns: ["channel", "anime_text"]
-	};
-
-	var tmpQueryString = "select ";
-	tmp.columns.map((aColumn) => {
-		tmpQueryString += (tmpQueryString === "select " ? "" : ", ") + aColumn + " as " + aColumn;
-	});
-	tmpQueryString += " from " + tmp.name;
-
-	queryToDb(tmpQueryString, (error, response) => {
-		if (error) {
-			printLogError(undefined, "getReadyTable() -> queryToDb() error", "getReadyTable() -> queryToDb() error");
-			// if(error.code==="42P01"){
-
-			// }else{
-
-			// }
+async function testDb(callback) {
+	// anime
+	queryToDb("SELECT *  FROM " + TablesForm[0].name, (qSelErr, qSelRes) => {
+		if (qSelErr) {
+			if (qSelErr.code === "42P01") {
+				queryToDb(`CREATE TABLE ${TablesForm[0].name} ( ${TablesForm[0].columns[0]} text, ${TablesForm[0].columns[1]} text )`, (qCreateErr, qCreateRes) => {
+					callback(qCreateErr, qCreateRes);
+				});
+			} else {
+				callback(qSelErr, undefined);
+			}
 		} else {
-			printLog(consoleLog, embedLog, embedText);
+			callback(undefined, qSelRes);
 		}
-	})
+	});
+
+	// channel_anime
+	queryToDb("SELECT *  FROM " + TablesForm[1].name, (qSelErr, qSelRes) => {
+		if (qSelErr) {
+			if (qSelErr.code === "42P01") {
+				queryToDb(`CREATE TABLE ${TablesForm[1].name} ( ${TablesForm[1].columns[0]} text, ${TablesForm[1].columns[1]} text )`, (qCreateErr, qCreateRes) => {
+					callback(qCreateErr, qCreateRes);
+				});
+			} else {
+				callback(qSelErr, undefined);
+			}
+		} else {
+			callback(undefined, qSelRes);
+		}
+	});
+
+	// server_meme
+	queryToDb("SELECT *  FROM " + TablesForm[2].name, (qSelErr, qSelRes) => {
+		if (qSelErr) {
+			if (qSelErr.code === "42P01") {
+				queryToDb(`CREATE TABLE ${TablesForm[2].name} ( ${TablesForm[2].columns[0]} text, ${TablesForm[2].columns[1]} text, ${TablesForm[2].columns[2]} text )`, (qCreateErr, qCreateRes) => {
+					callback(qCreateErr, qCreateRes);
+				});
+			} else {
+				callback(qSelErr, undefined);
+			}
+		} else {
+			callback(undefined, qSelRes);
+		}
+	});
+}
+
+async function updateAnimeDb(callback) {
+	tryRequest({
+			uri: OHYS_JSON_URL,
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+			},
+			method: "GET",
+			encoding: "utf8",
+			timeout: 10000
+		}, 3,
+		(ohysReqErr, ohysReqRes, ohysReqBody) => {
+			if (ohysReqErr) {
+				printLogError(undefined, "tryRequest(ohysJSON) error", ohysReqErr);
+				if (callback != undefined) {
+					callback(ohysReqErr, undefined);
+				}
+			} else {
+				//var liveAnimeList = JSON.parse(ohysReqBody);
+				//var newAnimeList = [];
+				queryToDb("SELECT * FROM " + TablesForm[0].name, (qSelAnimesErr, qSelAnimesRes) => {
+					if (qSelAnimesErr) {
+						printLogError(undefined, "qSelAnimesErr", JSON.stringify(qSelAnimesErr, null, 2));
+						if (callback != undefined) {
+							callback(JSON.stringify(qSelAnimesErr, null, 2), undefined);
+						}
+					} else {
+						//answerToTheChannel(message, JSON.stringify(qSelAnimesRes, null, 2), undefined, (sentMessage) => { message.channel.stopTyping(); });
+						//printLog(JSON.stringify(qSelAnimesRes, null, 2), undefined, undefined);
+						//printLog(JSON.stringify(liveAnimeList, null, 2), undefined, undefined);
+						//var tmpInsertQuery = "INSERT INTO " + TablesForm[0].name + "(";
+
+						var newAnimes = JSON.parse(ohysReqBody).filter((anAnimeFromLive) => {
+							return !qSelAnimesRes.rows.includes(anAnimeFromLive);
+						});
+
+						queryToDb(`SELECT * FROM ${TablesForm[1].name}`, (qSelChannelErr, qSelChannelRes) => {
+							if (qSelChannelErr) {
+								printLogError(undefined, "qSelChannelErr", JSON.stringify(qSelChannelErr, null, 2));
+							} else {
+								qSelChannelRes.rows.map((aChannelAnime) => {
+									newAnimes.map((aNewAnime) => {
+										if (aNewAnime[OHYS_COLUMN_TITLE].toLowerCase().includes(aChannelAnime.anime_text)) {
+											searchGoogle({
+												q: aNewAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim(),
+												num: 1,
+												start: 1,
+												searchType: "image"
+											}, (searchErr, searchRes) => {
+												if (searchErr) {
+													printLogError(undefined, "updateAnimeDb(), get new Anime image error", "updateAnimeDb(), get new Anime image error");
+												}
+
+											})
+											Bot.channels.get(aChannelAnime.channel).send(undefined, {
+												embed: {
+													color: COLOR_INFO,
+													author: {
+														name: "Ohys-raws",
+														url: "http://raws.ohys.net/t/",
+														icon_url: OHYS_FAVICON
+													},
+													title: aNewAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(.torrent)/gi, "").trim(),
+													description: "New Anime found from [Ohys-Raws](http://raws.ohys.net/t/v)",
+													url: `OHYS_URL${aNewAnime[OHYS_COLUMN_URL]}`
+												}
+											});
+											/*.then((sentMessage) => {
+												if (callback != undefined) {
+													callback(sentMessage);
+												}
+											})
+											.catch((error) => {
+												printLogError(undefined, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
+											});*/
+										}
+									})
+
+								})
+
+							}
+						});
+						liveAnimeList.map((anAnime) => {
+							queryToDb(`INSERT INTO ${TablesForm[0].name} (${TablesForm[0].columns[0]}, ${TablesForm[0].columns[1]})
+												VALUES ($$${anAnime.t}$$, $$${anAnime.a}$$);`, (qInsertErr, qInsertRes) => {
+								if (qInsertErr) {
+									printLogError(message, "qInsertErr in Anime", JSON.stringify(qInsertErr, null, 2));
+									answerToTheChannel(message, "애니DB 쿼리 삽입 실패", undefined, true, undefined);
+								}
+							});
+						});
+						queryToDb("SELECT * FROM " + TablesForm[0].name, (qReSelErr, qReSelRes) => {
+							if (qReSelErr) {
+								printLogError(message, "qReSelErr", JSON.stringify(qReSelErr, null, 2));
+								answerToTheChannel(message, "qReSelErr", undefined, true, undefined);
+							} else {
+								printLog(JSON.stringify(qReSelRes, null, 2), undefined, undefined);
+							}
+						});
+					}
+				});
+				//answerToTheChannel(message, "```\n" + JSON.parse(ohysReqBody) + "\n```", undefined, (sentMessage) => {
+				/*answerToTheChannel(message, "```\n" + (ohysReqBody) + "\n```", undefined, (sentMessage) => {
+					message.channel.stopTyping();
+				});*/
+				//printLog(ohysReqBody, undefined, undefined);
+			}
+		}
+	);
 }
 
 
@@ -699,15 +843,18 @@ async function printLogError(message, consoleLog, eDesc) {
 	printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
 }
 
-async function answerToTheChannel(inputMessage, outputText, outputOptions, callback) {
+async function answerToTheChannel(inputMessage, outputText, outputOptions, responseFlag, callback) {
 	inputMessage.channel.send(outputText, (outputOptions != undefined ? outputOptions : null))
 		.then((sentMessage) => {
+			if (responseFlag) {
+				responseFeedback(inputMessage, 0);
+			}
 			if (callback != undefined) {
 				callback(sentMessage);
 			}
 		})
 		.catch((error) => {
-			printLogError(undefined, "answerToTheChannel() failed", error);
+			printLogError(undefined, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
 		});
 }
 
@@ -750,7 +897,7 @@ async function checkBotCall(message) {
 
 async function handleArgs(message, content) {
 	if (content.length < 1) {
-		answerToTheChannel(message, "명령어가 없서염... 아래의 도움말을 참고해주세여", getHelpEmbed(message), undefined);
+		answerToTheChannel(message, "명령어가 없서염... 아래의 도움말을 참고해주세여", getHelpEmbed(message), false, undefined);
 	} else {
 		var rawArgsArray = content.replace(/　/g, " ").split(" ");
 		var foundCommand = Commands.find((aCmd) => {
@@ -802,28 +949,30 @@ async function handleArgs(message, content) {
 										}]
 									}
 								},
-								undefined);
-						} else { answerToTheChannel(message, undefined, getDetailedHelpEmbed(foundCommand), undefined); }
+								false, undefined);
+						} else { answerToTheChannel(message, undefined, getDetailedHelpEmbed(foundCommand), false, undefined); }
 						detailedHelpFlag = true;
 					} else if (!detailedHelpFlag) {
-						var anOptionFound = foundCommand.options.find((anCmdOpt) => {
-							return anCmdOpt.inputs.find((anCmdOptInput) => { return anCmdOptInput === rawArgsArray[i].toLowerCase().replace("--", "") });
-						});
-						if (anOptionFound != undefined) {
-							if (anOptionFound.need_arg) {
-								if (rawArgsArray[i + 1] != undefined) {
-									argsStruct.options.push({
-										name: anOptionFound.name,
-										value: rawArgsArray[i + 1]
-									});
-									rawArgsArray[i] = rawArgsArray[i + 1] = "";
+						if ((foundCommand.multi_options) || (argsStruct.options.length < 1)) {
+							var anOptionFound = foundCommand.options.find((anCmdOpt) => {
+								return anCmdOpt.inputs.find((anCmdOptInput) => { return anCmdOptInput === rawArgsArray[i].toLowerCase().replace("--", "") });
+							});
+							if (anOptionFound != undefined) {
+								if (anOptionFound.need_arg) {
+									if (rawArgsArray[i + 1] != undefined) {
+										argsStruct.options.push({
+											name: anOptionFound.name,
+											value: rawArgsArray[i + 1]
+										});
+										rawArgsArray[i] = rawArgsArray[i + 1] = "";
+									} else {
+										argsStruct.options.push({ name: anOptionFound.name });
+										rawArgsArray[i] = "";
+									}
 								} else {
 									argsStruct.options.push({ name: anOptionFound.name });
 									rawArgsArray[i] = "";
 								}
-							} else {
-								argsStruct.options.push({ name: anOptionFound.name });
-								rawArgsArray[i] = "";
 							}
 						}
 					}
@@ -864,8 +1013,43 @@ async function handleArgs(message, content) {
 	}
 }
 
+async function responseFeedback(message, startFlag) {
+	if (incomeMessageIds.includes((message.id))) { // Exist
+		incomeMessageIds = incomeMessageIds.filter((anIncomeMessageId) => {
+			return anIncomeMessageId != message.id;
+		});
+		if (startFlag < 1) {
+			message.channel.stopTyping();
+			message.reactions.map((aReact) => {
+				if (aReact.me && (aReact.emoji.identifier === "%E2%9D%97")) {
+					aReact.remove();
+					/*printLog(`Logging Emoji`, {
+						embed: {
+							description: `emoji : ${aReact.emoji}\nidentifier : ${aReact.emoji.identifier}\nname : ${aReact.emoji.name}`
+						}
+					}, undefined)*/
+				}
+			});
+			message.react("✅");
+		}
+	} else { // Not exist
+		incomeMessageIds.push(message.id);
+		if (startFlag > 0) {
+			message.channel.startTyping();
+			message.react("❗");
+		}
+	}
+}
+
 async function responseToMessage(message, args) {
-	message.channel.startTyping();
+	// if (incomeMessageIds.find((anMessageId) => {
+	// 		return anMessageId === message.id;
+	// 	}) === undefined) {
+	// 	message.channel.startTyping().then((responsingMessage) => {
+	// 		incomeMessageIds.push(responsingMessage.id);
+	// 	});
+	// }
+	responseFeedback(message, 1);
 	var authorCallname = "";
 	switch (message.channel.type) {
 		default:
@@ -880,51 +1064,34 @@ async function responseToMessage(message, args) {
 	switch (args.command) {
 		default:
 			printLog("[WUT] Unexpected command!", getGeneralDebugLog(message, "Error command", COLOR_ERROR), `<@${DEVELOPER_ID}>` + "!! 이상한 커멘드가 왔다구!!");
-			answerToTheChannel(message,
-				"엥!? 여긴 어떻게 들어왔어?!?",
-				getHelpEmbed(message),
-				(sentMessage) => {
-					message.channel.stopTyping();
-				}
-			);
+			answerToTheChannel(message, "엥!? 여긴 어떻게 들어왔어?!?", getHelpEmbed(message), true, undefined);
 			break;
 		case "help":
-			answerToTheChannel(message, "", getHelpEmbed(message),
-				(sentMessage) => {
-					message.channel.stopTyping();
-				});
+			answerToTheChannel(message, "", getHelpEmbed(message), true, undefined);
 			break;
 		case "uptime":
 			if (args.options.find((anInputOpt) => {
 					return anInputOpt.name === "system";
 				}) != undefined) {
 				answerToTheChannel(message, "", {
-						embed: {
-							title: "봇 서버 업타임",
-							description: "" + secToDHMS(Os.uptime()),
-							color: COLOR_GREEN
-						}
-					},
-					(sentMessage) => {
-						message.channel.stopTyping();
-					});
+					embed: {
+						title: "봇 서버 업타임",
+						description: "" + secToDHMS(Os.uptime()),
+						color: COLOR_GREEN
+					}
+				}, true, undefined);
 			} else {
 				answerToTheChannel(message, "", {
-						embed: {
-							title: "봇 업타임",
-							description: "" + secToDHMS(Process.uptime()),
-							color: COLOR_GREEN
-						}
-					},
-					(sentMessage) => {
-						message.channel.stopTyping();
-					});
+					embed: {
+						title: "봇 업타임",
+						description: "" + secToDHMS(Process.uptime()),
+						color: COLOR_GREEN
+					}
+				}, true, undefined);
 			}
 			break;
 		case "chanid":
-			answerToTheChannel(message, "```" + message.channel.id + "```", undefined, (sentMessage) => {
-				message.channel.stopTyping();
-			})
+			answerToTheChannel(message, "```" + message.channel.id + "```", undefined, true, undefined);
 			break;
 		case "restart":
 			var restartJokeFlag = 0;
@@ -939,21 +1106,18 @@ async function responseToMessage(message, args) {
 					login: "봇 재로그인 성공"
 				}],
 				[{
-					answer: "히데붓!!",
-					login: "햣하-! 되살아났다-!"
+					answer: "*히데붓!!*",
+					login: "*햣하-! 되살아났다-!*"
 				}],
 				[{
-					answer: "아니, 한계다! 누르겠어, 지금이다!!",
-					login: "해, 해냈어! 발동했다! 돌아왔다고!"
+					answer: "*아니! 한계다, 누르겠어! 지금이다!!*",
+					login: "*해, 해냈어! 발동했다! 돌아왔다고!*"
 				}]
 			];
-			answerToTheChannel(message, (restartJoke[restartJokeFlag][0].answer), undefined, (sentMessage) => {
-				message.channel.stopTyping();
+			answerToTheChannel(message, (restartJoke[restartJokeFlag][0].answer), undefined, true, (sentMessage) => {
 				Bot.destroy().then(() => {
 					Bot.login(BOT_TOKEN).then(() => {
-						answerToTheChannel(message, restartJoke[restartJokeFlag][0].login, undefined, (sentMessage) => {
-							message.channel.stopTyping();
-						});
+						answerToTheChannel(message, restartJoke[restartJokeFlag][0].login, undefined, false, undefined);
 					});
 				});
 			})
@@ -996,12 +1160,12 @@ async function responseToMessage(message, args) {
 						title: ":game_die: " + authorCallname + "의 다이스 롤!",
 						description: diceEmoji
 					}
-				}, (sentMessage) => { message.channel.stopTyping() });
+				}, true, undefined);
 			} else {
 				doMathWithDice(args.arg, (error, formStr, dicedStr, formSum) => {
 					if (error) {
 						//TODO : 오류 자세히 말해주기?
-						answerToTheChannel(message, "수식 입력 오류인것 같은데염...", undefined, (sentMessage) => { message.channel.stopTyping() });
+						answerToTheChannel(message, "수식 입력 오류인것 같은데염...", undefined, true, undefined);
 					} else {
 						// var tmpComment = undefined;
 						var tmpTitle = ":game_die: **" + authorCallname + "**, " + formStr + "\n = " + dicedStr + "\n = **" + formSum + "**";
@@ -1020,7 +1184,7 @@ async function responseToMessage(message, args) {
 								// title: ":game_die: **" + authorCallname + "**, " + formStr + "\n = " + dicedStr + "\n = **" + formSum + "**\n" + (tmpComment != undefined ? +tmpComment : ""),
 								// description: formStr + "\n = " + dicedStr + "\n = **" + formSum + "**\n*#" + tmpComment + "*"
 							}
-						}, (sentMessage) => { message.channel.stopTyping() })
+						}, true, undefined);
 					}
 				});
 			}
@@ -1111,10 +1275,7 @@ async function responseToMessage(message, args) {
 		case "soundcloud":
 			// printLog("[DBG] search arg = " + args.arg, undefined, undefined);
 			if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
-				answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
-					(sentMessage) => {
-						message.channel.stopTyping();
-					});
+				answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined, true, undefined);
 			} else {
 				var qNum = 3;
 				var qPage = 1;
@@ -1143,7 +1304,7 @@ async function responseToMessage(message, args) {
 					}
 				});
 				if (qNum < 1 || qPage < 1) {
-					answerToTheChannel(message, "*" + qNum + "*개 검색결과의 *" + qPage + "* 페이지를 가져온다는건 이상한데여...");
+					answerToTheChannel(message, "*" + qNum + "*개 검색결과의 *" + qPage + "* 페이지를 가져온다는건 이상한데여...", undefined, true, undefined);
 				} else {
 					var iQuery = {
 						q: args.arg,
@@ -1181,12 +1342,10 @@ async function responseToMessage(message, args) {
 					searchGoogle(iQuery, (error, response) => {
 						if (error) {
 							printLogError(message, "searchGoogle failed?", error);
-							answerToTheChannel(message, "구글 검색 실패...?", undefined, (sentMessage) => {
-								message.channel.stopTyping();
-							});
+							answerToTheChannel(message, "구글 검색 실패...?", undefined, true, undefined);
 						} else if (response.data != undefined) {
 							if (response.data.searchInformation.totalResults === "0") {
-								answerToTheChannel(message, "검색 결과가 없섯서염...", undefined, message.channel.stopTyping());
+								answerToTheChannel(message, "검색 결과가 없섯서염...", undefined, true, undefined);
 							} else {
 								switch (args.command) {
 									case "google":
@@ -1224,15 +1383,15 @@ async function responseToMessage(message, args) {
 											(response.data.queries.request[0].count === 1 ?
 												response.data.queries.request[0].startIndex :
 												response.data.queries.request[0].startIndex + " ~ " + (response.data.queries.request[0].startIndex + response.data.queries.request[0].count - 1) + "") +
-											"번째 결과, " + response.data.searchInformation.searchTime + "초 소요`", searchResultEmbeds[0], (sentMessage) => {
+											"번째 결과, " + response.data.searchInformation.searchTime + "초 소요`", searchResultEmbeds[0], false, (sentMessage) => {
 												if (searchResultEmbeds.length > 1) {
 													var i = 1;
 
 													function answerSearchResultEmbed(message, idx) {
 														if (idx + 1 < searchResultEmbeds.length) {
-															answerToTheChannel(message, "", searchResultEmbeds[idx], answerSearchResultEmbed(message, idx + 1));
+															answerToTheChannel(message, "", searchResultEmbeds[idx], false, answerSearchResultEmbed(message, idx + 1));
 														} else if (idx < searchResultEmbeds.length) {
-															answerToTheChannel(message, "", searchResultEmbeds[idx], message.channel.stopTyping());
+															answerToTheChannel(message, "", searchResultEmbeds[idx], true, undefined);
 														}
 													}
 													answerSearchResultEmbed(message, i);
@@ -1244,13 +1403,13 @@ async function responseToMessage(message, args) {
 									case "soundcloud":
 										var tmpArray = [];
 										response.data.items.map((anItem) => { tmpArray.push(anItem.link) });
-										answerToTheChannel(message, tmpArray.join("\n"), undefined, (sentMessage) => { message.channel.stopTyping(); });
+										answerToTheChannel(message, tmpArray.join("\n"), undefined, true, undefined);
 										break;
 								}
 							}
 						} else {
 							printLogError(message, "searchGoogle error : No error, No response", "What the...??");
-							answerToTheChannel(message, "엥...? 검색 오류도 없는데 구글 응답이 없어요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+							answerToTheChannel(message, "엥...? 검색 오류도 없는데 구글 응답이 없어요...", undefined, true, undefined);
 						}
 					});
 				}
@@ -1258,10 +1417,7 @@ async function responseToMessage(message, args) {
 			break;
 		case "image":
 			if (args.arg.length === 0) {
-				answerToTheChannel(message, "검색어가 입력되지 않았서염...", getDetailedHelpEmbed(args),
-					(sentMessage) => {
-						message.channel.stopTyping();
-					});
+				answerToTheChannel(message, "검색어가 입력되지 않았서염...", getDetailedHelpEmbed(args), true, undefined);
 			} else {
 				var detailedFlag = false;
 				var indexOpt = 1;
@@ -1285,9 +1441,7 @@ async function responseToMessage(message, args) {
 					}
 				});
 				if (indexOpt < 1) {
-					answerToTheChannel(message, "옵션을 잘못 입력하신것 같은대...", undefined, (sentMessage) => {
-						message.channel.stopTyping();
-					});
+					answerToTheChannel(message, "옵션을 잘못 입력하신것 같은대...", undefined, true, undefined);
 				} else {
 					searchGoogle({
 						q: args.arg,
@@ -1297,12 +1451,10 @@ async function responseToMessage(message, args) {
 					}, (searchErr, searchRes) => {
 						if (searchErr) {
 							printLogError(message, "searchGoogle(image) error", searchErr);
-							answerToTheChannel(message, "이미지 검색 에러... 라는대여...??", undefined, (sentMessage) => {
-								message.channel.stopTyping();
-							});
+							answerToTheChannel(message, "이미지 검색 에러... 라는대여...??", undefined, true, undefined);
 						} else if (searchRes.data != undefined) {
 							if (searchRes.data.searchInformation.totalResults === "0") {
-								answerToTheChannel(message, "검색 결과가 없섯서염...", undefined, (sentMessage) => { message.channel.stopTyping() });
+								answerToTheChannel(message, "검색 결과가 없섯서염...", undefined, true, undefined);
 							} else {
 								if (!detailedFlag) {
 									tryRequest({
@@ -1314,7 +1466,7 @@ async function responseToMessage(message, args) {
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
 												printLogError(message, "tryRequest(image) error", imgReqErr);
-												answerToTheChannel(message, "이미지 다운로드 실패...??", undefined, (sentMessage) => { message.channel.stopTyping(); });
+												answerToTheChannel(message, "이미지 다운로드 실패...??", undefined, true, undefined);
 											} else {
 												if (imgReqRes.statusCode != 200) {
 													if (searchRes.data.items[0].link.startsWith("https://w.namu")) {
@@ -1325,9 +1477,7 @@ async function responseToMessage(message, args) {
 																	url: searchRes.data.items[0].image.thumbnailLink
 																}
 															}
-														}, (sentMessage) => {
-															message.channel.stopTyping();
-														});
+														}, true, undefined);
 													} else {
 														printLogError(message, "imgReqRes.statusCode != 200", searchRes.data.items[0].link);
 														answerToTheChannel(message, "_403 이미지 표시 제한, 구글 썸네일로 대체_", {
@@ -1337,9 +1487,7 @@ async function responseToMessage(message, args) {
 																	url: searchRes.data.items[0].image.thumbnailLink
 																}
 															}
-														}, (sentMessage) => {
-															message.channel.stopTyping();
-														});
+														}, true, undefined);
 													}
 												} else {
 													var imageFileName = searchRes.data.items[0].link.match(/([^\/]+)(?=\.\w+$)/gm);
@@ -1360,9 +1508,7 @@ async function responseToMessage(message, args) {
 															name: imageFileName,
 															attachment: imgReqBody
 														}
-													}, (sentMessage) => {
-														message.channel.stopTyping();
-													});
+													}, true, undefined);
 												}
 											}
 										});
@@ -1388,12 +1534,12 @@ async function responseToMessage(message, args) {
 													text: searchRes.data.items[0].image.contextLink
 												}
 											}
-										}, (sentMessage) => { message.channel.stopTyping() });
+										}, true, undefined);
 								}
 							}
 						} else {
 							printLogError(message, "searchGoogle(image) No error, no response", "Not an error, but undefined searchRes.data returned");
-							answerToTheChannel(message, "엥?? 검색 에러도 없고 결과도 없는대요???? :thinking:", undefined, (sentMessage) => { message.channel.stopTyping(); });
+							answerToTheChannel(message, "엥?? 검색 에러도 없고 결과도 없는대요???? :thinking:", undefined, true, undefined);
 						}
 					});
 				}
@@ -1401,7 +1547,7 @@ async function responseToMessage(message, args) {
 			break;
 		case "swpower":
 			if (args.arg === undefined) {
-				answerToTheChannel(message, "위력값을 입력하셔야...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				answerToTheChannel(message, "위력값을 입력하셔야...", undefined, true, undefined);
 			} else {
 				var operands = ["+", "-", "/", "*", "%", "(", ")"];
 				var operandsRegExp = ["\\\+", "\\\-", "\\\/", "\\\*", "\\\%", "\\\(", "\\\)"];
@@ -1428,7 +1574,7 @@ async function responseToMessage(message, args) {
 					}
 				}
 				if (powerPointer === -2) {
-					answerToTheChannel(message, "위력은 한 번만 입력해주새여;;", undefined, (sentMessage) => { message.channel.stopTyping() });
+					answerToTheChannel(message, "위력은 한 번만 입력해주새여;;", undefined, true, undefined);
 				} else {
 					if (powerPointer === -1) {
 						// printLog("[DBG] powerPointer = -1, argArray[0] = " + argArray[0], undefined, undefined);
@@ -1438,15 +1584,15 @@ async function responseToMessage(message, args) {
 					}
 					// printLog("[DBG] inputPower = " + inputPower, undefined, undefined);
 					if (!Number.isInteger(Number(inputPower))) {
-						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, "**" + inputPower + "** 은 숫자가 아닌것 같은데여...?", undefined, true, undefined);
 					} else if ((inputPower < 0) || (inputPower > 100)) {
-						answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, "**" + inputPower + "** 은 0보다 작거나 100보다 큽니다, 그런 위력은 업소요...", undefined, true, undefined);
 					} else if (args.options.length > 0 && args.options.find((anOpt) => { return anOpt.name === "lookup"; })) {
 						var tmpStr = "```ini\n";
 						for (var i = 0; i < SwPowerTable[inputPower].value.length; i++) {
 							tmpStr += "" + (i + 3) + " → [" + SwPowerTable[inputPower].value[i] + "]\n";
 						}
-						answerToTheChannel(message, ":scroll: 위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, ":scroll: 위력값 **" + inputPower + "**의 위력표" + tmpStr + "```", undefined, true, undefined);
 					} else {
 						var comments = [];
 						if (args.options.length > 0) {
@@ -1477,7 +1623,7 @@ async function responseToMessage(message, args) {
 										color: COLOR_ERROR,
 										title: tmpTitle
 									}
-								}, (sentMessage) => { message.channel.stopTyping(); });
+								}, true, undefined);
 							} else {
 								var result = ExprParser.evaluate(prePowerArray.join(" ") + powerFromTable + postPowerArray.join(" "));
 								var tmpTitle = ":muscle: **" + authorCallname + "**, 위력 **" + inputPower + "**의 2D6 = ( **" + powerDices[0] + "** + **" + powerDices[1] + "** ) = **" + (powerDices[0] + powerDices[1]) + "** → [ **" + powerFromTable + "** ]" +
@@ -1491,11 +1637,11 @@ async function responseToMessage(message, args) {
 										color: COLOR_GREEN,
 										title: tmpTitle
 									}
-								}, (sentMessage) => { message.channel.stopTyping(); });
+								}, true, undefined);
 							}
 						} catch (error) {
 							printLogError(message, "Eval error...?", error.toString());
-							answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, (sentMessage) => { message.channel.stopTyping(); });
+							answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, true, undefined);
 						}
 					}
 				}
@@ -1516,28 +1662,110 @@ async function responseToMessage(message, args) {
 						// printLog(`[DBG] foundImageUrl = ${foundImageUrl}`, undefined, undefined);
 					});
 					if (foundImageUrl === undefined) {
-						answerToTheChannel(message, "최근 메세지 20개중에서 이미지를 찾을 수 없었습니당...", undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, "최근 메세지 20개중에서 이미지를 찾을 수 없었습니당...", undefined, true, undefined);
 					} else {
-						answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + foundImageUrl, undefined, (sentMessage) => { message.channel.stopTyping(); });
+						answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + foundImageUrl, undefined, true, undefined);
 					}
 				}).catch((error) => {
-					answerToTheChannel(message, "어라...? 메세지 기록을 읽어오지 못했나봐여...", undefined, undefined);
+					answerToTheChannel(message, "어라...? 메세지 기록을 읽어오지 못했나봐여...", undefined, true, undefined);
 					printLogError(message, "fetchMessages() failed : " + error, undefined);
 				});
 			} else if (args.arg === undefined || args.arg === null || args.arg.length < 1) {
-				answerToTheChannel(message, "검색할 url을 입력해주세여... 디스코드 이미지라면 우클릭->링크복사해서 붙여넣으시면 편해염", undefined, (sentMessage) => { message.channel.stopTyping(); });
+				answerToTheChannel(message, "검색할 url을 입력해주세여... 디스코드 이미지라면 우클릭->링크복사해서 붙여넣으시면 편해염", undefined, true, undefined);
 			} else {
-				answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + args.arg, undefined, (sentMessage) => { message.channel.stopTyping(); });
+				answerToTheChannel(message, "http://saucenao.com/search.php?db=999&url=" + args.arg, undefined, true, undefined);
 			}
 			break;
 		case "anime":
-			// TODO : 190719
 			// args.options.map
-			// break;
+
+			if (args.options.length === 0) {
+				args.options.push({ name: "search" });
+			}
+
+			//answerToTheChannel(message, JSON.stringify(args), undefined, false, undefined);
+			switch (args.options[0].name) {
+				default:
+				case "search":
+					if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined, true, undefined);
+					} else {
+						tryRequest({
+							uri: `${OHYS_JSON_URL}&q=${args.arg}`,
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+							},
+							method: "GET",
+							encoding: "utf8",
+							timeout: 10000
+						}, 3, (searchErr, searchRes, searchBody) => {
+							if (searchErr) {
+								printLogError(message, `anime searchErr`, undefined);
+								answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, true, undefined);
+							} else {
+								if (searchRes.statusCode != 200) {
+									printLogError(message, `anime search bad response code`, undefined);
+									answerToTheChannel(message, `Ohys 응답이 이상해요...`, undefined, true, undefined);
+								} else {
+									var tmpFoundStr = "";
+									JSON.parse(searchBody).map((anAnime) => {
+										if (tmpFoundStr.length > 0) {
+											tmpFoundStr += `\n`;
+										}
+										tmpFoundStr += `[${anAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
+									});
+									answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
+										embed: {
+											color: COLOR_INFO,
+											author: {
+												name: "Ohys-Raws",
+												url: OHYS_PAGE_URL,
+												icon_url: OHYS_FAVICON
+											},
+											description: tmpFoundStr
+										}
+									}, true, undefined);
+								}
+							}
+						});
+					}
+					break;
+				case "list":
+					//break;
+				case "add":
+					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
+							(sentMessage) => {
+								message.channel.stopTyping();
+							});
+					} else {
+
+					}
+					break;*/
+				case "remove":
+					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
+							(sentMessage) => {
+								message.channel.stopTyping();
+							});
+					} else {
+
+					}*/
+					answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, true, undefined);
+					break;
+				case "forceupdate":
+					/*answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, (sentMessage) => {
+						message.channel.stopTyping();
+					});*/
+					updateAnimeDb();
+
+
+					break;
+			}
+
+			break;
 		case "meme":
-			answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, (sentMessage) => {
-				message.channel.stopTyping();
-			});
+			answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, true, undefined);
 			break;
 	}
 }
@@ -1557,13 +1785,21 @@ Bot.on("ready", () => {
 			color: COLOR_GREEN
 		}
 	});
-	Bot.user.setActivity("//help", { type: "LISTENING" })
+	Bot.user.setActivity(BOT_PREFIX + "help", { type: "LISTENING" })
 		.catch(console.error);
 
 	initializePostgres((error, pool) => {
-		if (error) { printLogError(undefined, "Postgres connect() fail", JSON.stringify(error)); }
+		if (error) { printLogError(undefined, "Postgres connect() fail", JSON.stringify(error, null, 2)); }
 	});
 
+	testDb((dbErr, dbRes) => {
+		if (dbErr) {
+			printLogError(undefined, "DB table test error", JSON.stringify(dbErr, null, 2));
+		} else {
+			//printLog("testDB success\n" + JSON.stringify(dbRes, null, 2), undefined, undefined);
+			printLog("testDB success", undefined, undefined); // TODO : Log differently between tables
+		}
+	});
 	// setSwPowerTable();
 	// doMathWithDice("(23+25)-2d6+21*25/29%(35+13-23*35)");
 	// doMathWithDice("10d6+10-2fffferx");

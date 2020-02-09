@@ -25,11 +25,12 @@
     "bufferutil": "^4.0.1",
     "discord.js": "^11.5.1",
     "expr-eval": "^1.2.3",
-    "googleapis": "^40.0.0",
+    "googleapis": "^40.0.1",
     "html-entities": "^1.2.1",
     "os": "^0.1.1",
-    "pg": "^7.11.0",
+    "pg": "^7.18.1",
     "process": "^0.11.10",
     "request": "^2.88.0"
-  }
+  },
+  "devDependencies": {}
 }

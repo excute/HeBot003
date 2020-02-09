@@ -1,0 +1,13 @@
+[
+{
+	"name": "anime",
+	"columns": ["anime_title", "anime_url"]
+},
+{
+	"name": "channel_anime",
+	"columns": ["channel", "anime_text"]
+},
+{
+	"name": "server_meme",
+	"columns": ["server", "meme_text", "meme_url"]
+}]

@@ -7,6 +7,7 @@
 		"사용법",
 		"도움말"
 	],
+	"multi_options": false,
 	"options": [],
 	"short_usage": "사용법 안내",
 	"usage": "봇에 대해 표시합니다",
@@ -19,6 +20,7 @@
 		"가동시간",
 		"업타임"
 	],
+	"multi_options": false,
 	"options": [
 	{
 		"name": "process",
@@ -56,6 +58,7 @@
 		"채널아이디",
 		"채널아디"
 	],
+	"multi_options": false,
 	"options": [],
 	"short_usage": "현재 채널 ID 표시",
 	"usage": "현재 채널의 ID를 말해줍니다.",
@@ -74,6 +77,7 @@
 		"넌이미죽어있다",
 		"스위치를누르게두지마"
 	],
+	"multi_options": false,
 	"options": [],
 	"short_usage": "봇 재시작",
 	"usage": "봇 로그아웃 후 재로그인",
@@ -93,6 +97,7 @@
 		"rr",
 		"dr"
 	],
+	"multi_options": false,
 	"options": [
 	{
 		"name": "comment",
@@ -123,6 +128,7 @@
 		"위",
 		"威力"
 	],
+	"multi_options": false,
 	"options": [
 	{
 		"name": "lookup",
@@ -170,6 +176,7 @@
 		"search",
 		"검색"
 	],
+	"multi_options": true,
 	"options": [
 	{
 		"name": "quantity",
@@ -205,6 +212,7 @@
 		"사진",
 		"그림"
 	],
+	"multi_options": true,
 	"options": [
 	{
 		"name": "index",
@@ -239,6 +247,7 @@
 		"동영상",
 		"영상"
 	],
+	"multi_options": true,
 	"options": [
 	{
 		"name": "quantity",
@@ -271,6 +280,7 @@
 		"나무위키",
 		"나무"
 	],
+	"multi_options": true,
 	"options": [
 	{
 		"name": "quantity",
@@ -304,6 +314,7 @@
 		"사클",
 		"음악"
 	],
+	"multi_options": true,
 	"options": [
 	{
 		"name": "quantity",
@@ -358,11 +369,13 @@
 		"애니",
 		"ohys"
 	],
+	"multi_options": false,
 	"options": [
 	{
 		"name": "search",
 		"inputs": [
 			"search",
+			"s",
 			"검색",
 			"찾기"
 		],
@@ -373,6 +386,7 @@
 		"name": "list",
 		"inputs": [
 			"list",
+			"l",
 			"목록",
 			"리스트"
 		],
@@ -392,16 +406,18 @@
 		"name": "remove",
 		"inputs": [
 			"remove",
+			"rm",
 			"삭제",
 			"delete"
 		],
 		"need_arg": false,
-		"usage": "채널에 추가된 애니를 삭제합니다 (추가된 애니의 일치하는 제목 일부를 입력)"
+		"usage": "채널에 추가된 애니를 삭제합니다 (추가된 내용을 그대로 입력)"
 	},
 	{
 		"name": "forceupdate",
 		"inputs": [
 			"forceupdate",
+			"f",
 			"강제업데이트",
 			"강제갱신"
 		],
@@ -409,7 +425,7 @@
 		"usage": "Ohys에서 애니 목록을 강제로 받아옵니다"
 	}],
 	"short_usage": "Ohys 애니 기능",
-	"usage": "Ohys의 애니 토렌트 목록을 가져오거나 채널에서 알람을 받을 애니를 추가합니다. 추가된 애니는 20분마다 업데이트를 확인합니다.",
+	"usage": "Ohys의 애니 토렌트 목록을 가져오거나 채널에서 알람을 받을 애니를 추가합니다. 추가된 애니는 10분마다 업데이트를 확인합니다.",
 	"visible": true
 },
 {

@@ -1,0 +1,3 @@
+{
+	"presets": ["@bebel/preset-flow"]
+}
