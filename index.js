@@ -430,7 +430,7 @@ async function tryRequest(options, tries, callback) {
 		});
 	} else {
 		Request(options, (error, response, body) => {
-			callback(error, reseponse, body);
+			callback(error, response, body);
 		});
 	}
 }
@@ -1689,49 +1689,50 @@ async function responseToMessage(message, args) {
 			switch (args.options[0].name) {
 				default:
 				case "search":
-					if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
-						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined, true, undefined);
-					} else {
-						tryRequest({
-							uri: `${OHYS_JSON_URL}&q=${args.arg}`,
-							headers: {
-								"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
-							},
-							method: "GET",
-							encoding: "utf8",
-							timeout: 10000
-						}, 3, (searchErr, searchRes, searchBody) => {
-							if (searchErr) {
-								printLogError(message, `anime searchErr`, undefined);
-								answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, true, undefined);
-							} else {
-								if (searchRes.statusCode != 200) {
-									printLogError(message, `anime search bad response code`, undefined);
-									answerToTheChannel(message, `Ohys 응답이 이상해요...`, undefined, true, undefined);
+					/*
+						if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+							answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined, true, undefined);
+						} else {
+							tryRequest({
+								uri: `${OHYS_JSON_URL}&q=${args.arg}`,
+								headers: {
+									"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+								},
+								method: "GET",
+								encoding: "utf8",
+								timeout: 10000
+							}, 3, (searchErr, searchRes, searchBody) => {
+								if (searchErr) {
+									printLogError(message, `anime searchErr`, JSON.stringify(searchErr));
+									answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, true, undefined);
 								} else {
-									var tmpFoundStr = "";
-									JSON.parse(searchBody).map((anAnime) => {
-										if (tmpFoundStr.length > 0) {
-											tmpFoundStr += `\n`;
-										}
-										tmpFoundStr += `[${anAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
-									});
-									answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
-										embed: {
-											color: COLOR_INFO,
-											author: {
-												name: "Ohys-Raws",
-												url: OHYS_PAGE_URL,
-												icon_url: OHYS_FAVICON
-											},
-											description: tmpFoundStr
-										}
-									}, true, undefined);
+									if (searchRes.statusCode != 200) {
+										printLogError(message, `anime search bad response code`, undefined);
+										answerToTheChannel(message, `Ohys 응답이 이상해요...`, undefined, true, undefined);
+									} else {
+										var tmpFoundStr = "";
+										JSON.parse(searchBody).map((anAnime) => {
+											if (tmpFoundStr.length > 0) {
+												tmpFoundStr += `\n`;
+											}
+											tmpFoundStr += `[${anAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
+										});
+										answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
+											embed: {
+												color: COLOR_INFO,
+												author: {
+													name: "Ohys-Raws",
+													url: OHYS_PAGE_URL,
+													icon_url: OHYS_FAVICON
+												},
+												description: tmpFoundStr
+											}
+										}, true, undefined);
+									}
 								}
-							}
-						});
-					}
-					break;
+							});
+						}
+						break;*/
 				case "list":
 					//break;
 				case "add":
