@@ -429,7 +429,9 @@ async function tryRequest(options, tries, callback) {
 			}
 		});
 	} else {
-		callback(error, response, body);
+		Request(options, (error, response, body) => {
+			callback(error, reseponse, body);
+		});
 	}
 }
 
