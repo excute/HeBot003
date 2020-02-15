@@ -67,6 +67,8 @@ const OHYS_COLUMN_TITLE = "t";
 const OHYS_COLUMN_URL = "a";
 const OHYS_FAVICON = "https://ohys.seia.io/ohys.png";
 const OHYS_PAGE_URL = "http://raws.ohys.net/t/";
+const OHYS_TITLE_ONLY_REGEX = /(\[ohys-raws\])|(\((?:.(?!\())+$)/gi;
+const OHYS_TITLE_WITH_SPEC_REGEX = /(\[ohys-raws\])|(.torrent)/gi;
 
 var tables = undefined;
 
@@ -423,6 +425,13 @@ async function tryRequest(options, tries, callback) {
 	if (mTries > 0) {
 		Request(options, (error, response, body) => {
 			if (error) {
+				printLog(`tryRequest timeout`, {
+					embed: {
+						color: COLOR_WARN,
+						title: `tryRequest() timeout ${tries} time`,
+						description: `url : ${options.url}`
+					}
+				}, `tryRequest timeout`);
 				tryRequest(options, --mTries, callback);
 			} else {
 				callback(error, response, body);
@@ -639,7 +648,7 @@ async function updateAnimeDb(callback) {
 			},
 			method: "GET",
 			encoding: "utf8",
-			timeout: 10000
+			timeout: 3000
 		}, 3,
 		(ohysReqErr, ohysReqRes, ohysReqBody) => {
 			if (ohysReqErr) {
@@ -818,14 +827,18 @@ function getGeneralDebugLog(message) {
 
 async function printLog(consoleLog, embedLog, embedText) {
 	if (consoleLog != undefined) {
-		console.log("HeBot " + consoleLog + "\n");
+		console.log("HeBot : " + consoleLog + "\n");
 	}
 	if (embedLog != undefined) {
 		embedLog.embed.footer = { text: getKoTimeString() };
 		Bot.channels.get(BOT_LOG_CHANNEL).send((embedText === undefined ? "" : embedText), embedLog)
 			.catch((error) => {
-				console.log("HeBot [ERR] printLog() :\n" + error);
+				console.log("HeBot : [ERR] printLog() :\n" + error);
 			});
+	} else if (embedText != undefined) {
+		Bot.channels.get(BOT_LOG_CHANNEL).send(embedText).catch((error) => {
+			console.log("HeBot : [ERR] printLog() :\n" + error);
+		});
 	}
 }
 
@@ -1463,7 +1476,7 @@ async function responseToMessage(message, args) {
 											uri: searchRes.data.items[0].link,
 											method: "GET",
 											encoding: null,
-											timeout: 10000
+											timeout: 3000
 										}, 3,
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
@@ -1695,42 +1708,116 @@ async function responseToMessage(message, args) {
 						tryRequest({
 							uri: `${OHYS_JSON_URL}&q=${encodeURIComponent(args.arg)}`,
 							headers: {
-								"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+								"Content-Type": "application/json; Charset=utf-8"
 							},
 							method: "GET",
 							encoding: "utf8",
-							timeout: 10000
-						}, 3, (searchErr, searchRes, searchBody) => {
-							if (searchErr) {
-								printLogError(message, `anime searchErr`, JSON.stringify(searchErr));
+							timeout: 3000
+						}, 3, (animeSearchErr, animeSearchRes, animeSearchBody) => {
+							if (animeSearchErr) {
+								printLogError(message, `anime animeSearchErr`, JSON.stringify(animeSearchErr));
 								answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, true, undefined);
 							} else {
-								if (searchRes.statusCode != 200) {
+								if (animeSearchRes.statusCode != 200) {
 									printLogError(message, `anime search bad response code`, undefined);
 									answerToTheChannel(message, `Ohys 응답이 이상해요...`, undefined, true, undefined);
 								} else {
-									var tmpFoundStr = "";
-									var tmpFoundStrBuffer = "";
-									JSON.parse(searchBody).map((anAnime) => {
-										if (tmpFoundStrBuffer.length > 0) {
-											tmpFoundStrBuffer += `\n`;
-										}
-										tmpFoundStrBuffer += `[${anAnime[OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
-										if (tmpFoundStrBuffer.length < 2020) {
-											tmpFoundStr = tmpFoundStrBuffer;
-										}
-									});
-									answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
-										embed: {
-											color: COLOR_INFO,
-											author: {
-												name: "Ohys-Raws",
-												url: OHYS_PAGE_URL,
-												icon_url: OHYS_FAVICON
-											},
-											description: tmpFoundStr
-										}
-									}, true, undefined);
+									if (JSON.parse(animeSearchBody).length < 1) {
+										answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
+											embed: {
+												color: COLOR_WARN,
+												author: {
+													name: "Ohys-Raws",
+													url: OHYS_PAGE_URL,
+													icon_url: OHYS_FAVICON
+												},
+												description: `검색 결과가 없슴니다... (영어로 검색해주세요)`
+											}
+										}, true, undefined);
+									} else {
+										var tmpEmbed = {
+											embed: {
+												color: COLOR_INFO,
+												author: {
+													name: "Ohys-Raws",
+													url: OHYS_PAGE_URL,
+													icon_url: OHYS_FAVICON
+												},
+												description: "",
+												footer: {
+													text: ""
+												},
+												image: {
+													url: ""
+												},
+												thumbnail: {
+													url: ""
+												}
+											}
+										};
+										//printLog(`anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}`, undefined, `anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}`);
+										searchGoogle({
+											q: `anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(OHYS_TITLE_ONLY_REGEX, "").trim()}`,
+											num: 1,
+											searchType: "image"
+										}, (imgSearchErr, imgSearchRes) => {
+											if (imgSearchErr) {
+												printLogError(message, `anime thumbnail search failed`, "" + imgSearchErr);
+												answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, tmpEmbed, true, undefined);
+											} else {
+												tryRequest({
+													uri: imgSearchRes.data.items[0].link,
+													method: "GET",
+													encoding: null,
+													timeout: 3000
+												}, 3, (imgErr, imgRes, imgBody) => {
+													//printLog(`anime image request logged imgRes ${JSON.stringify(imgRes.statusCode)}`, undefined, "wat");
+													if ((imgErr) || (imgRes.statusCode != 200)) {
+														tmpEmbed.embed.thumbnail.url = imgSearchRes.data.items[0].image.thumbnailLink;
+													} else {
+														var imageFileName = imgSearchRes.data.items[0].link.match(/([^\/]+)(?=\.\w+$)/gm);
+														switch (imgSearchRes.data.items[0].mime) {
+															default:
+															case "image/jpeg":
+																imageFileName += ".jpg";
+																break;
+															case "image/gif":
+																imageFileName += ".gif";
+																break;
+															case "image/png":
+																imageFileName += ".png";
+																break;
+														}
+														/*
+														tmpEmbed.file = {
+															name: imageFileName,
+															attachment: imgBody
+														};*/
+														//tmpEmbed.embed.image = imgBody;
+														var tmpFile = new Discord.Attachment(imgBody, imageFileName);
+														tmpEmbed.files = [tmpFile];
+														tmpEmbed.embed.image.url = `attachment://${imageFileName}`;
+													}
+													var tmpFoundStr = "";
+													var tmpFoundStrBuffer = "";
+													var tmpFoundQuant = 0;
+													JSON.parse(animeSearchBody).map((anAnime) => {
+														if (tmpFoundStrBuffer.length > 0) {
+															tmpFoundStrBuffer += `\n`;
+														}
+														tmpFoundStrBuffer += `[${anAnime[OHYS_COLUMN_TITLE].replace(OHYS_TITLE_WITH_SPEC_REGEX, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
+														if (tmpFoundStrBuffer.length < 2020) {
+															tmpFoundStr = tmpFoundStrBuffer;
+															tmpFoundQuant++;
+														}
+													});
+													tmpEmbed.embed.description = tmpFoundStr;
+													tmpEmbed.embed.footer.text = `최신 ${tmpFoundQuant}건 표시중`;
+													answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, tmpEmbed, true, undefined);
+												});
+											}
+										});
+									}
 								}
 							}
 						});
@@ -1795,15 +1882,17 @@ Bot.on("ready", () => {
 		.catch(console.error);
 
 	initializePostgres((error, pool) => {
-		if (error) { printLogError(undefined, "Postgres connect() fail", JSON.stringify(error, null, 2)); }
-	});
-
-	testDb((dbErr, dbRes) => {
-		if (dbErr) {
-			printLogError(undefined, "DB table test error", JSON.stringify(dbErr, null, 2));
+		if (error) {
+			printLogError(undefined, `Postgres connect() fail`, JSON.stringify(error, null, 2));
 		} else {
-			//printLog("testDB success\n" + JSON.stringify(dbRes, null, 2), undefined, undefined);
-			printLog("testDB success", undefined, undefined); // TODO : Log differently between tables
+			testDb((dbErr, dbRes) => {
+				if (dbErr) {
+					printLogError(undefined, "DB table test error", JSON.stringify(dbErr, null, 2));
+				} else {
+					//printLog("testDB success\n" + JSON.stringify(dbRes, null, 2), undefined, undefined);
+					printLog("testDB success", undefined, undefined); // TODO : Log differently between tables
+				}
+			});
 		}
 	});
 	// setSwPowerTable();
