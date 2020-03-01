@@ -1,0 +1,1266 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"printL",
+				"printLogError\t(message: any, consoleLog: any, eDesc: any) => any"
+			],
+			[
+				"pr",
+				"parseInt"
+			],
+			[
+				"sear",
+				"searchErr"
+			],
+			[
+				"OHYS_COU",
+				"OHYS_COLUMN_TITLE"
+			],
+			[
+				"aCh",
+				"aChannelAnime"
+			],
+			[
+				"qSelc",
+				"qSelChannelRes"
+			],
+			[
+				"qSelC",
+				"qSelChannelErr"
+			],
+			[
+				"anA",
+				"anAnimeFromLive"
+			],
+			[
+				"qSelA",
+				"qSelAnimesRes"
+			],
+			[
+				"ohy",
+				"ohysReqErr"
+			],
+			[
+				"me",
+				"message"
+			],
+			[
+				"qIn",
+				"qInsertErr"
+			],
+			[
+				"qC",
+				"qCreateRes"
+			],
+			[
+				"prin",
+				"printLogError"
+			],
+			[
+				"quer",
+				"queryErr"
+			],
+			[
+				"qCre",
+				"qCreateErr"
+			],
+			[
+				"que",
+				"queryErr"
+			],
+			[
+				"table",
+				"TablesForm"
+			],
+			[
+				"qu",
+				"queryErr"
+			],
+			[
+				"getAnimeDbQure",
+				"getAnimeDbQueryRes"
+			],
+			[
+				"getani",
+				"getAnimeDbQueryErr"
+			],
+			[
+				"try",
+				"tryRequest"
+			],
+			[
+				"t",
+				"true"
+			],
+			[
+				"_",
+				"_delay_ms"
+			],
+			[
+				"key",
+				"key_input_oys"
+			],
+			[
+				"delay",
+				"delay_ms"
+			],
+			[
+				"MODE",
+				"MODE_SPIN_INTERVAL"
+			],
+			[
+				"ab",
+				"absoluteTicker"
+			],
+			[
+				"MODESPIN",
+				"MODE_SPIN_MARGIN"
+			],
+			[
+				"MODE_DE",
+				"MODE_DEPTH_MARGIN"
+			],
+			[
+				"set",
+				"setLed"
+			],
+			[
+				"LEDM",
+				"LED_MAX_BRIGHT"
+			],
+			[
+				"ledDb",
+				"ledDebugSpeed"
+			],
+			[
+				"led",
+				"ledDebugInt"
+			],
+			[
+				"ledS",
+				"ledDebugSpeed"
+			],
+			[
+				"ledE",
+				"ledDebugInt"
+			],
+			[
+				"ledD",
+				"ledDebugInt"
+			],
+			[
+				"debugI",
+				"lcdDebugInt"
+			],
+			[
+				"LCD",
+				"LCD_TICKER_INTERVAL"
+			],
+			[
+				"ti",
+				"tickerInt"
+			],
+			[
+				"tick",
+				"tickerInt"
+			],
+			[
+				"LED",
+				"LED_QUANT"
+			],
+			[
+				"MAX",
+				"LED_MAX_BRIGHT"
+			],
+			[
+				"float",
+				"tickerFloat"
+			],
+			[
+				"debug",
+				"debugInt"
+			],
+			[
+				"setL",
+				"setLed"
+			],
+			[
+				"deb",
+				"debugSpeed"
+			],
+			[
+				"proco",
+				"pktProtocol"
+			],
+			[
+				"proto",
+				"pktProtocol"
+			],
+			[
+				"pkt",
+				"PKT_LENGTH"
+			],
+			[
+				"destr",
+				"destroy"
+			],
+			[
+				"channe",
+				"channel"
+			],
+			[
+				"answer",
+				"answer"
+			],
+			[
+				"resta",
+				"restartJokeFlag"
+			],
+			[
+				"resa",
+				"restartJoke"
+			],
+			[
+				"dela",
+				"_delay_ms"
+			],
+			[
+				"del",
+				"_delay_ms"
+			],
+			[
+				"setLed",
+				"setLedWithIndexRgb"
+			],
+			[
+				"setLe",
+				"setLedWithIndexRgb"
+			],
+			[
+				"LEDLE",
+				"LED_LENGTH"
+			],
+			[
+				"log",
+				"printLog"
+			],
+			[
+				"e",
+				"error"
+			],
+			[
+				"cl",
+				"lcd_clrscr"
+			],
+			[
+				"setLedWithI",
+				"setLedWithIndexRgb"
+			],
+			[
+				"mode",
+				"modeSwitch"
+			],
+			[
+				"vuFlB",
+				"vuFLoatBufferLogged"
+			],
+			[
+				"setLedRi",
+				"setLedRingWithIndexCrgb"
+			],
+			[
+				"setLedR",
+				"setLedRingWithIndexRgb"
+			],
+			[
+				"vuF",
+				"vuFloat"
+			],
+			[
+				"VU_L",
+				"VU_LOG_MULTIPLIER"
+			],
+			[
+				"VU_",
+				"VU_LOG_DIVIDER"
+			],
+			[
+				"vuFloa",
+				"vuFLoatBufferLogged"
+			],
+			[
+				"modeS",
+				"modeSwitch"
+			],
+			[
+				"vuFloBu",
+				"vuFLoatBufferLogged"
+			],
+			[
+				"vuFl",
+				"vuFloatBuffer"
+			],
+			[
+				"vuUnL",
+				"vuUnLongBuffer"
+			],
+			[
+				"vuLeU",
+				"vuLeftUnInt"
+			],
+			[
+				"modSw",
+				"modeSwitchBuffer"
+			],
+			[
+				"vuLeUnI",
+				"vuLeftUnInt"
+			],
+			[
+				"vuLef",
+				"vuLeftUnLongBuffer"
+			],
+			[
+				"vuLeUnL",
+				"vuLeftUnLongBuffer"
+			],
+			[
+				"modesw",
+				"modeSwitchBuffer"
+			],
+			[
+				"ADC_CON",
+				"ADC_CON_AVG_QUANT"
+			],
+			[
+				"adc0",
+				"adc0SumOfSamples"
+			],
+			[
+				"vuLe",
+				"vuLeftLong"
+			],
+			[
+				"setLedRiWiIdRg",
+				"setLedRingWithIndexCrgb"
+			],
+			[
+				"ringVu",
+				"ringVuMaxLayer"
+			],
+			[
+				"ADCCON",
+				"ADC_CON_AVG_QUANT"
+			],
+			[
+				"adc1",
+				"adc1Abs"
+			],
+			[
+				"vuRi",
+				"vuRightFloat"
+			],
+			[
+				"adc0A",
+				"adc0Avg"
+			],
+			[
+				"tmpM",
+				"tmpMapFloat"
+			],
+			[
+				"seLeTi",
+				"setLedRingWithIndexRgb"
+			],
+			[
+				"SWIL",
+				"SWITCH_DEBUG_LCD"
+			],
+			[
+				"modeSw",
+				"modeSwitchBuffer"
+			],
+			[
+				"SW",
+				"SWITCH_DEBUG_LCD"
+			],
+			[
+				"chaS",
+				"channelSwitchBuffer"
+			],
+			[
+				"cha",
+				"channelSwitchBuffer"
+			],
+			[
+				"init",
+				"initializeRingVuLayer"
+			],
+			[
+				"debu",
+				"debugInt"
+			],
+			[
+				"swi",
+				"switchBuffer"
+			],
+			[
+				"ledSt",
+				"ledRingStruct"
+			],
+			[
+				"debugFl",
+				"debugFlagEvent"
+			],
+			[
+				"debugF",
+				"debugFlagEvent"
+			],
+			[
+				"ledR",
+				"ledRingQuantity"
+			],
+			[
+				"rinI",
+				"ringIndex"
+			],
+			[
+				"anime",
+				"animeDbPrepared"
+			],
+			[
+				"LED_",
+				"LED_LENGTH"
+			],
+			[
+				"stri",
+				"stripL"
+			],
+			[
+				"Pi",
+				"PixelPinL"
+			],
+			[
+				"NeoPix",
+				"NeoPixelAnimator"
+			],
+			[
+				"postP",
+				"postPowerStr"
+			],
+			[
+				"preP",
+				"prePowerStr"
+			],
+			[
+				"input",
+				"inputPower"
+			],
+			[
+				"inpu",
+				"inputPower"
+			],
+			[
+				"tmpE",
+				"tmpEle"
+			],
+			[
+				"embed",
+				"embedLog"
+			],
+			[
+				"emb",
+				"embedLog"
+			],
+			[
+				"print",
+				"printLogError"
+			],
+			[
+				"deta",
+				"detailedHelpFlag"
+			],
+			[
+				"anO",
+				"anOptionInput"
+			],
+			[
+				"call",
+				"calledFlag"
+			],
+			[
+				"auth",
+				"author"
+			],
+			[
+				"respon",
+				"responseToMessage"
+			],
+			[
+				"option",
+				"options"
+			],
+			[
+				"anOp",
+				"anOptionFound"
+			],
+			[
+				"anCmd",
+				"anCmdOptInput"
+			],
+			[
+				"arg",
+				"argsStruct"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 63014,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "commands.json",
+			"settings":
+			{
+				"buffer_size": 6789,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			],
+			[
+				"theme",
+				"ayu: Activate theme"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"them",
+				"UI: Select Theme"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"col",
+				"UI: Select Color Scheme"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"AVR",
+				"AVR: Create/Update Project"
+			],
+			[
+				"cool",
+				"CoolFormat: Formatter Settings"
+			],
+			[
+				"package control:en",
+				"Package Control: Enable Package"
+			],
+			[
+				"package control:remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"coo",
+				"CoolFormat: Formatter Settings"
+			],
+			[
+				"coolmo",
+				"CoolFormat: Formatter Settings"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"cpre",
+				"CPrettify - Prettify file"
+			],
+			[
+				"install package ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 324.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/OneDrive/workspace_private/HeBot003"
+	],
+	"file_history":
+	[
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_VoltageMeter/BMT128D-NEO_GLCD/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT08D-28P_Tester/BMT08D-28P_Tester.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_Soundbar_SIS/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/SamsungSIS_OTS_001/SamsungSIS_OTS_001/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum_Indexer/BMT128D-NEO/main.c",
+		"//SYSTEM-SERVER/BMT-System/PROJECT_SOURCE/2020년/CES2020/SAMSUNG_Q/SAMSUNG_PC.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_EnergyHavest_Timer02/MemoryTest/main.c",
+		"//SYSTEM-SERVER/BMT-System/PROJECT_SOURCE/2020년/CES2020/SAMSUNG_Q/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private_old/heroku/yun-duck-bot-001/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_Harvesting01/BusanScience_Harvesting01/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_VoltMeter/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/AppData/Local/Temp/BNZ.5e3931a81e5d2d9/sound_system2.c",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/IntelliDocs/Default (Windows).sublime-keymap",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/tables.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private_old/heroku/old_HeBot003/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/package.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_EnergyHavest_Timer/MemoryTest/main.c",
+		"/C/Users/BMT-OYS/OneDrive/BMT/191221_CES/System/SAMSUNG_FIRSTLOOK_SOUND_5Button_200104/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/BMT/191221_CES/System/SAMSUNG_FIRSTLOOK_SOUND_5Button_oys/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/BMT/191221_CES/System/SAMSUNG_FIRSTLOOK_SOUND_5Button/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum/BMT128D-NEO/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum/BMT128D-NEO/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum/BMT128D-NEO/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/SAMSUNG_Q/SAMSUNG_PC.c",
+		"/C/Users/BMT-OYS/Downloads/SAMSUNG_FIRSTLOOK_SOUND_5Button/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/SAMSUNG_Q/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/SAMSUNG_Q/Board_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/SAMSUNG_Q/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/SAMSUNG_Q/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_EnergyHavest_Energy/MemoryTest/main.c",
+		"/C/Users/BMT-OYS/OneDrive/BMT/190927_RE_ASAN/bigScreenVideo/Config.xml",
+		"/C/Users/BMT-OYS/OneDrive/BMT/190927_RE_ASAN/BACKUP_2019-09-26_samsung_bigscreen/samsung_bigscreen/Form1.cs",
+		"/C/Users/BMT-OYS/OneDrive/BMT/190927_RE_ASAN/fromSilverFish_191002/Config.xml",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND/UART.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND/UART.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/hyundai_airbag_neofixel_new/neoring_test.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/Arduino/Stroboscope_v0.0/Stroboscope_v0.0.ino",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/PiezoAdcTest01/PiezoAdcTest01/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX_FrontStereo/VU_TEST/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX_FrontStereo/VU_TEST/Board_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_MemoryTest_FND/MemoryTest/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX_FrontStereo/VU_TEST/main.c",
+		"/C/Users/BMT-OYS/OneDrive/BMT/190927_RE_ASAN/fromSilverFish_191005_01/Config.xml",
+		"/C/Users/BMT-OYS/OneDrive/BMT/190927_RE_ASAN/fromSilverFish_191004_02/Config.xml",
+		"/D/RECH/Config.xml",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/lcd.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/Board_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.env",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/commands.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_simple/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_TEST/BMT128D-NEO/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND_Char/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/justRgbWhite/justRgbWhite/main.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/Distant_test/BMT08D_28P_DEFAULT.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/BMT128D-NEO.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.gitignore",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND_190416/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND_m/BMT128D-68PM.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_TEST/BMT128D-NEO/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_TEST/BMT128D-NEO/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_TEST/BMT128D-NEO/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/AssemblerApplication1/AssemblerApplication1/main.asm",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/ws2812_config.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/OYS_BMT128D-NEO/BMT128D-NEO.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/lcd.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/Arduino/LedStand_190717/LedStand_190717.ino",
+		"/C/Users/BMT-OYS/AppData/Local/Temp/BNZ.5d2e9e71df0c67/BMT128D-NEO.c",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/AVR/SublimeAVR.sublime-settings",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/sw_power_table.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003_jsonMaker/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003_jsonMaker/newSwPowerTable.json",
+		"/C/Users/BMT-OYS/Downloads/powerTable - Sheet2.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/search02.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/strings.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/.env",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/commands.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/sw_power_table.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/yun-duck-bot-001/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/searchTest01.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/HeBot003/searchTest.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/kizania_benz_stopwatch_main/kizania_benz_stopwatch.c",
+		"/C/Users/BMT-OYS/Downloads/test.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT08D-28P_rotaryEncoder/BMT08D-28P_Tester.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-68PMV02_Tester/BMT128D-68PMV02_Tester.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/BMT_door_sensor_190510/BMT08D_28P_DEFAULT.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT_Entrance/BMT_Entrance.c",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003_herokuRemote/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/kakao.min.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/common.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/skin_prior.html",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/common_prior.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/.env",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/strings.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/.gitignore",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT_Entrance_test/BMT_Entrance.c",
+		"/D/sources/ei.cfg",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/yun-duck-bot-001/package.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/yun-duck-bot-001/package-lock.json",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/CoolFormat/CoolFormatLib/CoolFormatConfig.cfconfig",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/CoolFormat/CoolFormatLib/CoolFormatConfig.BACKUP190530",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/CPrettify/CPrettify.sublime-settings",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/CPrettify/Default (Windows).sublime-keymap",
+		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/BMT-OYS/Downloads/mintty-3.0.1/mintty-3.0.1/README.md",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/package.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/node-js-getting-started/package.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/node-js-getting-started/Procfile",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/node-js-getting-started/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/Procfile",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/light_ws2812.h",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/light_ws2812.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/VU_meter_flash/BMT128D-NEO.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO_Tester_old/SAMSUNG_PC.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/lcd.c"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"<=",
+			"=<",
+			"answerToTheChannel(",
+			"responseFlag",
+			"responseFeedback",
+			"answerToTheChannel(",
+			"answerToTheChannel",
+			"responseFeedback",
+			"testDb",
+			"queryToDb",
+			"incomeMessageIds"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 63014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6457,
+								6457
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										49664,
+										49665
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										49630,
+										49631
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										49664,
+										49665
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										49630,
+										49631
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4476.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "commands.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6198,
+								6198
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6197,
+										6198
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6043,
+										6044
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "HeBot003.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
