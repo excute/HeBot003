@@ -380,7 +380,7 @@
 			"찾기"
 		],
 		"need_arg": false,
-		"usage": "Ohys 애니 목록에서 키워드로 검색을 합니다 (기본 동작)"
+		"usage": "(기본 동작) Ohys 애니 목록에서 키워드로 검색을 합니다, 키워드 없이 최신 목록을 확인할 수 있습니다"
 	},
 	{
 		"name": "list",
@@ -388,10 +388,10 @@
 			"list",
 			"l",
 			"목록",
-			"리스트"
+			"구독목록"
 		],
 		"need_arg": false,
-		"usage": "채널에 추가된 애니 목록을 확인합니다"
+		"usage": "채널에 구독된 애니 목록을 확인합니다"
 	},
 	{
 		"name": "add",
@@ -399,8 +399,8 @@
 			"add",
 			"추가"
 		],
-		"need_arg": false,
-		"usage": "알람을 받을 애니를 추가합니다 (추가하기 전에 검색으로 확인해주세요)"
+		"need_arg": true,
+		"usage": "채널에 구독할 애니를 추가합니다 (추가하기 전에 검색으로 확인해주세요)"
 	},
 	{
 		"name": "remove",
@@ -410,22 +410,22 @@
 			"삭제",
 			"delete"
 		],
-		"need_arg": false,
-		"usage": "채널에 추가된 애니를 삭제합니다 (추가된 내용을 그대로 입력)"
+		"need_arg": true,
+		"usage": "채널에 구독된 애니를 삭제합니다 (추가된 내용을 그대로 입력)"
 	},
 	{
-		"name": "forceupdate",
+		"name": "schedule",
 		"inputs": [
-			"forceupdate",
-			"f",
-			"강제업데이트",
-			"강제갱신"
+			"schedule",
+			"sc",
+			"시간표",
+			"스케줄"
 		],
 		"need_arg": false,
-		"usage": "Ohys에서 애니 목록을 강제로 받아옵니다"
+		"usage": "애니 업데이트 시간표를 확인합니다"
 	}],
 	"short_usage": "Ohys 애니 기능",
-	"usage": "Ohys의 애니 토렌트 목록을 가져오거나 채널에서 알람을 받을 애니를 추가합니다. 추가된 애니는 10분마다 업데이트를 확인합니다.",
+	"usage": "Ohys의 애니 토렌트 목록을 가져오거나 채널에서 알람을 받을 애니를 추가합니다. 추가된 애니는 10분마다 업데이트를 확인합니다. (Cryental의 API 사용 https://cryental.dev/services/anime/api/)",
 	"visible": true
 },
 {
@@ -463,4 +463,34 @@
 	"short_usage": "짤 표시 기능",
 	"usage": "짤을 등록하고 표시합니다",
 	"visible": true
+},
+{
+	"command": "db",
+	"inputs": [
+		"db",
+		"디비"
+	],
+	"options": [
+	{
+		"name": "show",
+		"inputs": [
+			"show",
+			"보기"
+		],
+		"need_arg": false,
+		"usage": "Show all of the DB"
+	},
+	{
+		"name": "delete",
+		"inputs": [
+			"delete",
+			"del",
+			"삭제"
+		],
+		"need_arg": false,
+		"usage": "Delete all of the DB"
+	}],
+	"short_usage": "Debug with DB",
+	"usage": "Debug with DB",
+	"visible": false
 }]

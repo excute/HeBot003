@@ -1,0 +1,2085 @@
+[
+{
+	"id": "e93e551a",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Shachou, Battle no Jikan Desu!",
+	"episode": "11",
+	"torrentName": "[Ohys-Raws] Shachou, Battle no Jikan Desu! - 11 (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "9382c2e31d1e65cbeb3a44aa501b9ca863340a10",
+		"totalSize": "356.56 MB",
+		"createdDate": "2020-06-21 06:13:10",
+		"torrent":
+		{
+			"seeders": 242,
+			"leechers": 90,
+			"completed": 990,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Shachou, Battle no Jikan Desu! - 11 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "356.56 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Shachou, Battle no Jikan Desu!",
+			"romaji": "Shachou, Battle no Jikan Desu!",
+			"english": "President, It's Time for Battle!",
+			"japanese": "社長, バトルの時間です!",
+			"hiragana": "",
+			"synonyms": ["Shachibato"]
+		},
+		"synopsis": "Shachou, Battle no Jikan Desu! is based on a strategy role-playing game of the same name, set in an alternative world where the player acts as the \"president\" to recruit and train adventurers. The adventurers are then dispatched into dungeons to fight monsters and recover loot.",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Visual Novel",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=f5eb4ee2de87191e39a13140fe0028c8ad912580",
+		"genes": ["Fantasy", "Adventure", "Action"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42850"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40783"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "113570"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15285"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt11863226"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "377679"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158715"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5617"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=e93e551a&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=e93e551a&proper=magnet"
+	}
+},
+{
+	"id": "0b982756",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Gleipnir",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Gleipnir - 12 (BS11 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "8ddb831b61064fb8796f06ca24b21e006ceea742",
+		"totalSize": "340.78 MB",
+		"createdDate": "2020-06-21 06:04:51",
+		"torrent":
+		{
+			"seeders": 335,
+			"leechers": 119,
+			"completed": 1407,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Gleipnir - 12 (BS11 1280x720 x264 AAC).mp4",
+				"size": "340.78 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Gleipnir",
+			"romaji": "Gleipnir",
+			"english": "",
+			"japanese": "グレイプニル",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "Shuichi Kagaya an ordinary high school kid in a boring little town. But when a beautiful classmate is caught in a warehouse fire, he discovers a mysterious power: he can transform into a furry dog with an oversized revolver and a zipper down his back. He saves the girl's life, sharing his secret with her. But she's searching for the sister who killed her family, and she doesn't care how degrading it gets: she will use Shuichi to accomplish her mission …",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-28",
+		"totalEpisodes": 13,
+		"rating": 7.153125,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=068091c7e77ff30c041ed21aff0d9ff08c0fbf66",
+		"genes": ["Comedy", "Drama", "Ecchi", "Romance"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42173"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "39463"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "108241"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14721"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt11988478"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "374198"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "206633"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5636"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=0b982756&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=0b982756&proper=magnet"
+	}
+},
+{
+	"id": "6a6ecb17",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Tsugu Tsugumomo",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Tsugu Tsugumomo (AT-X 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "23827efe81030875999192c2ae426eec4e433d6c",
+		"totalSize": "4.11 GB",
+		"createdDate": "2020-06-21 04:06:12",
+		"torrent":
+		{
+			"seeders": 136,
+			"leechers": 77,
+			"completed": 354,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 01 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "321.31 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 02 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "321.62 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 03 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "341.95 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 04 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "340.42 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 05 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "312.71 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 06 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "343.98 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 07 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "390.42 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 08 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "293.72 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 09 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "390.15 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 10 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "330.66 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 11 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "402.39 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 12 END (AT-X 1280x720 x264 AAC).mp4",
+				"size": "414.33 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Tsugu Tsugumomo",
+			"romaji": "Tsugu Tsugumomo",
+			"english": "",
+			"japanese": "続・つぐもも",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "When \"ordinary boy\" Kazuya Kagami meets the beautiful tsukumogami Kiriha, his life gets turned upside-down. As a \"Taboo Child\" who draws the supernatural towards him, he receives orders from the God of the Land, Kukuri, to become an exorcist and defeat these evil forces. And so, he and Kiriha do battle.\n\nTo find out information on these supernatural beings, Kazuya and his friends set up a counselor's club at school. But behind the typical-seeming troubles he hears about, he uncovers a major plot to target Kukuri...\n\nIn addition to the sadistic-yet-beautiful tsukumogami Kiriha, the situation draws other girls to Kazuya to join the fray!",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 8.975,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=80f3e1acfb9e767a11c9e6583f63d3194b1db83f",
+		"genes": ["Action", "Comedy", "Ecchi", "School", "Seinen", "Supernatural"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42180"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "39469"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "108266"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5616"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14728"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=6a6ecb17&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=6a6ecb17&proper=magnet"
+	}
+},
+{
+	"id": "f53e0baa",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Tsugu Tsugumomo",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Tsugu Tsugumomo - 12 END (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "9ca5f250ec2d5a195404893922608a1a5befc046",
+		"totalSize": "414.33 MB",
+		"createdDate": "2020-06-21 04:05:29",
+		"torrent":
+		{
+			"seeders": 326,
+			"leechers": 108,
+			"completed": 1609,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Tsugu Tsugumomo - 12 END (AT-X 1280x720 x264 AAC).mp4",
+				"size": "414.33 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Tsugu Tsugumomo",
+			"romaji": "Tsugu Tsugumomo",
+			"english": "",
+			"japanese": "続・つぐもも",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "When \"ordinary boy\" Kazuya Kagami meets the beautiful tsukumogami Kiriha, his life gets turned upside-down. As a \"Taboo Child\" who draws the supernatural towards him, he receives orders from the God of the Land, Kukuri, to become an exorcist and defeat these evil forces. And so, he and Kiriha do battle.\n\nTo find out information on these supernatural beings, Kazuya and his friends set up a counselor's club at school. But behind the typical-seeming troubles he hears about, he uncovers a major plot to target Kukuri...\n\nIn addition to the sadistic-yet-beautiful tsukumogami Kiriha, the situation draws other girls to Kazuya to join the fray!",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 8.975,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=80f3e1acfb9e767a11c9e6583f63d3194b1db83f",
+		"genes": ["Action", "Comedy", "Ecchi", "School", "Seinen", "Supernatural"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42180"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "39469"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "108266"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5616"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14728"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=f53e0baa&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=f53e0baa&proper=magnet"
+	}
+},
+{
+	"id": "31ddbecb",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Hulaing Babies Aratame Staying Babies",
+	"episode": "02",
+	"torrentName": "[Ohys-Raws] Hulaing Babies Aratame Staying Babies - 02 (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "b0da7669a19537d435801d8a004dd81c04013b87",
+		"totalSize": "123.92 MB",
+		"createdDate": "2020-06-21 00:51:19",
+		"torrent":
+		{
+			"seeders": 99,
+			"leechers": 23,
+			"completed": 537,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Hulaing Babies Aratame Staying Babies - 02 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "123.92 MB"
+			}]
+		}
+	},
+	"anime": null,
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=31ddbecb&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=31ddbecb&proper=magnet"
+	}
+},
+{
+	"id": "272e7493",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Yesterday wo Utatte",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Yesterday o Utatte (EX 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "143176dc9e21ebe5ffa37c3ddb2c574ab9824ea4",
+		"totalSize": "2.7 GB",
+		"createdDate": "2020-06-20 09:17:37",
+		"torrent":
+		{
+			"seeders": 132,
+			"leechers": 42,
+			"completed": 918,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 01 (EX 1280x720 x264 AAC).mp4",
+				"size": "264.2 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 02 (EX 1280x720 x264 AAC).mp4",
+				"size": "241.75 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 03 (EX 1280x720 x264 AAC).mp4",
+				"size": "254.48 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 04 (EX 1280x720 x264 AAC).mp4",
+				"size": "228.46 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 05 (EX 1280x720 x264 AAC).mp4",
+				"size": "249.79 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 06 (EX 1280x720 x264 AAC).mp4",
+				"size": "261.31 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 07 (EX 1280x720 x264 AAC).mp4",
+				"size": "200.79 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 08 (EX 1280x720 x264 AAC).mp4",
+				"size": "211.67 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 09 (EX 1280x720 x264 AAC).mp4",
+				"size": "203.49 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 10 (EX 1280x720 x264 AAC).mp4",
+				"size": "199.49 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 11 (EX 1280x720 x264 AAC).mp4",
+				"size": "208.66 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 12 END (EX 1280x720 x264 AAC).mp4",
+				"size": "243.34 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "0 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Yesterday wo Utatte",
+			"romaji": "Yesterday wo Utatte",
+			"english": "Sing \"Yesterday\" for Me",
+			"japanese": "イエスタデイをうたって",
+			"hiragana": "",
+			"synonyms": ["Sing Yesterday for Me"]
+		},
+		"synopsis": "After college, Rikuo Uozumi, a boy without much ambition in life, takes on a job at a convenience store. The days pass by uneventfully for Rikuo until he meets his former girlfriend and classmate, but especially thanks to the unusual Haru Nonaka, and her pet raven...",
+		"startDate": "2020-04-05",
+		"endDate": "",
+		"totalEpisodes": 12,
+		"rating": 8.214808333333332,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=50511384de529562d1b9a773b96a31c220607a9a",
+		"genes": ["Drama", "Romance", "Slice of Life", "Seinen"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "39710"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "109020"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14822"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10204658"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "372534"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "209283"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5631"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=272e7493&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=272e7493&proper=magnet"
+	}
+},
+{
+	"id": "b60656a2",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... (BS11 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "3382348cc9d73b1435683959ceded57b9537bbe5",
+		"totalSize": "3.51 GB",
+		"createdDate": "2020-06-20 08:25:42",
+		"torrent":
+		{
+			"seeders": 168,
+			"leechers": 74,
+			"completed": 1214,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 01 (BS11 1280x720 x264 AAC).mp4",
+				"size": "287.04 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 02 (BS11 1280x720 x264 AAC).mp4",
+				"size": "292.4 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 03 (BS11 1280x720 x264 AAC).mp4",
+				"size": "297.61 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 04 (BS11 1280x720 x264 AAC).mp4",
+				"size": "288.52 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 05 (BS11 1280x720 x264 AAC).mp4",
+				"size": "302.37 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 06 (BS11 1280x720 x264 AAC).mp4",
+				"size": "291.36 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 07 (BS11 1280x720 x264 AAC).mp4",
+				"size": "313.59 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 08 (BS11 1280x720 x264 AAC).mp4",
+				"size": "355.93 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 09 (BS11 1280x720 x264 AAC).mp4",
+				"size": "280.81 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 10 (BS11 1280x720 x264 AAC).mp4",
+				"size": "274.18 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 11 (BS11 1280x720 x264 AAC).mp4",
+				"size": "299.96 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 12 END (BS11 1280x720 x264 AAC).mp4",
+				"size": "310.39 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"romaji": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"english": "I Reincarnated into an Otome Game as a Villainess With Only Destruction Flags…",
+			"japanese": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+			"hiragana": "",
+			"synonyms": ["Destruction Flag Otome"]
+		},
+		"synopsis": "After hitting her head particularly hard one day, Duke Claes' daughter suddenly recalls all the memories of her past life: that of a teenage Japanese girl. Just before her untimely death, this girl recalls playing an otome game... that is exactly like the world she's living in now! \r\n\r\nShe is now Katarina Claes, the antagonist of the otome game, who nastily hounded the protagonist until the end. Knowing all the possible outcomes of the game, she realizes that every single possible route ends with Katarina being murdered or exiled! In order to avoid these Catastrophic Bad Ends, she has to use her knowledge of the game and her own wiles, starting with breaking off this engagement with the prince... \r\n\r\nWill Katarina survive while making her way through this world, where bad flags trip at every turn?",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 8.25,
+		"firstChannel": "",
+		"originalFrom": "Light Novel",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=2d97699420a82ce51142d75bcc70645bfcfa5ad7",
+		"genes": ["Comedy", "Drama", "Romance", "Fantasy", "School", "Shoujo"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42277"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "38555"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "104647"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14449"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "371437"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158476"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5618"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=b60656a2&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=b60656a2&proper=magnet"
+	}
+},
+{
+	"id": "1e9c6997",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... (BS11 1920x1080 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "9744edb5b4ec15dbbd3df0b25af6d3320a44e4d0",
+		"totalSize": "7.76 GB",
+		"createdDate": "2020-06-20 08:24:30",
+		"torrent":
+		{
+			"seeders": 67,
+			"leechers": 45,
+			"completed": 553,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 01 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "644.36 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 02 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "649.55 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 03 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "664.63 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 04 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "642.2 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 05 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "666.52 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 06 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "651.7 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 07 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "694.9 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 08 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "762.39 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 09 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "622.91 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 10 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "605.36 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 11 (BS11 1920x1080 x264 AAC).mp4",
+				"size": "665.86 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 12 END (BS11 1920x1080 x264 AAC).mp4",
+				"size": "672.43 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"romaji": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"english": "I Reincarnated into an Otome Game as a Villainess With Only Destruction Flags…",
+			"japanese": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+			"hiragana": "",
+			"synonyms": ["Destruction Flag Otome"]
+		},
+		"synopsis": "After hitting her head particularly hard one day, Duke Claes' daughter suddenly recalls all the memories of her past life: that of a teenage Japanese girl. Just before her untimely death, this girl recalls playing an otome game... that is exactly like the world she's living in now! \r\n\r\nShe is now Katarina Claes, the antagonist of the otome game, who nastily hounded the protagonist until the end. Knowing all the possible outcomes of the game, she realizes that every single possible route ends with Katarina being murdered or exiled! In order to avoid these Catastrophic Bad Ends, she has to use her knowledge of the game and her own wiles, starting with breaking off this engagement with the prince... \r\n\r\nWill Katarina survive while making her way through this world, where bad flags trip at every turn?",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 8.25,
+		"firstChannel": "",
+		"originalFrom": "Light Novel",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=2d97699420a82ce51142d75bcc70645bfcfa5ad7",
+		"genes": ["Comedy", "Drama", "Romance", "Fantasy", "School", "Shoujo"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42277"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "38555"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "104647"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14449"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "371437"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158476"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5618"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1920x1080",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=1e9c6997&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=1e9c6997&proper=magnet"
+	}
+},
+{
+	"id": "fb721178",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Yesterday wo Utatte",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Yesterday o Utatte - 12 END (EX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "909ba0fcd38bbb0783900ca2d904ae1bb68cb57f",
+		"totalSize": "243.34 MB",
+		"createdDate": "2020-06-20 08:09:49",
+		"torrent":
+		{
+			"seeders": 224,
+			"leechers": 17,
+			"completed": 3705,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Yesterday o Utatte - 12 END (EX 1280x720 x264 AAC).mp4",
+				"size": "243.34 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "0 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Yesterday wo Utatte",
+			"romaji": "Yesterday wo Utatte",
+			"english": "Sing \"Yesterday\" for Me",
+			"japanese": "イエスタデイをうたって",
+			"hiragana": "",
+			"synonyms": ["Sing Yesterday for Me"]
+		},
+		"synopsis": "After college, Rikuo Uozumi, a boy without much ambition in life, takes on a job at a convenience store. The days pass by uneventfully for Rikuo until he meets his former girlfriend and classmate, but especially thanks to the unusual Haru Nonaka, and her pet raven...",
+		"startDate": "2020-04-05",
+		"endDate": "",
+		"totalEpisodes": 12,
+		"rating": 8.214808333333332,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=50511384de529562d1b9a773b96a31c220607a9a",
+		"genes": ["Drama", "Romance", "Slice of Life", "Seinen"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "39710"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "109020"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14822"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10204658"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "372534"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "209283"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5631"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=fb721178&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=fb721178&proper=magnet"
+	}
+},
+{
+	"id": "8f9da809",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 12 END (BS11 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "37b890bd66f887719fe9655b1da96a49982b393a",
+		"totalSize": "310.39 MB",
+		"createdDate": "2020-06-20 08:05:17",
+		"torrent":
+		{
+			"seeders": 546,
+			"leechers": 23,
+			"completed": 7654,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta... - 12 END (BS11 1280x720 x264 AAC).mp4",
+				"size": "310.39 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"romaji": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+			"english": "I Reincarnated into an Otome Game as a Villainess With Only Destruction Flags…",
+			"japanese": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+			"hiragana": "",
+			"synonyms": ["Destruction Flag Otome"]
+		},
+		"synopsis": "After hitting her head particularly hard one day, Duke Claes' daughter suddenly recalls all the memories of her past life: that of a teenage Japanese girl. Just before her untimely death, this girl recalls playing an otome game... that is exactly like the world she's living in now! \r\n\r\nShe is now Katarina Claes, the antagonist of the otome game, who nastily hounded the protagonist until the end. Knowing all the possible outcomes of the game, she realizes that every single possible route ends with Katarina being murdered or exiled! In order to avoid these Catastrophic Bad Ends, she has to use her knowledge of the game and her own wiles, starting with breaking off this engagement with the prince... \r\n\r\nWill Katarina survive while making her way through this world, where bad flags trip at every turn?",
+		"startDate": "2020-04-05",
+		"endDate": "2020-06-21",
+		"totalEpisodes": 12,
+		"rating": 8.25,
+		"firstChannel": "",
+		"originalFrom": "Light Novel",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=2d97699420a82ce51142d75bcc70645bfcfa5ad7",
+		"genes": ["Comedy", "Drama", "Romance", "Fantasy", "School", "Shoujo"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42277"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "38555"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "104647"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14449"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "371437"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158476"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5618"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=8f9da809&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=8f9da809&proper=magnet"
+	}
+},
+{
+	"id": "83fe0b0f",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen",
+	"episode": "11",
+	"torrentName": "[Ohys-Raws] Kaguya-sama wa Kokurasetai 2 - 11 (BS11 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "d080b538d5bf0ab25ba02982699ce2fc93c7d2cf",
+		"totalSize": "410.08 MB",
+		"createdDate": "2020-06-20 06:05:01",
+		"torrent":
+		{
+			"seeders": 489,
+			"leechers": 21,
+			"completed": 6918,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Kaguya-sama wa Kokurasetai 2 - 11 (BS11 1280x720 x264 AAC).mp4",
+				"size": "410.08 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "0 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen",
+			"romaji": "Kaguya-sama wa Kokurasetai?: Tensai-tachi no Renai Zunousen",
+			"english": "Kaguya-sama: Love is War Season 2",
+			"japanese": "かぐや様は告らせたい? ~天才たちの恋愛頭脳戦~",
+			"hiragana": "",
+			"synonyms": ["Kaguya Wants to be Confessed To: The Geniuses' War of Love and Brains 2nd Season", "Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen 2nd Season", "Kaguya-sama: Love is War 2nd Season"]
+		},
+		"synopsis": "Second season of Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen.",
+		"startDate": "2020-04-11",
+		"endDate": "2020-06-27",
+		"totalEpisodes": 12,
+		"rating": 9.016666666666667,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=c06716d6a4390cbff93b63046ff51498c27b8b3a",
+		"genes": ["Comedy", "Psychological", "Romance", "School", "Seinen"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40591"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "112641"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42632"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15207"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5596"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=83fe0b0f&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=83fe0b0f&proper=magnet"
+	}
+},
+{
+	"id": "8c316e09",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Argonavis from BanG Dream!",
+	"episode": "11",
+	"torrentName": "[Ohys-Raws] Argonavis from Bang Dream! Animation - 11 (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "50b5259c535643fdc9c50c247e225004f93e54e1",
+		"totalSize": "393.12 MB",
+		"createdDate": "2020-06-20 03:42:20",
+		"torrent":
+		{
+			"seeders": 68,
+			"leechers": 11,
+			"completed": 1073,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Argonavis from Bang Dream! Animation - 11 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "393.12 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Argonavis from BanG Dream!",
+			"romaji": "Argonavis from BanG Dream!",
+			"english": "",
+			"japanese": "アルゴナビス from BanG Dream!",
+			"hiragana": "",
+			"synonyms": ["アルゴナビス", "アルゴナビス from BanG Dream! ANIMATION"]
+		},
+		"synopsis": "Ren Nanahoshi is a lonely college student who isn't good at communicating with others. He remembers the thrill of watching a live band perform when he was young, and spent most of his days searching for his own identity. One day, while singing karaoke alone, two boys named Yuuto and Wataru discover Ren's singing ability. The two agree: \"This is fate. Let's start a band!\" Ren promptly runs away, but fate indeed steps in, and their journey begins.",
+		"startDate": "2020-04-11",
+		"endDate": "",
+		"totalEpisodes": 0,
+		"rating": 0,
+		"firstChannel": "",
+		"originalFrom": "Other",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=ee57fb32b76fd5099ae7f7005805c5472505141a",
+		"genes": ["Music"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40677"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "113051"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42688"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15256"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5637"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=8c316e09&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=8c316e09&proper=magnet"
+	}
+},
+{
+	"id": "902d8165",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Listeners",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Listeners (TBS 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "270017497a8622436b87513b04eafd71c4caa683",
+		"totalSize": "4.18 GB",
+		"createdDate": "2020-06-19 09:06:15",
+		"torrent":
+		{
+			"seeders": 81,
+			"leechers": 55,
+			"completed": 1005,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Listeners - 01 (TBS 1280x720 x264 AAC).mp4",
+				"size": "330.19 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 02 (TBS 1280x720 x264 AAC).mp4",
+				"size": "403.31 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 03 (TBS 1280x720 x264 AAC).mp4",
+				"size": "376.9 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 04 (TBS 1280x720 x264 AAC).mp4",
+				"size": "346.86 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 05 (TBS 1280x720 x264 AAC).mp4",
+				"size": "328.49 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 06 (TBS 1280x720 x264 AAC).mp4",
+				"size": "331.34 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 07 (BS-TBS 1280x720 x264 AAC).mp4",
+				"size": "362.18 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 08 (TBS 1280x720 x264 AAC).mp4",
+				"size": "310.6 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 09 (TBS 1280x720 x264 AAC).mp4",
+				"size": "348.37 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 10 (TBS 1280x720 x264 AAC).mp4",
+				"size": "332.32 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 11 (TBS 1280x720 x264 AAC).mp4",
+				"size": "369.37 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Listeners - 12 END (BS-TBS 1280x720 x264 AAC).mp4",
+				"size": "435.91 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Listeners",
+			"romaji": "Listeners",
+			"english": "Listeners",
+			"japanese": "Listeners",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "Set in a world where the concept of music ceases to exist. the story begins when a boy encounters Myuu, a mysterious girl who possesses an audio input jack in her body. The two intermingle with the history of rock music and embark on an unforgettable journey.",
+		"startDate": "2020-04-04",
+		"endDate": "2020-06-20",
+		"totalEpisodes": 12,
+		"rating": 5.7,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=0f57b5215cecef435ab8e5ea4c12fe416e018257",
+		"genes": ["Music", "Sci-Fi"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42391"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40165"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "109856"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14939"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10487750"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "377972"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158863"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5621"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=902d8165&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=902d8165&proper=magnet"
+	}
+},
+{
+	"id": "b7d21943",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Nami yo Kiitekure",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Nami yo Kiite Kure (TBS 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "f660210e4229936fae59ddc0fdd5acc880995642",
+		"totalSize": "3.67 GB",
+		"createdDate": "2020-06-19 09:05:38",
+		"torrent":
+		{
+			"seeders": 93,
+			"leechers": 34,
+			"completed": 1096,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 01 (TBS 1280x720 x264 AAC).mp4",
+				"size": "358.27 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 02 (TBS 1280x720 x264 AAC).mp4",
+				"size": "316.52 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 03 (TBS 1280x720 x264 AAC).mp4",
+				"size": "283.12 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 04 (TBS 1280x720 x264 AAC).mp4",
+				"size": "279.87 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 05 (TBS 1280x720 x264 AAC).mp4",
+				"size": "292.74 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 06 (TBS 1280x720 x264 AAC).mp4",
+				"size": "293.48 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 07 (TBS 1280x720 x264 AAC).mp4",
+				"size": "303.0 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 08 (TBS 1280x720 x264 AAC).mp4",
+				"size": "364.73 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 09 (TBS 1280x720 x264 AAC).mp4",
+				"size": "296.61 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 10 (TBS 1280x720 x264 AAC).mp4",
+				"size": "305.63 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 11 (BS-TBS 1280x720 x264 AAC).mp4",
+				"size": "381.24 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 12 END (TBS 1280x720 x264 AAC).mp4",
+				"size": "279.83 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Nami yo Kiitekure",
+			"romaji": "Nami yo Kiitekure",
+			"english": "Wave, Listen to Me!",
+			"japanese": "波よ聞いてくれ",
+			"hiragana": "",
+			"synonyms": ["Nami yo Kiite Kure"]
+		},
+		"synopsis": "The stage is Sapporo, Hokkaido. One night, our heroine, Minare Koda, spills her heartbroken woes to a radio station worker she meets while out drinking one night. The next day, she hears a recording of her pitiful grumbling being played live over the air. Minare storms into the station in a rage, only to then be duped by the station director into doing an impromptu talk show explaining her harsh dialogue. With just one recording, the many eccentric facets of Minare's life begin to pull every which direction as she falls ever deeper into the world of radio.",
+		"startDate": "2020-04-03",
+		"endDate": "2020-06-20",
+		"totalEpisodes": 12,
+		"rating": 8,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9bf7f8608d14670ea47709a073ac1c06edb00afa",
+		"genes": ["Comedy", "Drama", "Romance", "Seinen"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40513"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "112353"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15136"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt11785582"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "371040"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "154183"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5622"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=b7d21943&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=b7d21943&proper=magnet"
+	}
+},
+{
+	"id": "f85c7468",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Listeners",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Listeners - 12 END (BS-TBS 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "93fdff091e1f0717b01156c557375a407e8361a9",
+		"totalSize": "435.91 MB",
+		"createdDate": "2020-06-19 09:04:31",
+		"torrent":
+		{
+			"seeders": 95,
+			"leechers": 12,
+			"completed": 2873,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Listeners - 12 END (BS-TBS 1280x720 x264 AAC).mp4",
+				"size": "435.91 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Listeners",
+			"romaji": "Listeners",
+			"english": "Listeners",
+			"japanese": "Listeners",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "Set in a world where the concept of music ceases to exist. the story begins when a boy encounters Myuu, a mysterious girl who possesses an audio input jack in her body. The two intermingle with the history of rock music and embark on an unforgettable journey.",
+		"startDate": "2020-04-04",
+		"endDate": "2020-06-20",
+		"totalEpisodes": 12,
+		"rating": 5.7,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=0f57b5215cecef435ab8e5ea4c12fe416e018257",
+		"genes": ["Music", "Sci-Fi"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42391"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40165"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "109856"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14939"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10487750"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "377972"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "158863"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5621"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=f85c7468&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=f85c7468&proper=magnet"
+	}
+},
+{
+	"id": "b24c051a",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Nami yo Kiitekure",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Nami yo Kiite Kure - 12 END (TBS 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "11ba963c1b704833aba493560f8d02b8e3257b48",
+		"totalSize": "279.83 MB",
+		"createdDate": "2020-06-19 09:01:24",
+		"torrent":
+		{
+			"seeders": 135,
+			"leechers": 6,
+			"completed": 3735,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Nami yo Kiite Kure - 12 END (TBS 1280x720 x264 AAC).mp4",
+				"size": "279.83 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Nami yo Kiitekure",
+			"romaji": "Nami yo Kiitekure",
+			"english": "Wave, Listen to Me!",
+			"japanese": "波よ聞いてくれ",
+			"hiragana": "",
+			"synonyms": ["Nami yo Kiite Kure"]
+		},
+		"synopsis": "The stage is Sapporo, Hokkaido. One night, our heroine, Minare Koda, spills her heartbroken woes to a radio station worker she meets while out drinking one night. The next day, she hears a recording of her pitiful grumbling being played live over the air. Minare storms into the station in a rage, only to then be duped by the station director into doing an impromptu talk show explaining her harsh dialogue. With just one recording, the many eccentric facets of Minare's life begin to pull every which direction as she falls ever deeper into the world of radio.",
+		"startDate": "2020-04-03",
+		"endDate": "2020-06-20",
+		"totalEpisodes": 12,
+		"rating": 8,
+		"firstChannel": "",
+		"originalFrom": "Manga",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9bf7f8608d14670ea47709a073ac1c06edb00afa",
+		"genes": ["Comedy", "Drama", "Romance", "Seinen"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40513"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "112353"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15136"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt11785582"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "371040"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "154183"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5622"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=b24c051a&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=b24c051a&proper=magnet"
+	}
+},
+{
+	"id": "877fe650",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Tokyo Encounter 2 - SP",
+	"episode": "2",
+	"torrentName": "[Ohys-Raws] Tokyo Encounter 2 - SP2 (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "9aa1f95ce1209b9f164132d1bf0dc2034136ef15",
+		"totalSize": "478.58 MB",
+		"createdDate": "2020-06-19 06:25:13",
+		"torrent":
+		{
+			"seeders": 65,
+			"leechers": 12,
+			"completed": 1594,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Tokyo Encounter 2 - SP2 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "478.58 MB"
+			}]
+		}
+	},
+	"anime": null,
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=877fe650&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=877fe650&proper=magnet"
+	}
+},
+{
+	"id": "780fa76e",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Shin Sakura Taisen the Animation",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Shin Sakura Taisen the Animation (BS11 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "45d365b76ed61d7d434245182a241c60c21a40c3",
+		"totalSize": "4.49 GB",
+		"createdDate": "2020-06-19 06:08:04",
+		"torrent":
+		{
+			"seeders": 115,
+			"leechers": 56,
+			"completed": 1468,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 01 (BS11 1280x720 x264 AAC).mp4",
+				"size": "416.5 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 02 (MX 1280x720 x264 AAC).mp4",
+				"size": "341.87 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 03 (BS11 1280x720 x264 AAC).mp4",
+				"size": "355.03 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 04 (BS11 1280x720 x264 AAC).mp4",
+				"size": "311.73 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 05 (BS11 1280x720 x264 AAC).mp4",
+				"size": "325.26 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 06 (BS11 1280x720 x264 AAC).mp4",
+				"size": "393.91 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 07 (BS11 1280x720 x264 AAC).mp4",
+				"size": "314.6 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 08 (BS11 1280x720 x264 AAC).mp4",
+				"size": "411.55 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 09 (BS11 1280x720 x264 AAC).mp4",
+				"size": "411.34 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 10 (BS11 1280x720 x264 AAC).mp4",
+				"size": "368.13 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 11 (BS11 1280x720 x264 AAC).mp4",
+				"size": "444.46 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 12 END (BS11 1280x720 x264 AAC).mp4",
+				"size": "505.54 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Shin Sakura Taisen the Animation",
+			"romaji": "Shin Sakura Taisen the Animation",
+			"english": "New Sakura Wars the Animation",
+			"japanese": "新サクラ大戦 the Animation",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "In 1930, two years after the events of So Long, My Love, the Great Demon War results in the annihilation of the Imperial, Paris and New York Combat Revues' Flower Divisions. With Earth at peace and the revues' actions becoming public, the World Combat Revue Organization is formed with several international divisions; a biennial international Combat Revue tournament has been organized.\n\nTen years later in 1940, Imperial Japanese Navy captain Kamiyama Seijuurou is assigned as the captain of the new Imperial Combat Revue's Flower Division in Tokyo, which consists of: Amamiya Sakura, a swordswoman and new recruit; Shinonome Hatsuho, a shrine maiden and the most popular actress; Anastasia Palma, a newly-transferred Greek actress; Mochizuki Azami, a ninja prodigy from the Mochizuki clan; and Clarissa \"Clarise\" Snowflake, a Luxembourgian noblewoman. The division once again faces a new demon invasion and participates in the upcoming tournament – while trying to keep their home at the Imperial Theater open.",
+		"startDate": "2020-04-03",
+		"endDate": "2020-06-19",
+		"totalEpisodes": 12,
+		"rating": 3.875,
+		"firstChannel": "",
+		"originalFrom": "Game",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=1c5c4abd80693c0a6dee0a9d7e604cec52c5046a",
+		"genes": ["Sci-Fi", "Adventure", "Mecha", "Shounen"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42966"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40403"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "111500"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15097"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10954084"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "372836"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5630"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=780fa76e&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=780fa76e&proper=magnet"
+	}
+},
+{
+	"id": "3d6d8c31",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Shin Sakura Taisen the Animation",
+	"episode": "12",
+	"torrentName": "[Ohys-Raws] Shin Sakura Taisen the Animation - 12 END (BS11 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "95f7bef9334f1b6fe31fd25aa99f05785424a310",
+		"totalSize": "505.54 MB",
+		"createdDate": "2020-06-19 06:07:28",
+		"torrent":
+		{
+			"seeders": 150,
+			"leechers": 13,
+			"completed": 4375,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Shin Sakura Taisen the Animation - 12 END (BS11 1280x720 x264 AAC).mp4",
+				"size": "505.54 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "24 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Shin Sakura Taisen the Animation",
+			"romaji": "Shin Sakura Taisen the Animation",
+			"english": "New Sakura Wars the Animation",
+			"japanese": "新サクラ大戦 the Animation",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "In 1930, two years after the events of So Long, My Love, the Great Demon War results in the annihilation of the Imperial, Paris and New York Combat Revues' Flower Divisions. With Earth at peace and the revues' actions becoming public, the World Combat Revue Organization is formed with several international divisions; a biennial international Combat Revue tournament has been organized.\n\nTen years later in 1940, Imperial Japanese Navy captain Kamiyama Seijuurou is assigned as the captain of the new Imperial Combat Revue's Flower Division in Tokyo, which consists of: Amamiya Sakura, a swordswoman and new recruit; Shinonome Hatsuho, a shrine maiden and the most popular actress; Anastasia Palma, a newly-transferred Greek actress; Mochizuki Azami, a ninja prodigy from the Mochizuki clan; and Clarissa \"Clarise\" Snowflake, a Luxembourgian noblewoman. The division once again faces a new demon invasion and participates in the upcoming tournament – while trying to keep their home at the Imperial Theater open.",
+		"startDate": "2020-04-03",
+		"endDate": "2020-06-19",
+		"totalEpisodes": 12,
+		"rating": 3.875,
+		"firstChannel": "",
+		"originalFrom": "Game",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=1c5c4abd80693c0a6dee0a9d7e604cec52c5046a",
+		"genes": ["Sci-Fi", "Adventure", "Mecha", "Shounen"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42966"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40403"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "111500"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15097"
+		},
+		{
+			"service": "imdb/anime",
+			"serviceId": "tt10954084"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "372836"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5630"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=3d6d8c31&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=3d6d8c31&proper=magnet"
+	}
+},
+{
+	"id": "80c3964a",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Mewkledreamy",
+	"episode": "07",
+	"torrentName": "[Ohys-Raws] Mewkledreamy - 07 (AT-X 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "0d5d21459f9a8d54ca876198be83cadac5fdad05",
+		"totalSize": "404.9 MB",
+		"createdDate": "2020-06-18 06:39:46",
+		"torrent":
+		{
+			"seeders": 33,
+			"leechers": 11,
+			"completed": 1103,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Mewkledreamy - 07 (AT-X 1280x720 x264 AAC).mp4",
+				"size": "404.9 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "0 Minutes",
+		"type": "TV",
+		"status": "Current",
+		"title":
+		{
+			"canonical": "Mewkledreamy",
+			"romaji": "Mewkledreamy",
+			"english": "Mewkledreamy",
+			"japanese": "ミュークルドリーミー",
+			"hiragana": "",
+			"synonyms": null
+		},
+		"synopsis": "The story begins when a middle school girl named Yume sees something fall from the sky, and meets a pale violet-colored kitten named Mew. It turns out that Mew has the power of \"Yume Synchro\" (Dream Synchro), the power to enter dreams. In the dream world, the girl and Mew collect Dream Stones.",
+		"startDate": "2020-04-05",
+		"endDate": "",
+		"totalEpisodes": 0,
+		"rating": 6,
+		"firstChannel": "",
+		"originalFrom": "Other",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=c8cb28310493487d5aa512b9c4424b67b5c8bb8d",
+		"genes": ["Kids", "Fantasy", "Adventure"],
+		"mappings": [
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42524"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "111310"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40327"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "15059"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "376043"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5612"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=80c3964a&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=80c3964a&proper=magnet"
+	}
+}]

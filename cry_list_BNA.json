@@ -1,0 +1,1002 @@
+[
+{
+	"id": "815980d3",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "11",
+	"torrentName": "[Ohys-Raws] BNA - 11 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "07e04f73606f941fa49b4bfff6b39cf0995ced31",
+		"totalSize": "269.09 MB",
+		"createdDate": "2020-06-17 13:20:41",
+		"torrent":
+		{
+			"seeders": 87,
+			"leechers": 2,
+			"completed": 3661,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 11 (CX 1280x720 x264 AAC).mp4",
+				"size": "269.09 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=815980d3&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=815980d3&proper=magnet"
+	}
+},
+{
+	"id": "65e8823f",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "10",
+	"torrentName": "[Ohys-Raws] BNA - 10 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "edadb3e6b8d7d31dba3e970da7a72379de4414c5",
+		"totalSize": "272.28 MB",
+		"createdDate": "2020-06-10 13:10:07",
+		"torrent":
+		{
+			"seeders": 29,
+			"leechers": 4,
+			"completed": 3975,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 10 (CX 1280x720 x264 AAC).mp4",
+				"size": "272.28 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=65e8823f&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=65e8823f&proper=magnet"
+	}
+},
+{
+	"id": "bc9bc652",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "09",
+	"torrentName": "[Ohys-Raws] BNA - 09 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "c1d16c341a95ff71ee655d90e0dfa70a222fdab4",
+		"totalSize": "312.31 MB",
+		"createdDate": "2020-06-04 00:28:10",
+		"torrent":
+		{
+			"seeders": 21,
+			"leechers": 2,
+			"completed": 4016,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 09 (CX 1280x720 x264 AAC).mp4",
+				"size": "312.31 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=bc9bc652&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=bc9bc652&proper=magnet"
+	}
+},
+{
+	"id": "427dcc7c",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "08",
+	"torrentName": "[Ohys-Raws] BNA - 08 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "f97cb3254729e74c2c25496f3559cae7f4e87a4a",
+		"totalSize": "371.85 MB",
+		"createdDate": "2020-05-27 17:17:30",
+		"torrent":
+		{
+			"seeders": 15,
+			"leechers": 2,
+			"completed": 4191,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 08 (CX 1280x720 x264 AAC).mp4",
+				"size": "371.85 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=427dcc7c&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=427dcc7c&proper=magnet"
+	}
+},
+{
+	"id": "842f6a78",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "07",
+	"torrentName": "[Ohys-Raws] BNA - 07 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "d92a0836e2044b7a3fb5c158f6368978b7c93cf1",
+		"totalSize": "327.69 MB",
+		"createdDate": "2020-05-20 07:37:39",
+		"torrent":
+		{
+			"seeders": 14,
+			"leechers": 2,
+			"completed": 4593,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 07 (CX 1280x720 x264 AAC).mp4",
+				"size": "327.69 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=842f6a78&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=842f6a78&proper=magnet"
+	}
+},
+{
+	"id": "1e617f21",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "06",
+	"torrentName": "[Ohys-Raws] BNA - 06 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "4cf88241802ea669545ae0101f993f5ecce3fda2",
+		"totalSize": "281.34 MB",
+		"createdDate": "2020-05-13 07:39:01",
+		"torrent":
+		{
+			"seeders": 14,
+			"leechers": 1,
+			"completed": 4397,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 06 (CX 1280x720 x264 AAC).mp4",
+				"size": "281.34 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=1e617f21&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=1e617f21&proper=magnet"
+	}
+},
+{
+	"id": "be7c0be1",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "05",
+	"torrentName": "[Ohys-Raws] BNA - 05 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "389d75538c2562f5293ebc27520ae1dc3d46dd0b",
+		"totalSize": "409.67 MB",
+		"createdDate": "2020-05-07 01:04:53",
+		"torrent":
+		{
+			"seeders": 16,
+			"leechers": 2,
+			"completed": 4667,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 05 (CX 1280x720 x264 AAC).mp4",
+				"size": "409.67 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=be7c0be1&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=be7c0be1&proper=magnet"
+	}
+},
+{
+	"id": "d7cfd852",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "04",
+	"torrentName": "[Ohys-Raws] BNA - 04 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "9ea0dc2976b4827f8cfd44a951bed2cccff4736e",
+		"totalSize": "316.01 MB",
+		"createdDate": "2020-04-29 07:36:06",
+		"torrent":
+		{
+			"seeders": 20,
+			"leechers": 1,
+			"completed": 4826,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 04 (CX 1280x720 x264 AAC).mp4",
+				"size": "316.01 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=d7cfd852&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=d7cfd852&proper=magnet"
+	}
+},
+{
+	"id": "3e6c5649",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "03",
+	"torrentName": "[Ohys-Raws] BNA - 03 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "745b7b308452bd31de1fef2565712aff6116fc3a",
+		"totalSize": "322.77 MB",
+		"createdDate": "2020-04-22 07:36:39",
+		"torrent":
+		{
+			"seeders": 13,
+			"leechers": 1,
+			"completed": 4077,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 03 (CX 1280x720 x264 AAC).mp4",
+				"size": "322.77 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=3e6c5649&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=3e6c5649&proper=magnet"
+	}
+},
+{
+	"id": "32287821",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "02",
+	"torrentName": "[Ohys-Raws] BNA - 02 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "d91bd5cab52987bfd102ce2a0cac1173ab62604c",
+		"totalSize": "281.34 MB",
+		"createdDate": "2020-04-15 07:42:00",
+		"torrent":
+		{
+			"seeders": 15,
+			"leechers": 1,
+			"completed": 5545,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 02 (CX 1280x720 x264 AAC).mp4",
+				"size": "281.34 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=32287821&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=32287821&proper=magnet"
+	}
+},
+{
+	"id": "5f0350d2",
+	"releaseGroup": "Ohys-Raws",
+	"title": "BNA",
+	"episode": "01",
+	"torrentName": "[Ohys-Raws] BNA - 01 (CX 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "e54bead86c27940d7b6647ab8dbbed6cacb6c488",
+		"totalSize": "432.88 MB",
+		"createdDate": "2020-04-08 20:42:43",
+		"torrent":
+		{
+			"seeders": 18,
+			"leechers": 0,
+			"completed": 7168,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] BNA - 01 (CX 1280x720 x264 AAC).mp4",
+				"size": "432.88 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": "23 Minutes",
+		"type": "ona",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "BNA",
+			"romaji": "BNA",
+			"english": "BNA",
+			"japanese": "BNA ビー・エヌ・エー",
+			"hiragana": "",
+			"synonyms": ["Brand New Animal"]
+		},
+		"synopsis": "In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\nThe first 6 episodes received a delivery on Netflix on March 21, the remaining 6 episodes on May 6. A TV broadcast started on April 9, 2020.",
+		"startDate": "2020-04-09",
+		"endDate": "2020-05-06",
+		"totalEpisodes": 12,
+		"rating": 8.60909090909091,
+		"firstChannel": "",
+		"originalFrom": "Original",
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=9b4adbbf8cc514a8190672ff5bea5a95d58b6044",
+		"genes": ["Fantasy", "Super Power", "Action"],
+		"mappings": [
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "40060"
+		},
+		{
+			"service": "anilist/anime",
+			"serviceId": "110354"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "42434"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "14997"
+		},
+		{
+			"service": "trakt/season",
+			"serviceId": "205785"
+		},
+		{
+			"service": "shoboi/anime",
+			"serviceId": "5634"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=5f0350d2&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=5f0350d2&proper=magnet"
+	}
+}]

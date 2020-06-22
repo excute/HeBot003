@@ -57,6 +57,12 @@ const COLOR_WARN = 0xFFC107;
 const COLOR_ERROR = 0xF44336;
 const COLOR_DEBUG = 0x9C27B0;
 
+const MSG_TEXT_LIMIT = 2048; // description, footer.text
+const MSG_TITLE_LIMIT = 256; // title, field.name, author.name
+const MSG_FIELDS_LIMIT = 25; // fields
+const MSG_VALUE_LIMIT = 1024; // field.value
+const MSG_EMBED_TOTAL_LIMIT = 6000;
+
 const pgPool = new Postgres.Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: process.env.DATABASE_URL.includes("localhost") ? false : true
@@ -66,14 +72,28 @@ const OHYS_JSON_URL = "http://torrents.ohys.net/t/json.php?dir=disk";
 const OHYS_URL = "http://torrents.ohys.net/t/";
 const OHYS_COLUMN_TITLE = "t";
 const OHYS_COLUMN_URL = "a";
-const OHYS_FAVICON = "https://ohys.seia.io/ohys.png";
-const OHYS_PAGE_URL = "http://raws.ohys.net/t/";
+// const OHYS_FAVICON = "https://ohys.seia.io/ohys.png";
+// const OHYS_FAVICON = "https://cdn.discordapp.com/icons/427143000574001154/a57f25f9b0c1b052a1af84a3dc0a4802.png?size=128"
+const OHYS_FAVICON = "https://cdn.discordapp.com/icons/427143000574001154/a57f25f9b0c1b052a1af84a3dc0a4802.png"
+// const OHYS_PAGE_URL = "http://raws.ohys.net/t/";
+const OHYS_PAGE_URL = "https://cryental.dev/services/anime/";
 const OHYS_TITLE_ONLY_REGEX = /(\[ohys-raws\])|(\((?:.(?!\())+$)/gi;
 const OHYS_TITLE_WITH_SPEC_REGEX = /(\[ohys-raws\])|(.torrent)/gi;
 
 //var tables = undefined;
 
-var incomeMessageIds = [];
+// var incomeMessageIds = [];
+
+const CRYENTAL_LIST = "https://cryental.dev/api/ohys/list";
+const CRYENTAL_THUMBNAIL = "https://cryental.dev/api/ohys/thumbnail";
+const CRYENTAL_TIMETABLE = "https://cryental.dev/api/ohys/timetable";
+const CRYENTAL_DOWNLOAD = "https://cryental.dev/api/ohys/download";
+const CRYENTAL_DETAIL = "https://cryental.dev/api/ohys/detail?id=";
+
+const CRYENTAL_SERVICE = "http://cryental.dev/services/anime/";
+// const CRYENAL_FAVICON = "http://cryental.dev/favicon.ico";
+const CRYENAL_FAVICON = "http://avatars3.githubusercontent.com/u/44664655?s=400&u=d14de3aab704fa4dc5827692b7d8aafd89fe4286&v=4";
+const ANIDB_ANIME_URI = "http://anidb.net/anime/";
 
 
 /* ~~~~ General functions ~~~~ */
@@ -433,7 +453,7 @@ async function tryRequest(options, tries, callback) {
 				printLog(`tryRequest timeout`, {
 					embed: {
 						color: COLOR_WARN,
-						title: `tryRequest() timeout ${tries} time`,
+						title: `tryRequest() timeout ${tries - 1 } time left`,
 						description: `url : ${options.url}`
 					}
 				}, `tryRequest timeout`);
@@ -645,6 +665,10 @@ async function testDb(callback) {
 	});
 }
 
+async function updateCryental(callback) {
+
+}
+
 async function updateAnimeDb(callback) {
 	tryRequest({
 			uri: OHYS_JSON_URL,
@@ -657,7 +681,7 @@ async function updateAnimeDb(callback) {
 		}, 3,
 		(ohysReqErr, ohysReqRes, ohysReqBody) => {
 			if (ohysReqErr) {
-				printLogError(undefined, "tryRequest(ohysJSON) error", ohysReqErr);
+				printLogError(undefined, 0, "tryRequest(ohysJSON) error", ohysReqErr);
 				if (callback != undefined) {
 					callback(ohysReqErr, undefined);
 				}
@@ -666,7 +690,7 @@ async function updateAnimeDb(callback) {
 				//var newAnimeList = [];
 				queryToDb("SELECT * FROM " + TablesForm[0].name, (qSelAnimesErr, qSelAnimesRes) => {
 					if (qSelAnimesErr) {
-						printLogError(undefined, "qSelAnimesErr", JSON.stringify(qSelAnimesErr, null, 2));
+						printLogError(undefined, 0, "qSelAnimesErr", JSON.stringify(qSelAnimesErr, null, 2));
 						if (callback != undefined) {
 							callback(JSON.stringify(qSelAnimesErr, null, 2), undefined);
 						}
@@ -682,7 +706,7 @@ async function updateAnimeDb(callback) {
 
 						queryToDb(`SELECT * FROM ${TablesForm[1].name}`, (qSelChannelErr, qSelChannelRes) => {
 							if (qSelChannelErr) {
-								printLogError(undefined, "qSelChannelErr", JSON.stringify(qSelChannelErr, null, 2));
+								printLogError(undefined, 0, "qSelChannelErr", JSON.stringify(qSelChannelErr, null, 2));
 							} else {
 								qSelChannelRes.rows.map((aChannelAnime) => {
 									newAnimes.map((aNewAnime) => {
@@ -694,7 +718,7 @@ async function updateAnimeDb(callback) {
 												searchType: "image"
 											}, (searchErr, searchRes) => {
 												if (searchErr) {
-													printLogError(undefined, "updateAnimeDb(), get new Anime image error", "updateAnimeDb(), get new Anime image error");
+													printLogError(undefined, 0, "updateAnimeDb(), get new Anime image error", "updateAnimeDb(), get new Anime image error");
 												}
 
 											})
@@ -717,7 +741,7 @@ async function updateAnimeDb(callback) {
 												}
 											})
 											.catch((error) => {
-												printLogError(undefined, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
+												printLogError(undefined, 0, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
 											});*/
 										}
 									})
@@ -730,14 +754,14 @@ async function updateAnimeDb(callback) {
 							queryToDb(`INSERT INTO ${TablesForm[0].name} (${TablesForm[0].columns[0]}, ${TablesForm[0].columns[1]})
 												VALUES ($$${anAnime.t}$$, $$${anAnime.a}$$);`, (qInsertErr, qInsertRes) => {
 								if (qInsertErr) {
-									printLogError(message, "qInsertErr in Anime", JSON.stringify(qInsertErr, null, 2));
+									printLogError(message, 0, "qInsertErr in Anime", JSON.stringify(qInsertErr, null, 2));
 									answerToTheChannel(message, "애니DB 쿼리 삽입 실패", undefined, undefined);
 								}
 							});
 						});
 						queryToDb("SELECT * FROM " + TablesForm[0].name, (qReSelErr, qReSelRes) => {
 							if (qReSelErr) {
-								printLogError(message, "qReSelErr", JSON.stringify(qReSelErr, null, 2));
+								printLogError(message, 0, "qReSelErr", JSON.stringify(qReSelErr, null, 2));
 								answerToTheChannel(message, "qReSelErr", undefined, undefined);
 							} else {
 								printLog(JSON.stringify(qReSelRes, null, 2), undefined, undefined);
@@ -851,20 +875,27 @@ async function printLog(consoleLog, logEmbed, logText) {
 	}
 }
 
-async function printLogError(message, consoleLog, eDesc) {
+async function printLogError(message, level, consoleLog, eDesc) {
 	var tmpEmbed = {
 		embed: {
 			color: COLOR_ERROR
 		}
 	};
+	if (level != 0) {
+		tmpEmbed.embed.color = COLOR_WARN;
+	}
 	if (message != undefined) {
 		tmpEmbed = getGeneralDebugLog(message);
 	}
-	tmpEmbed.embed.color = COLOR_ERROR;
+	// tmpEmbed.embed.color = COLOR_ERROR;
 	// tmpEmbed.title = eTitle;
 	tmpEmbed.embed.title = consoleLog;
 	tmpEmbed.embed.description = eDesc;
-	printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
+	if (level === 0) {
+		printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
+	} else {
+		printLog("[WRN] " + consoleLog, tmpEmbed, "☢️ ＷＡＲＮＩＮＧ ☢️");
+	}
 }
 
 async function answerToTheChannel(inputMessage, outputText, outputOptions, callback) {
@@ -879,7 +910,7 @@ async function answerToTheChannel(inputMessage, outputText, outputOptions, callb
 			}
 		})
 		.catch((error) => {
-			printLogError(inputMessage, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
+			printLogError(inputMessage, 0, "answerToTheChannel() failed", JSON.stringify(error, null, 2));
 		});
 }
 
@@ -1370,7 +1401,7 @@ async function responseToMessage(message, args) {
 					}
 					searchGoogle(iQuery, (error, response) => {
 						if (error) {
-							printLogError(message, "searchGoogle failed?", error);
+							printLogError(message, 0, "searchGoogle failed?", error);
 							answerToTheChannel(message, "구글 검색 실패...?", undefined, undefined);
 						} else if (response.data != undefined) {
 							if (response.data.searchInformation.totalResults === "0") {
@@ -1437,7 +1468,7 @@ async function responseToMessage(message, args) {
 								}
 							}
 						} else {
-							printLogError(message, "searchGoogle error : No error, No response", "What the...??");
+							printLogError(message, 0, "searchGoogle error : No error, No response", "What the...??");
 							answerToTheChannel(message, "엥...? 검색 오류도 없는데 구글 응답이 없어요...", undefined, undefined);
 						}
 					});
@@ -1479,7 +1510,7 @@ async function responseToMessage(message, args) {
 						searchType: "image"
 					}, (searchErr, searchRes) => {
 						if (searchErr) {
-							printLogError(message, "searchGoogle(image) error", searchErr);
+							printLogError(message, 0, "searchGoogle(image) error", searchErr);
 							answerToTheChannel(message, "이미지 검색 에러... 라는대여...??", undefined, undefined);
 						} else if (searchRes.data != undefined) {
 							if (searchRes.data.searchInformation.totalResults === "0") {
@@ -1494,7 +1525,7 @@ async function responseToMessage(message, args) {
 										}, 3,
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
-												printLogError(message, "tryRequest(image) error", JSON.stringify(imgReqErr));
+												printLogError(message, 0, "tryRequest(image) error", JSON.stringify(imgReqErr));
 												answerToTheChannel(message, "이미지 다운로드 실패...??", undefined, undefined);
 											} else {
 												if (imgReqRes.statusCode != 200) {
@@ -1508,7 +1539,7 @@ async function responseToMessage(message, args) {
 															}
 														}, undefined);
 													} else {
-														printLogError(message, "imgReqRes.statusCode != 200", searchRes.data.items[0].link);
+														printLogError(message, 1, "imgReqRes.statusCode != 200", searchRes.data.items[0].link);
 														answerToTheChannel(message, "_403 이미지 표시 제한, 구글 썸네일로 대체_", {
 															embed: {
 																color: COLOR_WARN,
@@ -1580,7 +1611,7 @@ async function responseToMessage(message, args) {
 								}
 							}
 						} else {
-							printLogError(message, "searchGoogle(image) No error, no response", "Not an error, but undefined searchRes.data returned");
+							printLogError(message, 0, "searchGoogle(image) No error, no response", "Not an error, but undefined searchRes.data returned");
 							answerToTheChannel(message, "엥?? 검색 에러도 없고 결과도 없는대요???? :thinking:", undefined, undefined);
 						}
 					});
@@ -1682,7 +1713,7 @@ async function responseToMessage(message, args) {
 								}, undefined);
 							}
 						} catch (error) {
-							printLogError(message, "Eval error...?", error.toString());
+							printLogError(message, 0, "Eval error...?", error.toString());
 							answerToTheChannel(message, "수식이 잘못된것 같은데여...?", undefined, undefined);
 						}
 					}
@@ -1710,7 +1741,7 @@ async function responseToMessage(message, args) {
 					}
 				}).catch((error) => {
 					answerToTheChannel(message, "어라...? 메세지 기록을 읽어오지 못했나봐여...", undefined, undefined);
-					printLogError(message, "fetchMessages() failed : " + error, undefined);
+					printLogError(message, 0, "fetchMessages() failed : " + error, undefined);
 				});
 			} else if (args.arg === undefined || args.arg === null || args.arg.length < 1) {
 				answerToTheChannel(message, "검색할 url을 입력해주세여... 디스코드 이미지라면 우클릭->링크복사해서 붙여넣으시면 편해염", undefined, undefined);
@@ -1720,150 +1751,188 @@ async function responseToMessage(message, args) {
 			break;
 		case "anime":
 			// args.options.map
+			var tmpAnimeFooter = -1;
+			var tmpAnimeAuther = {
+				name: "Cryental",
+				url: CRYENTAL_SERVICE,
+				icon_url: CRYENAL_FAVICON
+			};
 
 			if (args.options.length === 0) {
 				args.options.push({ name: "search" });
+				tmpAnimeFooter++;
 			}
 
 			//answerToTheChannel(message, JSON.stringify(args), undefined, false, undefined);
 			switch (args.options[0].name) {
 				default:
 				case "search":
-					if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
-						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined, undefined);
-					} else {
-						tryRequest({
-							uri: `${OHYS_JSON_URL}&q=${encodeURIComponent(args.arg)}`,
-							headers: {
-								"Content-Type": "application/json; Charset=utf-8"
-							},
-							method: "GET",
-							encoding: "utf8",
-							timeout: 3000
-						}, 3, (animeSearchErr, animeSearchRes, animeSearchBody) => {
-							if (animeSearchErr) {
-								printLogError(message, `anime animeSearchErr`, JSON.stringify(animeSearchErr));
-								answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, undefined);
+					// var tmpAnimeKeyword = "";
+					var tmpAnimeSearchQuery = {
+						uri: CRYENTAL_LIST,
+						headers: {
+							"Content-Type": "application/json; Charset=utf-8"
+						},
+						method: "GET",
+						encoding: "utf8",
+						timeout: 3000
+					};
+					if ((args.arg != undefined) && (args.arg != null)) {
+						tmpAnimeSearchQuery.uri = `${CRYENTAL_LIST}?keyword=${encodeURIComponent(args.arg)}`.toString();
+						tmpAnimeFooter++;
+					}
+					printLog("tmpAnimeSearchQuery.uri = " + tmpAnimeSearchQuery.uri, undefined, undefined);
+
+					tryRequest(tmpAnimeSearchQuery, 3, (animeSearchErr, animeSearchRes, animeSearchBody) => {
+						if (animeSearchErr) {
+							printLogError(message, 0, `anime animeSearchErr`, JSON.stringify(animeSearchErr));
+							answerToTheChannel(message, `검색에 실패했서요... 모지...??`, undefined, undefined);
+						} else {
+							if (animeSearchRes.statusCode != 200) {
+								printLogError(message, 0, `anime search bad response code`, undefined);
+								answerToTheChannel(message, `Cryental API 응답이 이상해요...`, undefined, undefined);
 							} else {
-								if (animeSearchRes.statusCode != 200) {
-									printLogError(message, `anime search bad response code`, undefined);
-									answerToTheChannel(message, `Ohys 응답이 이상해요...`, undefined, undefined);
+								if (JSON.parse(animeSearchBody).length < 1) {
+									answerToTheChannel(message, `애니 *${args.arg}* Cryental 검색 결과`, {
+										embed: {
+											color: COLOR_WARN,
+											author: tmpAnimeAuther,
+											description: `검색 결과가 없슴니다... (영어로 짧게 검색해주세요)`
+										}
+									}, undefined);
 								} else {
-									if (JSON.parse(animeSearchBody).length < 1) {
-										answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, {
-											embed: {
-												color: COLOR_WARN,
-												author: {
-													name: "Ohys-Raws",
-													url: OHYS_PAGE_URL,
-													icon_url: OHYS_FAVICON
-												},
-												description: `검색 결과가 없슴니다... (영어로 검색해주세요)`
+									var tmpCryentalBody = JSON.parse(animeSearchBody);
+
+									var tmpDebug = "";
+									// printLog(`[LOG] Logging Anime search result`, undefined, logText);
+									// printLog(JSON.stringify(tmpCryentalBody[1], null, "\t"), undefined, "```JSON\n" + JSON.stringify(tmpCryentalBody[1], null, "\t") + "\n```");
+
+
+									var tmpEmbedTotalSize = 0;
+
+									var tmpEmbed = {
+										embed: {
+											title: args.arg,
+											color: COLOR_INFO,
+											author: tmpAnimeAuther,
+											description: "",
+											footer: {
+												text: ""
+											},
+											image: {
+												url: ""
+											},
+											thumbnail: {
+												url: ""
+											},
+											fields: []
+										}
+									};
+
+									tmpEmbed.embed.author.url = `${CRYENTAL_SERVICE}?search=${encodeURIComponent(args.arg)}`.toString();
+									// tmpEmbedTotalSize += tmpEmbed.embed.author.url.length;
+									tmpDebug += "author.url = " + tmpEmbed.embed.author.url;
+
+									var tmpDiffs = -1;
+									var tmpTitle = "";
+
+									tmpCryentalBody.map((anAnime) => {
+										if (anAnime.anime === null) {
+											tmpDiffs += 2;
+										} else {
+											if (tmpTitle != anAnime.anime.title.canonical) {
+												tmpTitle = anAnime.anime.title.canonical;
+												tmpDiffs++;
 											}
-										}, undefined);
-									} else {
-										var tmpEmbed = {
-											embed: {
-												color: COLOR_INFO,
-												author: {
-													name: "Ohys-Raws",
-													url: OHYS_PAGE_URL,
-													icon_url: OHYS_FAVICON
-												},
-												description: "",
-												footer: {
-													text: ""
-												},
-												image: {
-													url: ""
-												},
-												thumbnail: {
-													url: ""
-												}
-											}
-										};
-										//printLog(`anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}`, undefined, `anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(/(\[ohys-raws\])|(\((?:.(?!\())+$)/gi, "").trim()}`);
-										searchGoogle({
-											q: `anime ${JSON.parse(animeSearchBody)[0][OHYS_COLUMN_TITLE].replace(OHYS_TITLE_ONLY_REGEX, "").trim()}`,
-											num: 1,
-											searchType: "image"
-										}, (imgSearchErr, imgSearchRes) => {
-											if (imgSearchErr) {
-												printLogError(message, `anime thumbnail search failed`, "" + imgSearchErr);
-												answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, tmpEmbed, undefined);
-											} else {
+										}
+									});
 
-												tryRequest({
-													uri: imgSearchRes.data.items[0].link,
-													method: "GET",
-													encoding: null,
-													timeout: 3000
-												}, 3, (imgErr, imgRes, imgBody) => {
-													// printLog(`anime image request logged imgRes ${JSON.stringify(imgRes.statusCode)}`, undefined, "wat");
-													if ((imgErr) || (imgRes.statusCode != 200)) {
-														// tmpEmbed.embed.thumbnail.url = imgSearchRes.data.items[0].image.thumbnailLink;
-														tmpEmbed.embed.thumbnail = { url: imgSearchRes.data.items[0].image.thumbnailLink };
-														// printLog("Got an imgErr or !200", undefined, undefined);
-													} else {
-														tmpEmbed.embed.image = { url: imgSearchRes.data.items[0].link };
-														// printLog("Got a good imgRes", undefined, undefined);
-													}
+									// var tmpFooterTemplate = footer `애니 시리즈 검색 ${0}, ${1}화 검색 됨`;
+									if (tmpDiffs < 1) { // Found the unique anime
+										var tmpFoundSeries = tmpCryentalBody[0].anime;
+										// tmpEmbed.embed.title = `${tmpFoundSeries.title.japanese} (${tmpFoundSeries.title.synonyms})`;
+										tmpEmbed.embed.title = tmpFoundSeries.title.japanese;
+										if (tmpFoundSeries.title.synonyms != null) {
+											tmpEmbed.embed.title += ` (${tmpFoundSeries.title.synonyms})`;
+										}
+										tmpEmbedTotalSize += tmpEmbed.embed.title.length;
+										tmpDebug += "\ntitle = " + tmpEmbed.embed.title;
 
-													// tmpEmbed.file = {
-													// 	name: imageFileName,
-													// 	attachment: imgBody
-													// };
+										tmpEmbed.embed.url = ANIDB_ANIME_URI + tmpFoundSeries.mappings.find((aMap) => {
+											return aMap.service.toLowerCase().startsWith("anidb");
+										}).serviceId;
+										tmpEmbedTotalSize += tmpEmbed.embed.url.length;
+										tmpDebug += "\nurl = " + tmpEmbed.embed.url;
 
-													//tmpEmbed.embed.image = imgBody;
-													// var tmpFile = new Discord.Attachment(imgBody, imageFileName);
-													// tmpEmbed.files = [tmpFile];
-													// tmpEmbed.embed.image.url = `attachment://${imageFileName}`;
+										tmpEmbed.embed.image.url = tmpFoundSeries.image;
+										tmpEmbedTotalSize += tmpEmbed.embed.image.url.length;
+										tmpDebug += "\nimage.url = " + tmpEmbed.embed.image.url;
 
-													var tmpFoundStr = "";
-													var tmpFoundStrBuffer = "";
-													var tmpFoundQuant = 0;
-													JSON.parse(animeSearchBody).map((anAnime) => {
-														if (tmpFoundStrBuffer.length > 0) {
-															tmpFoundStrBuffer += `\n`;
-														}
-														tmpFoundStrBuffer += `[${anAnime[OHYS_COLUMN_TITLE].replace(OHYS_TITLE_WITH_SPEC_REGEX, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
-														if (tmpFoundStrBuffer.length < 2020) {
-															tmpFoundStr = tmpFoundStrBuffer;
-															tmpFoundQuant++;
-														}
-													});
-													tmpEmbed.embed.description = tmpFoundStr;
-													tmpEmbed.embed.footer.text = `최신 ${tmpFoundQuant}건 표시중`;
-													answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, tmpEmbed, undefined);
-												});
+										tmpEmbed.embed.thumbnail.url = tmpFoundSeries.image;
+										tmpEmbedTotalSize += tmpEmbed.embed.thumbnail.url.length;
+										tmpDebug += "\nthumbnail.url = " + tmpEmbed.embed.thumbnail.url;
 
-												/*
-												var tmpFoundStr = "";
-												var tmpFoundStrBuffer = "";
-												var tmpFoundQuant = 0;
-												JSON.parse(animeSearchBody).map((anAnime) => {
-													if (tmpFoundStrBuffer.length > 0) {
-														tmpFoundStrBuffer += `\n`;
-													}
-													tmpFoundStrBuffer += `[${anAnime[OHYS_COLUMN_TITLE].replace(OHYS_TITLE_WITH_SPEC_REGEX, "").trim()}](${OHYS_URL+anAnime[OHYS_COLUMN_URL]})`;
-													if (tmpFoundStrBuffer.length < 2020) {
-														tmpFoundStr = tmpFoundStrBuffer;
-														tmpFoundQuant++;
-													}
-												});
-												tmpEmbed.embed.description = tmpFoundStr;
-												tmpEmbed.embed.footer.text = `최신 ${tmpFoundQuant}건 표시중`;
-												if()
-												tmpEmbed.embed.image = { url: imgSearchRes.data.items[0].link };
-												answerToTheChannel(message, `애니 *${args.arg}* Ohys-Raws 검색 결과`, tmpEmbed, undefined);
-												*/
-											}
-										});
+										tmpEmbed.embed.description = "평점 : " + Math.round(tmpFoundSeries.rating * 100) / 100 +
+											"\n원작 : " + tmpFoundSeries.originalFrom +
+											"\n타입 : " + tmpFoundSeries.type.toUpperCase() + ", " + tmpFoundSeries.duration + ", " + tmpFoundSeries.totalEpisodes + "화" +
+											"\n방영 : " + tmpFoundSeries.status + ", " + tmpFoundSeries.startDate + " ~ " + tmpFoundSeries.endDate;
+										tmpEmbedTotalSize += tmpEmbed.embed.description.length;
+										tmpDebug += "\ndescription = " + tmpEmbed.embed.description;
+
+										tmpEmbed.embed.footer.text = `애니 시리즈 검색 성공, ${tmpCryentalBody.length}건 검색 됨`;
+										tmpEmbedTotalSize += tmpEmbed.embed.footer.text.length;
+										tmpDebug += "\nfooter.text = " + tmpEmbed.embed.footer.text;
+									} else { //Found some serieses
+										tmpEmbed.embed.footer.text = `애니 시리즈 검색 실패, ${tmpCryentalBody.length}건 검색 됨`;
+										tmpEmbedTotalSize += tmpEmbed.embed.footer.text.length;
+										tmpDebug += "\nfooter.text = " + tmpEmbed.embed.footer.text;
 									}
+
+									Object.values(tmpEmbed.embed.author).map((aEle) => {
+										tmpEmbedTotalSize += aEle.length;
+									});
+
+									// tmpEmbedTotalSize += tmpEmbed.embed.title.length + tmpEmbed.embed.url.length + tmpEmbed.embed.thumbnail.url.length +
+									// 	tmpEmbed.embed.description.length + tmpEmbed.embed.footer.text.length;
+
+									// if(tmpEmbedTotalSize > 6000)
+									// printLog("tmpEmbedTotalSize = " + tmpEmbedTotalSize, undefined, undefined);
+
+									var tmpAFieldLength = 0;
+									var tmpAField = {};
+									// var tmpFields = [];
+
+
+									tmpCryentalBody.map((anAnime) => {
+										// printLog(tmpEmbed.embed.fields.length, undefined, undefined);
+
+										if (tmpEmbed.embed.fields.length < MSG_FIELDS_LIMIT) {
+											tmpAField = {
+												name: anAnime.title,
+												value: `${anAnime.info.createdDate} [Magnet link](${anAnime.download.magnet})`
+											};
+											if (anAnime.episode != null) {
+												tmpAField.name += " - " + anAnime.episode;
+											}
+
+											tmpAFieldLength = tmpAField.name.length + tmpAField.value.length;
+											if ((tmpEmbedTotalSize + tmpAFieldLength) <= MSG_EMBED_TOTAL_LIMIT) {
+												tmpEmbed.embed.fields.push(tmpAField);
+												// tmpFields.push(tmpAField);
+												tmpEmbedTotalSize += tmpAFieldLength;
+												// printLog(tmpFields.length, undefined, undefined);
+											}
+										}
+									});
+									// tmpEmbed.embed.fields = tmpFields;
+									// printLog(tmpDebug, undefined, ">>> " + tmpDebug);
+									answerToTheChannel(message, undefined, tmpEmbed, undefined);
+
 								}
 							}
-						});
-					}
+						}
+					});
+
 					break;
 				case "list":
 					// queryToDb(`SELECT * FROM `, (qSelErr, qSelRes) => {
@@ -1891,12 +1960,7 @@ async function responseToMessage(message, args) {
 					}*/
 					answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, undefined);
 					break;
-				case "forceupdate":
-					/*answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, (sentMessage) => {
-						message.channel.stopTyping();
-					});*/
-					updateAnimeDb();
-
+				case "schedule":
 
 					break;
 			}
@@ -1904,6 +1968,18 @@ async function responseToMessage(message, args) {
 			break;
 		case "meme":
 			answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, undefined);
+			break;
+		case "db":
+			if (args.options.length === 0) {
+				answerToTheChannel(message, "DB 뭐! 옵션을 말해!", undefined, undefined);
+			} else {
+				switch (args.options[0].name) {
+					case "show":
+						break;
+					case "delete":
+						break;
+				}
+			}
 			break;
 	}
 }
@@ -1928,14 +2004,16 @@ Bot.on("ready", () => {
 
 	initializePostgres((error, pool) => {
 		if (error) {
-			printLogError(undefined, `Postgres connect() fail`, JSON.stringify(error, null, 2));
+			printLogError(undefined, 0, `Postgres connect() fail`, JSON.stringify(error, null, 2));
 		} else {
 			testDb((dbErr, dbRes) => {
 				if (dbErr) {
-					printLogError(undefined, "DB table test error", JSON.stringify(dbErr, null, 2));
+					printLogError(undefined, 0, "DB table test error", JSON.stringify(dbErr, null, 2));
 				} else {
-					//printLog("testDB success\n" + JSON.stringify(dbRes, null, 2), undefined, undefined);
-					printLog("testDB success", undefined, undefined); // TODO : Log differently between tables
+					// printLog("testDB success\n" + JSON.stringify(dbRes, null, 2), undefined, undefined);
+					// printLog("testDB success", undefined, undefined); // TODO : Log differently between tables // Really?? Do we need that??
+					printLog("init testDB success", undefined, "init testDB success");
+					// printLog("```JSON\n" + JSON.stringify(dbRes, null, "\t") + "\n```", undefined, "```JSON\n" + JSON.stringify(dbRes, null, "\t") + "\n```");
 				}
 			});
 		}
