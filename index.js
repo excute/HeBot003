@@ -1781,7 +1781,7 @@ async function responseToMessage(message, args) {
 						tmpAnimeSearchQuery.uri = `${CRYENTAL_LIST}?keyword=${encodeURIComponent(args.arg)}`.toString();
 						tmpAnimeFooter++;
 					}
-					printLog("tmpAnimeSearchQuery.uri = " + tmpAnimeSearchQuery.uri, undefined, undefined);
+					// printLog("tmpAnimeSearchQuery.uri = " + tmpAnimeSearchQuery.uri, undefined, undefined);
 
 					tryRequest(tmpAnimeSearchQuery, 3, (animeSearchErr, animeSearchRes, animeSearchBody) => {
 						if (animeSearchErr) {
