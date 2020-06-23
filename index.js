@@ -90,6 +90,7 @@ const CRYENTAL_TIMETABLE = "https://cryental.dev/api/ohys/timetable";
 const CRYENTAL_DOWNLOAD = "https://cryental.dev/api/ohys/download";
 const CRYENTAL_DETAIL = "https://cryental.dev/api/ohys/detail?id=";
 
+const CRYENTAL_HOME = "https://cryental.dev";
 const CRYENTAL_SERVICE = "http://cryental.dev/services/anime/";
 // const CRYENAL_FAVICON = "http://cryental.dev/favicon.ico";
 const CRYENAL_FAVICON = "http://avatars3.githubusercontent.com/u/44664655?s=400&u=d14de3aab704fa4dc5827692b7d8aafd89fe4286&v=4";
@@ -453,7 +454,7 @@ async function tryRequest(options, tries, callback) {
 				printLog(`tryRequest timeout`, {
 					embed: {
 						color: COLOR_WARN,
-						title: `tryRequest() timeout ${tries - 1 } time left`,
+						title: `tryRequest() timeout ${tries - 1} time left`,
 						description: `url : ${options.url}`
 					}
 				}, `tryRequest timeout`);
@@ -474,8 +475,8 @@ async function searchGoogle(sOpt, callback) {
 	sOpt.cx = CSE_ID;
 	CustomSearch.cse.list(sOpt)
 		.then((response) => {
-				callback(undefined, response);
-			},
+			callback(undefined, response);
+		},
 			(error) => {
 				if (error.toString().startsWith("Error: This API requires billing")) {
 					printLog("[WAN] Custom search query limit exceeded :\n" + error, {
@@ -489,8 +490,8 @@ async function searchGoogle(sOpt, callback) {
 					sOpt.cx = CSE_JP_ID;
 					CustomSearchJp.cse.list(sOpt)
 						.then((response) => {
-								callback(undefined, response);
-							},
+							callback(undefined, response);
+						},
 							(errorJP) => {
 								callback(errorJP, undefined);
 							});
@@ -576,8 +577,8 @@ function getDetailedHelpEmbed(iCommand) {
 	Commands.map((aCmd) => {
 		if (aCmd.command === iCommand.command) {
 			res.embed.description = aCmd.inputs.map((aCmdInput) => {
-					return " `" + aCmdInput + "`";
-				}).toString().trim() + "\n" +
+				return " `" + aCmdInput + "`";
+			}).toString().trim() + "\n" +
 				aCmd.usage;
 			res.embed.fields = aCmd.options.map((anOpt) => {
 				return {
@@ -671,14 +672,14 @@ async function updateCryental(callback) {
 
 async function updateAnimeDb(callback) {
 	tryRequest({
-			uri: OHYS_JSON_URL,
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
-			},
-			method: "GET",
-			encoding: "utf8",
-			timeout: 3000
-		}, 3,
+		uri: OHYS_JSON_URL,
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+		},
+		method: "GET",
+		encoding: "utf8",
+		timeout: 3000
+	}, 3,
 		(ohysReqErr, ohysReqRes, ohysReqBody) => {
 			if (ohysReqErr) {
 				printLogError(undefined, 0, "tryRequest(ohysJSON) error", ohysReqErr);
@@ -802,51 +803,51 @@ function getGeneralDebugLog(message) {
 			default:
 			case "text":
 				tmpEmbed.embed.fields = [{
-						name: "Server",
-						value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
-						inline: true
-					},
-					{
-						name: "Channel",
-						value: `<#${message.channel.id}>`,
-						inline: true
-					},
-					{
-						name: "Author",
-						value: `<@!${message.author.id}>`,
-						inline: true
-					},
-					{
-						name: "Message",
-						value: "```" + message.content + "```",
-						inline: false
-					}
+					name: "Server",
+					value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
+					inline: true
+				},
+				{
+					name: "Channel",
+					value: `<#${message.channel.id}>`,
+					inline: true
+				},
+				{
+					name: "Author",
+					value: `<@!${message.author.id}>`,
+					inline: true
+				},
+				{
+					name: "Message",
+					value: "```" + message.content + "```",
+					inline: false
+				}
 				];
 				break;
 			case "group":
 				tmpEmbed.embed.fields = [{
-						name: "Author",
-						value: `<@!${message.author.id}>`,
-						inline: true
-					},
-					{
-						name: "Message",
-						value: "```" + message.content + "```",
-						inline: false
-					}
+					name: "Author",
+					value: `<@!${message.author.id}>`,
+					inline: true
+				},
+				{
+					name: "Message",
+					value: "```" + message.content + "```",
+					inline: false
+				}
 				];
 				break;
 			case "dm":
 				tmpEmbed.embed.fields = [{
-						name: "Author",
-						value: `<@!${message.author.id}>`,
-						inline: true
-					},
-					{
-						name: "Message",
-						value: "```" + message.content + "```",
-						inline: false
-					}
+					name: "Author",
+					value: `<@!${message.author.id}>`,
+					inline: true
+				},
+				{
+					name: "Message",
+					value: "```" + message.content + "```",
+					inline: false
+				}
 				];
 				break;
 		}
@@ -892,7 +893,7 @@ async function printLogError(message, level, consoleLog, eDesc) {
 	tmpEmbed.embed.title = consoleLog;
 	tmpEmbed.embed.description = eDesc;
 	if (level === 0) {
-		printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}>` + "!! 에러라구!!");
+		printLog("[ERR] " + consoleLog, tmpEmbed, `<@${DEVELOPER_ID}> !! 에러라구!!`);
 	} else {
 		printLog("[WRN] " + consoleLog, tmpEmbed, "☢️ ＷＡＲＮＩＮＧ ☢️");
 	}
@@ -977,8 +978,8 @@ async function handleArgs(message, content) {
 			for (var i = 0; i < rawArgsArray.length; i++) {
 				if (rawArgsArray[i].startsWith("--")) {
 					if (Commands.find((aCmd) => { return aCmd.command === "help"; }).inputs.find((aHelpInput) => {
-							return aHelpInput === rawArgsArray[i].replace("--", "").toLowerCase().trim();
-						})) {
+						return aHelpInput === rawArgsArray[i].replace("--", "").toLowerCase().trim();
+					})) {
 						if (foundCommand.command === "help") {
 							answerToTheChannel(message, "", {
 								embed: {
@@ -1131,8 +1132,8 @@ async function responseToMessage(message, args) {
 			break;
 		case "uptime":
 			if (args.options.find((anInputOpt) => {
-					return anInputOpt.name === "system";
-				}) != undefined) {
+				return anInputOpt.name === "system";
+			}) != undefined) {
 				answerToTheChannel(message, "", {
 					embed: {
 						title: "봇 서버 업타임",
@@ -1346,8 +1347,8 @@ async function responseToMessage(message, args) {
 					case "soundcloud":
 						qNum = 1;
 						break;
-						// case "namu":
-						// break;
+					// case "namu":
+					// break;
 				}
 				// if(args.arg===undefined||args.arg===null||args.arg.length<1){
 				// 	answerToTheChannel(message,)
@@ -1518,11 +1519,11 @@ async function responseToMessage(message, args) {
 							} else {
 								if (!detailedFlag) {
 									tryRequest({
-											uri: searchRes.data.items[0].link,
-											method: "GET",
-											encoding: null,
-											timeout: 3000
-										}, 3,
+										uri: searchRes.data.items[0].link,
+										method: "GET",
+										encoding: null,
+										timeout: 3000
+									}, 3,
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
 												printLogError(message, 0, "tryRequest(image) error", JSON.stringify(imgReqErr));
@@ -1593,21 +1594,21 @@ async function responseToMessage(message, args) {
 											searchRes.data.queries.request[0].startIndex :
 											searchRes.data.queries.request[0].startIndex + " ~ " + (searchRes.data.queries.request[0].startIndex + searchRes.data.queries.request[0].count - 1) + "") +
 										"번째 결과, " + searchRes.data.searchInformation.searchTime + "초 소요`", {
-											embed: {
-												color: COLOR_GREEN,
-												title: stringifyHtmlSnippet(searchRes.data.items[0].htmlTitle),
-												description: searchRes.data.items[0].link,
-												image: {
-													url: searchRes.data.items[0].link
-												},
-												thumbnail: {
-													url: searchRes.data.items[0].image.thumbnailLink
-												},
-												footer: {
-													text: searchRes.data.items[0].image.contextLink
-												}
+										embed: {
+											color: COLOR_GREEN,
+											title: stringifyHtmlSnippet(searchRes.data.items[0].htmlTitle),
+											description: searchRes.data.items[0].link,
+											image: {
+												url: searchRes.data.items[0].link
+											},
+											thumbnail: {
+												url: searchRes.data.items[0].image.thumbnailLink
+											},
+											footer: {
+												text: searchRes.data.items[0].image.contextLink
 											}
-										}, undefined);
+										}
+									}, undefined);
 								}
 							}
 						} else {
@@ -1751,12 +1752,14 @@ async function responseToMessage(message, args) {
 			break;
 		case "anime":
 			// args.options.map
-			var tmpAnimeFooter = -1;
+			// var tmpAnimeFooter = -1;
 			var tmpAnimeAuther = {
-				name: "Cryental",
-				url: CRYENTAL_SERVICE,
+				name: "Cryental's Anime DataBase",
+				url: CRYENTAL_HOME,
 				icon_url: CRYENAL_FAVICON
 			};
+
+			// printLog(JSON.stringify(args, null, "\t"), undefined, ">>> " + JSON.stringify(args, null, "\t"));
 
 			if (args.options.length === 0) {
 				args.options.push({ name: "search" });
@@ -1768,6 +1771,7 @@ async function responseToMessage(message, args) {
 				default:
 				case "search":
 					// var tmpAnimeKeyword = "";
+					tmpAnimeAuther.url = CRYENTAL_SERVICE;
 					var tmpAnimeSearchQuery = {
 						uri: CRYENTAL_LIST,
 						headers: {
@@ -1812,8 +1816,8 @@ async function responseToMessage(message, args) {
 
 									var tmpEmbed = {
 										embed: {
-											title: args.arg,
-											color: COLOR_INFO,
+											title: `*args.arg* 애니 검색 결과`,
+											color: COLOR_GREEN,
 											author: tmpAnimeAuther,
 											description: "",
 											footer: {
@@ -1935,20 +1939,20 @@ async function responseToMessage(message, args) {
 
 					break;
 				case "list":
-					// queryToDb(`SELECT * FROM `, (qSelErr, qSelRes) => {
+				// queryToDb(`SELECT * FROM `, (qSelErr, qSelRes) => {
 
-					// });
-					// break;
+				// });
+				// break;
 				case "add":
-					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
-						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
-							(sentMessage) => {
-								message.channel.stopTyping();
-							});
-					} else {
+				/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+					answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
+						(sentMessage) => {
+							message.channel.stopTyping();
+						});
+				} else {
 
-					}
-					break;*/
+				}
+				break;*/
 				case "remove":
 					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
 						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
@@ -1961,6 +1965,95 @@ async function responseToMessage(message, args) {
 					answerToTheChannel(message, "아직 헤봇이 복구되지 않앗서염... 만든놈을 탓하세여 " + `<@!${DEVELOPER_ID}>`, undefined, undefined);
 					break;
 				case "schedule":
+					var tmpAnimeScheduleQuery = {
+						uri: CRYENTAL_TIMETABLE,
+						headers: {
+							"Content-Type": "application/json; Charset=utf-8"
+						},
+						method: "GET",
+						encoding: "utf8",
+						timeout: 3000
+					};
+
+					tryRequest(tmpAnimeScheduleQuery, 3, (animeScheduleError, animeScheduleRes, animeScheduleBody) => {
+						if (animeScheduleError) {
+							printLogError(message, 0, `anime animeScheduleError`, JSON.stringify(animeScheduleError));
+							answerToTheChannel(message, `애니 스케쥴을 받아오는데 실패했서요... 모지...??`, undefined, undefined);
+						} else {
+							if (animeScheduleRes.statusCode != 200) {
+								printLogError(message, 0, `anime search bad response code`, undefined);
+								answerToTheChannel(message, `Cryental API 응답이 이상해요...`, undefined, undefined);
+							} else {
+								if (JSON.parse(animeScheduleBody).length < 1) {
+									answerToTheChannel(message, `애니 *${args.arg}* Cryental 검색 결과`, {
+										embed: {
+											color: COLOR_WARN,
+											author: tmpAnimeAuther,
+											description: `스케쥴 내용이 없는데요...? Cryental DB가 이상한것 같은데...`
+										}
+									}, undefined);
+								} else {
+									var tmpCryentalBody = JSON.parse(animeScheduleBody);
+									if (!tmpCryentalBody.result) {
+										answerToTheChannel(message, `현재 시간표가 없습니다, 저도 처음보는 현상이에요! <@${DEVELOPER_ID}> 야! 이것좀 봐!`, undefined, undefined);
+										printLog(`animeSchedule result = false`, undefined, undefined);
+									} else {
+										// var tmpEmbedTitle = "";
+										var tmpEmbed = {
+											embed: {
+												color: COLOR_GREEN,
+												author: tmpAnimeAuther,
+												title: tmpCryentalBody.season,
+												url: tmpCryentalBody.based_on.source,
+												footer: {
+													text: `현재 시각 : ${getKoTimeString()}`
+												},
+												fields:[]
+											}
+										};
+
+										// tmpCryentalBody.database
+										function setNPushADayField(sDayData, sString) {
+											var tmpString = "";
+											var tmpAField = {
+												name: sString,
+												value: ""
+											};
+											sDayData.map((anAni) => {
+												if (args.arg === undefined) {
+													tmpString += "\n" + `${anAni.time} : ${anAni.title}`;
+												} else if (args.arg.toLowerCase().startsWith("j")) {
+													tmpString += "\n" + `${anAni.time} : ${anAni.ja_title}`;
+												} else if (args.arg.toLowerCase().startsWith("k")) {
+													tmpString += "\n" + `${anAni.time} : ${anAni.kor_title}`;
+												} else if (args.arg.toLowerCase().startsWith("e")) {
+													tmpString += "\n" + `${anAni.time} : ${anAni.eng_title}`;
+												} else {
+													tmpString += "\n" + `${anAni.time} : ${anAni.title}`;
+												}
+											});
+											tmpAField.value = tmpString.trim();
+											tmpEmbed.embed.fields.push(tmpAField);
+										}
+
+										
+										setNPushADayField(tmpCryentalBody.database.Monday, "월요일");
+										setNPushADayField(tmpCryentalBody.database.Tuesday, "화요일");
+										setNPushADayField(tmpCryentalBody.database.Wednesday, "수요일");
+										setNPushADayField(tmpCryentalBody.database.Thursday, "목요일");
+										setNPushADayField(tmpCryentalBody.database.Friday, "금요일");
+										setNPushADayField(tmpCryentalBody.database.Saturday, "토요일");
+										setNPushADayField(tmpCryentalBody.database.Sunday, "일요일");
+
+										answerToTheChannel(message, undefined, tmpEmbed, undefined);
+									}
+
+
+								}
+							}
+						}
+					});
+
 
 					break;
 			}

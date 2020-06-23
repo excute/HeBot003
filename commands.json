@@ -371,61 +371,64 @@
 	],
 	"multi_options": false,
 	"options": [
-	{
-		"name": "search",
-		"inputs": [
-			"search",
-			"s",
-			"검색",
-			"찾기"
-		],
-		"need_arg": false,
-		"usage": "(기본 동작) Ohys 애니 목록에서 키워드로 검색을 합니다, 키워드 없이 최신 목록을 확인할 수 있습니다"
-	},
-	{
-		"name": "list",
-		"inputs": [
-			"list",
-			"l",
-			"목록",
-			"구독목록"
-		],
-		"need_arg": false,
-		"usage": "채널에 구독된 애니 목록을 확인합니다"
-	},
-	{
-		"name": "add",
-		"inputs": [
-			"add",
-			"추가"
-		],
-		"need_arg": true,
-		"usage": "채널에 구독할 애니를 추가합니다 (추가하기 전에 검색으로 확인해주세요)"
-	},
-	{
-		"name": "remove",
-		"inputs": [
-			"remove",
-			"rm",
-			"삭제",
-			"delete"
-		],
-		"need_arg": true,
-		"usage": "채널에 구독된 애니를 삭제합니다 (추가된 내용을 그대로 입력)"
-	},
-	{
-		"name": "schedule",
-		"inputs": [
-			"schedule",
-			"sc",
-			"시간표",
-			"스케줄"
-		],
-		"need_arg": false,
-		"usage": "애니 업데이트 시간표를 확인합니다"
-	}],
-	"short_usage": "Ohys 애니 기능",
-	"usage": "Ohys의 애니 토렌트 목록을 가져오거나 채널에서 알람을 받을 애니를 추가합니다. 추가된 애니는 10분마다 업데이트를 확인합니다. (Cryental의 API 사용 https://cryental.dev/services/anime/api/)",
+		{
+			"name": "search",
+			"inputs": [
+				"search",
+				"s",
+				"검색",
+				"찾기"
+			],
+			"need_arg": false,
+			"usage": "(기본 동작) 키워드로 애니를 검색합니다, 키워드 없이 최신 목록을 확인할 수 있습니다."
+		},
+		{
+			"name": "list",
+			"inputs": [
+				"list",
+				"l",
+				"목록",
+				"구독목록"
+			],
+			"need_arg": false,
+			"usage": "채널에 구독된 애니 목록을 확인합니다"
+		},
+		{
+			"name": "add",
+			"inputs": [
+				"add",
+				"추가"
+			],
+			"need_arg": true,
+			"usage": "채널에 구독할 애니를 추가합니다 (추가하기 전에 검색으로 확인해주세요)"
+		},
+		{
+			"name": "remove",
+			"inputs": [
+				"remove",
+				"rm",
+				"삭제",
+				"delete"
+			],
+			"need_arg": true,
+			"usage": "채널에 구독된 애니를 삭제합니다 (추가된 내용을 그대로 입력)"
+		},
+		{
+			"name": "schedule",
+			"inputs": [
+				"schedule",
+				"sc",
+				"t",
+				"시간표",
+				"스케줄",
+				"표"
+			],
+			"need_arg": false,
+			"usage": "애니 시간표를 확인합니다. e, k, j 를 추가로 입력하여 영어, 한국어, 일본어 제목으로 표시를 바꿀 수 있습니다."
+		}
+	],
+	"short_usage": "Cryental 애니 기능",
+	"usage": "Cryental의 애니 DB 기능을 사용하여 검색하거나 알림을 설정합니다. [*Cryental's Ohys-raws API*](https://cryental.dev/services/anime/api/)",
 	"visible": true
 },
 {
