@@ -523,9 +523,9 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 68721,
+				"buffer_size": 70912,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -542,7 +542,7 @@
 			"file": "commands.json",
 			"settings":
 			{
-				"buffer_size": 7226,
+				"buffer_size": 7352,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -699,6 +699,14 @@
 	],
 	"file_history":
 	[
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/Botchi/commands.json",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/Botchi/index.js",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.gitignore",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.env",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/Botchi/.gitignore",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/Botchi/.env",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/asobi/200612.c",
+		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/package.json",
 		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-keymap",
 		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
 		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/SublimeClang/SublimeClang.sublime-settings",
@@ -736,7 +744,6 @@
 		"/C/Users/BMT-OYS/AppData/Roaming/Sublime Text 3/Packages/IntelliDocs/Default (Windows).sublime-keymap",
 		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/tables.json",
 		"/C/Users/BMT-OYS/OneDrive/workspace_private_old/heroku/old_HeBot003/index.js",
-		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/package.json",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/CES_Quantum/BMT128D-NEO/main.c",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BusanScience_EnergyHavest_Timer/MemoryTest/main.c",
 		"/C/Users/BMT-OYS/OneDrive/BMT/191221_CES/System/SAMSUNG_FIRSTLOOK_SOUND_5Button_200104/BMT128D-68PM.c",
@@ -774,7 +781,6 @@
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/light_ws2812.h",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/Samsung_SoundBar_DMX/VU_TEST/ws2812_config.h",
 		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/index.js",
-		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.env",
 		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/commands.json",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_simple/BMT128D-NEO/main.c",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO_TEST/BMT128D-NEO/main.c",
@@ -782,7 +788,6 @@
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/justRgbWhite/justRgbWhite/main.c",
 		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/Distant_test/BMT08D_28P_DEFAULT.c",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AVR/BMT128D-NEO/BMT128D-NEO.c",
-		"/C/Users/BMT-OYS/OneDrive/workspace_private/HeBot003/.gitignore",
 		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND_190416/BMT128D-68PM.c",
 		"/C/Users/BMT-OYS/OneDrive/workspace/AtmelStudio/BMT128D-NEO/BMT128D-NEO/light_ws2812.h",
 		"/C/Users/BMT-OYS/OneDrive/workspace/CodeVision/SAMSUNG_AISOUND_m/BMT128D-68PM.c",
@@ -821,12 +826,7 @@
 		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003_herokuRemote/index.js",
 		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/kakao.min.js",
 		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/common.js",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/skin_prior.html",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/common_prior.js",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/index.js",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/.env",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/strings.json",
-		"/C/Users/BMT-OYS/OneDrive/workspace/private/heroku/hebot003/.gitignore"
+		"/C/Users/BMT-OYS/OneDrive/workspace/private/tistory/skin_prior.html"
 	],
 	"find":
 	{
@@ -844,6 +844,23 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"getGeneralDebugLog",
+			"Genera",
+			"야",
+			"function printLogError",
+			"printLogError",
+			"Error",
+			"channel",
+			"DMID",
+			"env",
+			"function answer",
+			"function answwer",
+			"function answwerTo",
+			"function answerToTheChannel",
+			"answerToTheChannel",
+			"checkBot",
+			"Process",
+			"Os",
 			"\"result\"",
 			"animeSearchBody",
 			"animeSearchRes",
@@ -925,15 +942,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 68721,
+						"buffer_size": 70912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								66324,
-								66324
+								26365,
+								26383
 							]
 						],
 						"settings":
@@ -1035,24 +1052,24 @@
 								{
 									"1":
 									[
-										66324,
-										66325
+										26391,
+										26392
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										66312,
-										66313
+										26383,
+										26384
 									]
 								},
 								"unmatched":
@@ -1061,31 +1078,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1101,21 +1093,46 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
 							"is_init_dirty_state": false,
 							"origin_encoding": "UTF-8",
@@ -1125,7 +1142,7 @@
 							"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 39477.0,
+						"translation.y": 17483.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1256,15 +1273,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7226,
+						"buffer_size": 7352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6181,
-								6181
+								0,
+								0
 							]
 						],
 						"settings":

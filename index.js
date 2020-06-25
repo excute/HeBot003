@@ -1763,7 +1763,7 @@ async function responseToMessage(message, args) {
 
 			if (args.options.length === 0) {
 				args.options.push({ name: "search" });
-				tmpAnimeFooter++;
+				// tmpAnimeFooter++;
 			}
 
 			//answerToTheChannel(message, JSON.stringify(args), undefined, false, undefined);
@@ -1783,7 +1783,7 @@ async function responseToMessage(message, args) {
 					};
 					if ((args.arg != undefined) && (args.arg != null)) {
 						tmpAnimeSearchQuery.uri = `${CRYENTAL_LIST}?keyword=${encodeURIComponent(args.arg)}`.toString();
-						tmpAnimeFooter++;
+						// tmpAnimeFooter++;
 					}
 					// printLog("tmpAnimeSearchQuery.uri = " + tmpAnimeSearchQuery.uri, undefined, undefined);
 
@@ -2037,13 +2037,13 @@ async function responseToMessage(message, args) {
 										}
 
 										
-										setNPushADayField(tmpCryentalBody.database.Monday, "월요일");
-										setNPushADayField(tmpCryentalBody.database.Tuesday, "화요일");
-										setNPushADayField(tmpCryentalBody.database.Wednesday, "수요일");
-										setNPushADayField(tmpCryentalBody.database.Thursday, "목요일");
-										setNPushADayField(tmpCryentalBody.database.Friday, "금요일");
-										setNPushADayField(tmpCryentalBody.database.Saturday, "토요일");
-										setNPushADayField(tmpCryentalBody.database.Sunday, "일요일");
+										setNPushADayField(tmpCryentalBody.database.Monday,	"월요일");
+										setNPushADayField(tmpCryentalBody.database.Tuesday,	"화요일");
+										setNPushADayField(tmpCryentalBody.database.Wednesday,	"수요일");
+										setNPushADayField(tmpCryentalBody.database.Thursday,	"목요일");
+										setNPushADayField(tmpCryentalBody.database.Friday,	"금요일");
+										setNPushADayField(tmpCryentalBody.database.Saturday,	"토요일");
+										setNPushADayField(tmpCryentalBody.database.Sunday,	"일요일");
 
 										answerToTheChannel(message, undefined, tmpEmbed, undefined);
 									}
