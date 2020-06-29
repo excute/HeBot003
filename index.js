@@ -1853,11 +1853,11 @@ async function responseToMessage(message, args) {
 									// });
 
 									for (var i = 0; i < tmpCryentalBody.length, i++) {
-										if (anAnime.anime === null) {
+										if (tmpCryentalBody[i] === null) {
 											tmpDiffs += 2;
 										} else {
-											if (tmpTitle != anAnime.anime.title.canonical) {
-												tmpTitle = anAnime.anime.title.canonical;
+											if (tmpTitle != tmpCryentalBody[i].title.canonical) {
+												tmpTitle = tmpCryentalBody[i].title.canonical;
 												tmpDiffs++;
 											}
 										}
