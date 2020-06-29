@@ -1852,7 +1852,7 @@ async function responseToMessage(message, args) {
 									// 	}
 									// });
 
-									for (var i = 0; i < tmpCryentalBody.length, i++) {
+									for (var i = 0; i < tmpCryentalBody.length; i++) {
 										if (tmpCryentalBody[i] === null) {
 											tmpDiffs += 2;
 										} else {
