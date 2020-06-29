@@ -475,8 +475,8 @@ async function searchGoogle(sOpt, callback) {
 	sOpt.cx = CSE_ID;
 	CustomSearch.cse.list(sOpt)
 		.then((response) => {
-			callback(undefined, response);
-		},
+				callback(undefined, response);
+			},
 			(error) => {
 				if (error.toString().startsWith("Error: This API requires billing")) {
 					printLog("[WAN] Custom search query limit exceeded :\n" + error, {
@@ -490,8 +490,8 @@ async function searchGoogle(sOpt, callback) {
 					sOpt.cx = CSE_JP_ID;
 					CustomSearchJp.cse.list(sOpt)
 						.then((response) => {
-							callback(undefined, response);
-						},
+								callback(undefined, response);
+							},
 							(errorJP) => {
 								callback(errorJP, undefined);
 							});
@@ -577,8 +577,8 @@ function getDetailedHelpEmbed(iCommand) {
 	Commands.map((aCmd) => {
 		if (aCmd.command === iCommand.command) {
 			res.embed.description = aCmd.inputs.map((aCmdInput) => {
-				return " `" + aCmdInput + "`";
-			}).toString().trim() + "\n" +
+					return " `" + aCmdInput + "`";
+				}).toString().trim() + "\n" +
 				aCmd.usage;
 			res.embed.fields = aCmd.options.map((anOpt) => {
 				return {
@@ -672,14 +672,14 @@ async function updateCryental(callback) {
 
 async function updateAnimeDb(callback) {
 	tryRequest({
-		uri: OHYS_JSON_URL,
-		headers: {
-			"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
-		},
-		method: "GET",
-		encoding: "utf8",
-		timeout: 3000
-	}, 3,
+			uri: OHYS_JSON_URL,
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded; Charset=utf-8"
+			},
+			method: "GET",
+			encoding: "utf8",
+			timeout: 3000
+		}, 3,
 		(ohysReqErr, ohysReqRes, ohysReqBody) => {
 			if (ohysReqErr) {
 				printLogError(undefined, 0, "tryRequest(ohysJSON) error", ohysReqErr);
@@ -803,51 +803,51 @@ function getGeneralDebugLog(message) {
 			default:
 			case "text":
 				tmpEmbed.embed.fields = [{
-					name: "Server",
-					value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
-					inline: true
-				},
-				{
-					name: "Channel",
-					value: `<#${message.channel.id}>`,
-					inline: true
-				},
-				{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
+						name: "Server",
+						value: message.channel.guild.name + "\n(Owner : " + `<@${message.channel.guild.ownerID}>` + ")",
+						inline: true
+					},
+					{
+						name: "Channel",
+						value: `<#${message.channel.id}>`,
+						inline: true
+					},
+					{
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
 				];
 				break;
 			case "group":
 				tmpEmbed.embed.fields = [{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
 				];
 				break;
 			case "dm":
 				tmpEmbed.embed.fields = [{
-					name: "Author",
-					value: `<@!${message.author.id}>`,
-					inline: true
-				},
-				{
-					name: "Message",
-					value: "```" + message.content + "```",
-					inline: false
-				}
+						name: "Author",
+						value: `<@!${message.author.id}>`,
+						inline: true
+					},
+					{
+						name: "Message",
+						value: "```" + message.content + "```",
+						inline: false
+					}
 				];
 				break;
 		}
@@ -978,8 +978,8 @@ async function handleArgs(message, content) {
 			for (var i = 0; i < rawArgsArray.length; i++) {
 				if (rawArgsArray[i].startsWith("--")) {
 					if (Commands.find((aCmd) => { return aCmd.command === "help"; }).inputs.find((aHelpInput) => {
-						return aHelpInput === rawArgsArray[i].replace("--", "").toLowerCase().trim();
-					})) {
+							return aHelpInput === rawArgsArray[i].replace("--", "").toLowerCase().trim();
+						})) {
 						if (foundCommand.command === "help") {
 							answerToTheChannel(message, "", {
 								embed: {
@@ -1132,8 +1132,8 @@ async function responseToMessage(message, args) {
 			break;
 		case "uptime":
 			if (args.options.find((anInputOpt) => {
-				return anInputOpt.name === "system";
-			}) != undefined) {
+					return anInputOpt.name === "system";
+				}) != undefined) {
 				answerToTheChannel(message, "", {
 					embed: {
 						title: "봇 서버 업타임",
@@ -1347,8 +1347,8 @@ async function responseToMessage(message, args) {
 					case "soundcloud":
 						qNum = 1;
 						break;
-					// case "namu":
-					// break;
+						// case "namu":
+						// break;
 				}
 				// if(args.arg===undefined||args.arg===null||args.arg.length<1){
 				// 	answerToTheChannel(message,)
@@ -1519,11 +1519,11 @@ async function responseToMessage(message, args) {
 							} else {
 								if (!detailedFlag) {
 									tryRequest({
-										uri: searchRes.data.items[0].link,
-										method: "GET",
-										encoding: null,
-										timeout: 3000
-									}, 3,
+											uri: searchRes.data.items[0].link,
+											method: "GET",
+											encoding: null,
+											timeout: 3000
+										}, 3,
 										(imgReqErr, imgReqRes, imgReqBody) => {
 											if (imgReqErr) {
 												printLogError(message, 0, "tryRequest(image) error", JSON.stringify(imgReqErr));
@@ -1594,21 +1594,21 @@ async function responseToMessage(message, args) {
 											searchRes.data.queries.request[0].startIndex :
 											searchRes.data.queries.request[0].startIndex + " ~ " + (searchRes.data.queries.request[0].startIndex + searchRes.data.queries.request[0].count - 1) + "") +
 										"번째 결과, " + searchRes.data.searchInformation.searchTime + "초 소요`", {
-										embed: {
-											color: COLOR_GREEN,
-											title: stringifyHtmlSnippet(searchRes.data.items[0].htmlTitle),
-											description: searchRes.data.items[0].link,
-											image: {
-												url: searchRes.data.items[0].link
-											},
-											thumbnail: {
-												url: searchRes.data.items[0].image.thumbnailLink
-											},
-											footer: {
-												text: searchRes.data.items[0].image.contextLink
+											embed: {
+												color: COLOR_GREEN,
+												title: stringifyHtmlSnippet(searchRes.data.items[0].htmlTitle),
+												description: searchRes.data.items[0].link,
+												image: {
+													url: searchRes.data.items[0].link
+												},
+												thumbnail: {
+													url: searchRes.data.items[0].image.thumbnailLink
+												},
+												footer: {
+													text: searchRes.data.items[0].image.contextLink
+												}
 											}
-										}
-									}, undefined);
+										}, undefined);
 								}
 							}
 						} else {
@@ -1838,9 +1838,21 @@ async function responseToMessage(message, args) {
 									tmpDebug += "author.url = " + tmpEmbed.embed.author.url;
 
 									var tmpDiffs = -1;
+									// var tmpIsUnique = false;
 									var tmpTitle = "";
 
-									tmpCryentalBody.map((anAnime) => {
+									// tmpCryentalBody.map((anAnime) => {
+									// 	if (anAnime.anime === null) {
+									// 		tmpDiffs += 2;
+									// 	} else {
+									// 		if (tmpTitle != anAnime.anime.title.canonical) {
+									// 			tmpTitle = anAnime.anime.title.canonical;
+									// 			tmpDiffs++;
+									// 		}
+									// 	}
+									// });
+
+									for (var i = 0; i < tmpCryentalBody.length, i++) {
 										if (anAnime.anime === null) {
 											tmpDiffs += 2;
 										} else {
@@ -1849,7 +1861,7 @@ async function responseToMessage(message, args) {
 												tmpDiffs++;
 											}
 										}
-									});
+									}
 
 									// var tmpFooterTemplate = footer `애니 시리즈 검색 ${0}, ${1}화 검색 됨`;
 									if (tmpDiffs < 1) { // Found the unique anime
@@ -1939,20 +1951,20 @@ async function responseToMessage(message, args) {
 
 					break;
 				case "list":
-				// queryToDb(`SELECT * FROM `, (qSelErr, qSelRes) => {
+					// queryToDb(`SELECT * FROM `, (qSelErr, qSelRes) => {
 
-				// });
-				// break;
+					// });
+					// break;
 				case "add":
-				/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
-					answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
-						(sentMessage) => {
-							message.channel.stopTyping();
-						});
-				} else {
+					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
+						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
+							(sentMessage) => {
+								message.channel.stopTyping();
+							});
+					} else {
 
-				}
-				break;*/
+					}
+					break;*/
 				case "remove":
 					/*if (args.arg === undefined || args.arg === null || args.arg.length === 0) {
 						answerToTheChannel(message, "검색어가 입력되지 않았서염...", undefined,
@@ -2008,7 +2020,7 @@ async function responseToMessage(message, args) {
 												footer: {
 													text: `현재 시각 : ${getKoTimeString()}`
 												},
-												fields:[]
+												fields: []
 											}
 										};
 
@@ -2036,14 +2048,14 @@ async function responseToMessage(message, args) {
 											tmpEmbed.embed.fields.push(tmpAField);
 										}
 
-										
-										setNPushADayField(tmpCryentalBody.database.Monday,	"월요일");
-										setNPushADayField(tmpCryentalBody.database.Tuesday,	"화요일");
-										setNPushADayField(tmpCryentalBody.database.Wednesday,	"수요일");
-										setNPushADayField(tmpCryentalBody.database.Thursday,	"목요일");
-										setNPushADayField(tmpCryentalBody.database.Friday,	"금요일");
-										setNPushADayField(tmpCryentalBody.database.Saturday,	"토요일");
-										setNPushADayField(tmpCryentalBody.database.Sunday,	"일요일");
+
+										setNPushADayField(tmpCryentalBody.database.Monday, "월요일");
+										setNPushADayField(tmpCryentalBody.database.Tuesday, "화요일");
+										setNPushADayField(tmpCryentalBody.database.Wednesday, "수요일");
+										setNPushADayField(tmpCryentalBody.database.Thursday, "목요일");
+										setNPushADayField(tmpCryentalBody.database.Friday, "금요일");
+										setNPushADayField(tmpCryentalBody.database.Saturday, "토요일");
+										setNPushADayField(tmpCryentalBody.database.Sunday, "일요일");
 
 										answerToTheChannel(message, undefined, tmpEmbed, undefined);
 									}
