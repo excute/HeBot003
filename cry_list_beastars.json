@@ -1,0 +1,597 @@
+[
+{
+	"id": "9b4491aa",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": null,
+	"torrentName": "[Ohys-Raws] Beastars (BSFUJI 1280x720 x264 AAC).torrent",
+	"info":
+	{
+		"totalHash": "ad3d3c1514368c92178cc7dc50e6ade449afaaf1",
+		"totalSize": "3.69 GB",
+		"createdDate": "2020-01-03 04:08:22",
+		"torrent":
+		{
+			"seeders": 5,
+			"leechers": 1,
+			"completed": 591,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 01 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "275.8 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 02 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "321.52 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 03 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "298.14 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 04 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "333.21 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 05 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "331.85 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 06 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "307.59 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 07 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "325.77 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 08 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "306.93 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 09 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "359.81 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 10 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "298.18 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 11 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "303.94 MB"
+			},
+			{
+				"name": "[Ohys-Raws] Beastars - 12 END (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "316.11 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=9b4491aa&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=9b4491aa&proper=magnet"
+	}
+},
+{
+	"id": "01112c3f",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": 11,
+	"torrentName": "[Ohys-Raws] Beastars - 11 (BSFUJI 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "51c1e577b78026a4410d99e1cd32c6c87db0a953",
+		"totalSize": "303.94 MB",
+		"createdDate": "2019-12-25 06:39:17",
+		"torrent":
+		{
+			"seeders": 4,
+			"leechers": 0,
+			"completed": 32,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 11 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "303.94 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=01112c3f&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=01112c3f&proper=magnet"
+	}
+},
+{
+	"id": "f757212c",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": 10,
+	"torrentName": "[Ohys-Raws] Beastars - 10 (BSFUJI 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "6db9d62e8831075b6aa98351de091c691cf3ea10",
+		"totalSize": "298.18 MB",
+		"createdDate": "2019-12-18 06:40:23",
+		"torrent":
+		{
+			"seeders": 3,
+			"leechers": 0,
+			"completed": 21,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 10 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "298.18 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=f757212c&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=f757212c&proper=magnet"
+	}
+},
+{
+	"id": "2da16e37",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": 9,
+	"torrentName": "[Ohys-Raws] Beastars - 09 (BSFUJI 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "0367d184939fe6f336bb64d45f962345ab95c9e9",
+		"totalSize": "359.81 MB",
+		"createdDate": "2019-12-11 07:52:22",
+		"torrent":
+		{
+			"seeders": 2,
+			"leechers": 0,
+			"completed": 21,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 09 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "359.81 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=2da16e37&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=2da16e37&proper=magnet"
+	}
+},
+{
+	"id": "6ff23b81",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": 8,
+	"torrentName": "[Ohys-Raws] Beastars - 08 (BSFUJI 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "aa0c65a7a416fea2d6329d4aeacfa3edea3ea826",
+		"totalSize": "306.93 MB",
+		"createdDate": "2019-12-04 06:38:58",
+		"torrent":
+		{
+			"seeders": 3,
+			"leechers": 0,
+			"completed": 19,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 08 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "306.93 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=6ff23b81&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=6ff23b81&proper=magnet"
+	}
+},
+{
+	"id": "298a1d55",
+	"releaseGroup": "Ohys-Raws",
+	"title": "Beast Wars Neo",
+	"episode": 7,
+	"torrentName": "[Ohys-Raws] Beastars - 07 (BSFUJI 1280x720 x264 AAC).mp4.torrent",
+	"info":
+	{
+		"totalHash": "41003b5ebd4c4e4c77d31f58f65918f2c9d0b945",
+		"totalSize": "325.77 MB",
+		"createdDate": "2019-11-27 07:27:15",
+		"torrent":
+		{
+			"seeders": 3,
+			"leechers": 0,
+			"completed": 24,
+			"announces": ["http://anidex.moe:6969/announce", "http://nyaa.tracker.wf:7777/announce", "http://tracker.anirena.com:80/announce", "udp://104.238.198.186:8000/annonuce", "udp://tracker.coppersurfer.tk:6969/announce", "udp://tracker.opentrackr.org:1337/announce", "udp://tracker.uw0.xyz:6969/announce"],
+			"files": [
+			{
+				"name": "[Ohys-Raws] Beastars - 07 (BSFUJI 1280x720 x264 AAC).mp4",
+				"size": "325.77 MB"
+			}]
+		}
+	},
+	"anime":
+	{
+		"duration": 23,
+		"type": "TV",
+		"status": "Finished",
+		"title":
+		{
+			"canonical": "Beast Wars Neo",
+			"romaji": "Beast Wars Neo",
+			"english": "Beast Wars Neo",
+			"japanese": "超生命体トランスフォーマー ビーストウォーズ・ネオ",
+			"hiragana": "",
+			"synonyms": ["Transformers: Beast Wars Neo", "Chou Seimeitai Transformers Beast Wars Neo"]
+		},
+		"synopsis": "Beast Wars Neo was a television series that aired in Japan in 1999, in support of the toyline of the same name. It directly follows Beast Wars II.\r\nThe show follows the adventures of a crew of Maximals, commanded by Big Convoy, as they compete with Magmatron's evil Predacons to collect the Angolmois energy capsules, scattered at the end of Beast Wars II.",
+		"startDate": "1999-02-03 00:00:00",
+		"endDate": "1999-09-29 00:00:00",
+		"totalEpisodes": 35,
+		"rating": 5,
+		"firstChannel": "",
+		"originalFrom": "Unknown",
+		"trailers": null,
+		"image": "https://cryental.dev/api/ohys/thumbnail?id=8524d9e17e19569b6589e6064f342bc2dcf12d5c",
+		"genes": ["Action", "Adventure", "Mecha", "Shounen", "Super Power"],
+		"mappings": [
+		{
+			"service": "anilist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "myanimelist/anime",
+			"serviceId": "6511"
+		},
+		{
+			"service": "thetvdb/anime",
+			"serviceId": "73925"
+		},
+		{
+			"service": "anidb/anime",
+			"serviceId": "4202"
+		},
+		{
+			"service": "trakt/anime",
+			"serviceId": "11775"
+		},
+		{
+			"service": "kitsu/anime",
+			"serviceId": "4587"
+		}]
+	},
+	"metadata":
+	{
+		"video":
+		{
+			"resolution": "1280x720",
+			"codec": "x264"
+		},
+		"audio":
+		{
+			"codec": "AAC"
+		}
+	},
+	"download":
+	{
+		"torrent": "https://cryental.dev/api/ohys/download?id=298a1d55&proper=torrent",
+		"magnet": "https://cryental.dev/api/ohys/download?id=298a1d55&proper=magnet"
+	}
+}]

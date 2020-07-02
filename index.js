@@ -94,7 +94,21 @@ const CRYENTAL_HOME = "https://cryental.dev";
 const CRYENTAL_SERVICE = "http://cryental.dev/services/anime/";
 // const CRYENAL_FAVICON = "http://cryental.dev/favicon.ico";
 const CRYENAL_FAVICON = "http://avatars3.githubusercontent.com/u/44664655?s=400&u=d14de3aab704fa4dc5827692b7d8aafd89fe4286&v=4";
-const ANIDB_ANIME_URI = "http://anidb.net/anime/";
+// const ANIDB_ANIME_URI = "http://anidb.net/anime/";
+
+const ANIDBS = [{
+	name: "anidb",
+	uri: "http://anidb.net/anime/"
+}, {
+	name: "anilist",
+	uri: "https://anilist.co/anime/"
+}, {
+	name: "kitsu",
+	uri: "https://kitsu.io/anime/"
+}, {
+	name: "myanimelist",
+	uri: "https://myanimelist.net/anime/"
+}];
 
 
 /* ~~~~ General functions ~~~~ */
@@ -1853,14 +1867,15 @@ async function responseToMessage(message, args) {
 									// });
 
 									for (var i = 0; i < tmpCryentalBody.length; i++) {
-										if (tmpCryentalBody[i] === null) {
+										if ((tmpCryentalBody[i] === undefined) || (tmpCryentalBody[i] === null)) {
 											tmpDiffs += 2;
 										} else {
-											if (tmpTitle != tmpCryentalBody[i].title.canonical) {
-												tmpTitle = tmpCryentalBody[i].title.canonical;
+											if (tmpTitle != tmpCryentalBody[i].anime.title.canonical) {
+												tmpTitle = tmpCryentalBody[i].anime.title.canonical;
 												tmpDiffs++;
 											}
 										}
+										// printLog(`[DEB]	${tmpCryentalBody[i].anime.title.canonical}	:	${tmpDiffs}`);
 									}
 
 									// var tmpFooterTemplate = footer `애니 시리즈 검색 ${0}, ${1}화 검색 됨`;
@@ -1873,10 +1888,22 @@ async function responseToMessage(message, args) {
 										}
 										tmpEmbedTotalSize += tmpEmbed.embed.title.length;
 										tmpDebug += "\ntitle = " + tmpEmbed.embed.title;
-
+										/*
 										tmpEmbed.embed.url = ANIDB_ANIME_URI + tmpFoundSeries.mappings.find((aMap) => {
 											return aMap.service.toLowerCase().startsWith("anidb");
 										}).serviceId;
+										*/
+										let tmpAniDbService = undefined;
+										for (let i = 0;
+											(i < ANIDBS.length) && (tmpAniDbService === undefined); i++) {
+											tmpAniDbService = tmpFoundSeries.mappings.find((aMap) => {
+												return aMap.service.startsWith(ANIDBS[i].name);
+											});
+											if (tmpAniDbService != undefined) {
+												tmpEmbed.embed.url = ANIDBS[i].uri + tmpAniDbService.serviceId;
+											}
+										}
+
 										tmpEmbedTotalSize += tmpEmbed.embed.url.length;
 										tmpDebug += "\nurl = " + tmpEmbed.embed.url;
 
